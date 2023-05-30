@@ -1,0 +1,2259 @@
+
+/*header-page*/
+/*============================================*/
+#service-subPage{
+    padding-bottom: 180px;
+}
+#service-subPage .header-page{
+    padding-top: 84px;
+}
+#service-subPage .header-page .header-description{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 85px;
+}
+#service-subPage .header-page .heading{
+    font-size: 52px;
+    line-height: 77px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+}
+#service-subPage.en .header-page .heading{
+    letter-spacing: 0;
+    line-height: 64px;
+}
+#service-subPage .header-page .text-description p{
+    font-size: 16px;
+    line-height: 36px;
+    letter-spacing: 0.5px;
+    min-height: 144px;
+    display: flex;
+    align-items: center;
+}
+#service-subPage.web-page .header-page .text-description p{
+    padding-right: 8px;
+}
+#service-subPage.en .header-page .text-description p{
+    letter-spacing: 0;
+    /*line-height: 30px;*/
+}
+#service-subPage .header-page .title-content{
+    padding-top: 9px;
+}
+#service-subPage.technical-training .header-page .title-content{
+    padding-right: 60px;
+}
+#service-subPage.technical-training.en .header-page .title-content{
+    padding-top: 0;
+}
+#service-subPage .header-page .headerImg-banner img{
+    width: 100%;
+}
+#service-subPage .content-page{
+    padding-top: 200px;
+}
+#service-subPage .header-page .subTitle{
+    font-size: 32px;
+    line-height: 32px;
+    letter-spacing: 0.6px;
+    font-weight: 500;
+}
+
+
+
+    /*technical-training*/
+/*===============================================*/
+.technical-training .technical-training-list{
+    margin-bottom: 160px;
+}
+.technical-training .technical-training-list .technical-training-item{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 112px;
+    align-items: center;
+}
+.technical-training .technical-training-list .technical-training-item:last-child{
+    margin-bottom: 0;
+}
+.technical-training .technical-training-list .technical-training-item .imageItem{
+    padding-right: 60px;
+}
+.technical-training .technical-training-list .technical-training-item .info{
+    /*padding-top: 37px;*/
+}
+.technical-training .technical-training-list .technical-training-item .title{
+    font-size: 32px;
+    line-height: 47px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 33px;
+}
+.technical-training.en .technical-training-list .technical-training-item .title{
+    letter-spacing: 0;
+}
+.technical-training .technical-training-list .technical-training-item .ttl{
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 500;
+    margin-bottom: 1px;
+}
+.technical-training .technical-training-list .technical-training-item .text{
+    font-size: 16px;
+    line-height: 28px;
+}
+.technical-training .technical-training-list .technical-training-item .text-info{
+    letter-spacing: 0.5px;
+    margin-bottom: 27px;
+}
+.technical-training.en .technical-training-list .technical-training-item .text-info{
+    letter-spacing: 0px;
+}
+.technical-training .technical-training-list .technical-training-item .text-info:last-child{
+    margin-bottom: 0;
+}
+.technical-training .video-content{
+    position: relative;
+    padding-bottom: 56.3%;
+}
+.technical-training .video-content iframe{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/*hr-page*/
+/*===================================*/
+.hr-page .text{
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.5px;
+}
+.hr-page.en .text{
+    letter-spacing: 0;
+}
+.hr-page .companies-recruiting{
+    padding-bottom: 160px;
+}
+.hr-page .companies-recruiting .company-item{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+.hr-page .companies-recruiting .company-item .title{
+    font-size: 32px;
+    line-height: 47px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+}
+.hr-page.en .companies-recruiting .company-item .title{
+    letter-spacing: 0;
+}
+.hr-page .companies-recruiting .company-item .company-info{
+    padding-bottom: 5px;
+}
+.hr-page .companies-recruiting .company-item .company-img{
+    padding-right: 60px;
+}
+.hr-page .practical-experience{
+    border-top: 1px solid #E2E2E2;
+    border-bottom: 1px solid #E2E2E2;
+    padding-top: 158px;
+    padding-bottom: 160px;
+}
+.hr-page .practical-experience .heading-block{
+    font-size: 42px;
+    line-height: 1.75;
+    font-weight: 500;
+    letter-spacing: 1.3px;
+    margin-bottom: 107px;
+}
+.hr-page.en .practical-experience .heading-block{
+    letter-spacing: 0;
+}
+.hr-page .practical-experience-list{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 120px;
+    row-gap: 120px;
+    margin-bottom: 120px;
+}
+.hr-page .practical-experience-item .ttl{
+    font-size: 18px;
+    line-height: 28px;
+    padding-left: 18px;
+    position: relative;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    margin-bottom: 12px;
+}
+.hr-page .practical-experience-item .ttl:before{
+    content: "";
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: #292F64;
+    top: 12px;
+    left: 0;
+    border-radius: 50%;
+}
+.hr-page.en .practical-experience-item .ttl{
+    letter-spacing: 0;
+}
+.hr-page .practical-experience-item .title{
+    font-size: 32px;
+    line-height: 47px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+}
+.hr-page.en .practical-experience-item .title{
+    letter-spacing: 0;
+}
+.hr-page.en-page .practical-experience-item .title{
+    min-height: 94px;
+}
+.hr-page .practical-experience-item .text{
+    margin-bottom: 46px;
+}
+.hr-page.en .practical-experience-item .text{
+    min-height: 84px;
+}
+.hr-page .practical-experience-item .image img{
+    width: 100%;
+}
+.hr-page .practical-experience .image-banner{
+    background: #F7F7F7;
+    padding: 96px 111px;
+}
+.hr-page .practical-experience .image-banner img{
+    width: 100%;
+}
+.hr-page .job-fair{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 114px;
+    padding-top: 162px;
+    align-items: center;
+}
+.hr-page .job-fair .job-fair-info{
+    padding-bottom: 7px;
+}
+.hr-page .job-fair .heading-block{
+    font-size: 42px;
+    line-height: 62px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    letter-spacing: 1.2px;
+}
+.hr-page.en .job-fair .heading-block{
+    letter-spacing: 0;
+}
+.hr-page .job-fair .job-fair-image img{
+    width: 100%;
+}
+
+
+/*bpo-page*/
+/*========================================*/
+#service-subPage.bpo-page .content-page {
+    padding-top: 160px;
+}
+.bpo-page .heading-block{
+    font-size: 42px;
+    line-height: 62px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    margin-bottom: 22px;
+}
+.bpo-page .tabList{
+    display: flex;
+}
+.bpo-page .tabList .tabItem{
+    display: flex;
+    margin-right: 16px;
+}
+.bpo-page .tabList .tabItem:last-child{
+    margin-bottom: 0;
+}
+.bpo-page .tabList .tabItem a{
+    display: flex;
+    height: 80px;
+    background: #F7F7F7;
+    justify-content: center;
+    align-items: center;
+    padding-left: 40px;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.5px;
+    padding-right: 91px;
+}
+.bpo-page .tabList .tabItem:nth-child(2) a{
+    padding-right: 74px;
+}
+.bpo-page .tabList .tabItem a span{
+    display: inline-block;
+    position: relative;
+}
+.bpo-page .tabList .tabItem a span:after{
+    content: "";
+    position: absolute;
+    background-image: url("/wp-content/uploads/arrow-drop.png");
+    background-size: 100%;
+    width: 8px;
+    height: 14px;
+    right: -32px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: .3s;
+}
+.bpo-page .tabList .tabItem a:hover span:after{
+    top: 80%;
+}
+
+
+.bpo-page .data-entry{
+    padding-top: 96px;
+}
+.bpo-page.en .heading-block{
+    letter-spacing: 0;
+}
+.bpo-page .text{
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.5px;
+}
+.bpo-page.en .text{
+    letter-spacing: 0;
+}
+.bpo-page .sub-ttl{
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.5px;
+}
+.bpo-page.en .sub-ttl{
+    letter-spacing: 0;
+}
+.bpo-page .data-entry-list{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 40px;
+    row-gap: 48px;
+    margin-top: 94px;
+}
+.bpo-page .data-entry-item{
+    background: #F7F7F7;
+    padding: 60px 24px 30px;
+}
+.bpo-page .data-entry-item .image{
+    display: block;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.bpo-page .data-entry-item .ttl{
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.5px;
+    margin-bottom: 22px;
+}
+.bpo-page.en .data-entry-item .ttl{
+    letter-spacing: 0;
+}
+.bpo-page .data-entry-item .text{
+    min-height: 112px;
+}
+
+.bpo-page .case-study{
+    padding-top: 112px;
+    border-bottom: 1px solid #E2E2E2;
+    padding-bottom: 158px;
+}
+.bpo-page .case-study .title-block{
+    font-size: 32px;
+    line-height: 47px;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 64px;
+}
+.bpo-page.en .case-study .title-block{
+    letter-spacing: 0;
+}
+.bpo-page .case-study-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
+}
+.bpo-page .case-study-item .image{
+    display: block;
+    margin-bottom: 29px;
+}
+.bpo-page .case-study-item .image img{
+    width: 100%;
+}
+.bpo-page .case-study-item .ttl{
+    font-size: 22px;
+    line-height: 1.75;
+    letter-spacing: 0.6px;
+    padding: 0 28px;
+    display: flex;
+    justify-content: center;
+}
+.bpo-page.en .case-study-item .ttl{
+    letter-spacing: 0;
+}
+
+.bpo-page .office-support{
+    padding-top: 160px;
+}
+.bpo-page .office-support-list{
+    margin-top: 62px;
+    margin-bottom: 146px;
+}
+.bpo-page .office-support-item{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-bottom: 110px;
+}
+.bpo-page .office-support-item:last-child{
+    margin-bottom: 0;
+}
+.bpo-page .office-support-item .imageContent{
+    padding-right: 60px;
+}
+.bpo-page .office-support-item .title{
+    font-size: 32px;
+    line-height: 47px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+.bpo-page.en .office-support-item .title{
+    letter-spacing: 0;
+}
+.bpo-page .office-support-item .text{
+    margin-bottom: 28px;
+}
+.bpo-page .office-support-item .text:last-child{
+    margin-bottom: 0;
+}
+.bpo-page .office-support-item .text-box{
+    background: #F7F7F7;
+    padding: 34px 32px;
+}
+.bpo-page .office-support-item .text-box .text{
+    font-size: 14px;
+    letter-spacing: 0.4px;
+}
+.bpo-page.en .office-support-item .text-box .text{
+    letter-spacing: 0;
+}
+.bpo-page .office-support-item .text-box .ttl{
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+.bpo-page .office-support-item:nth-child(3) .info{
+    padding-top: 13px;
+}
+
+
+/*fdi-support*/
+/*=====================================*/
+.fdi-support .heading-block{
+    font-size: 42px;
+    line-height: 62px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    margin-bottom: 97px;
+}
+.fdi-support .supportContent-item{
+    padding-bottom: 112px;
+    border-bottom: 1px solid #E2E2E2;
+    margin-bottom: 112px;
+}
+.fdi-support .supportContent-item:last-child{
+    border-bottom: 0;
+}
+.fdi-support .support-content{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+}
+.fdi-support .support-content .imageContent{
+    padding-right: 60px;
+}
+.fdi-support .support-content .title{
+    font-size: 32px;
+    line-height: 1.75;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 26px;
+}
+.fdi-support.en .support-content .title{
+    letter-spacing: 0;
+}
+.fdi-support .support-content .text{
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.5px;
+}
+.fdi-support.en .support-content .text{
+    letter-spacing: 0;
+}
+.fdi-support .support-content .ttl{
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 21px;
+}
+.fdi-support .support-content .info-ttl{
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+.fdi-support .support-content .info-txt{
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 0.4px;
+}
+.fdi-support .support-content .subInfo{
+    background: #F7F7F7;
+    padding: 32px;
+}
+
+
+
+
+
+/*web-page*/
+/*=====================================*/
+.web-page .text{
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.5px;
+}
+.web-page.en .text{
+    letter-spacing: 0;
+}
+#service-subPage.web-page .content-page {
+    padding-top: 80px;
+}
+.web-page .pointContent{
+    padding-bottom: 69px;
+}
+.web-page .point-list{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 127px;
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+.web-page .point-list:after{
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background: #E2E2E2;
+    left: 50%;
+    top: 0;
+}
+.web-page .point-item .title{
+    font-size: 32px;
+    line-height: 38px;
+    font-weight: 500;
+    margin-bottom: 32px;
+}
+.web-page .point-item .text{
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.5px;
+}
+.web-page.en .point-item .text{
+    letter-spacing: 0;
+}
+.web-page .point-item:nth-child(1){
+    padding-right: 20px;
+}
+.web-page .point-item:nth-child(2){
+    padding-right: 50px;
+}
+
+.web-page .web-content{
+    border-top: 1px solid #E2E2E2;
+    display: flex;
+    flex-wrap: wrap;
+}
+.web-page .web-sidebar{
+    width: 280px;
+    position: relative;
+    z-index: 5;
+}
+.web-page .web-sidebar .padding-sidebar{
+    height: 96px;
+    display: block;
+    width: 100%;
+}
+.web-page .web-sidebar .nav-webTab{
+    position: absolute;
+    top: 96px;
+    left: 0;
+    width: 100%;
+    transition: .3s;
+}
+.web-page .web-sidebar .nav-webTab .web-tabList{
+    transition: .3s;
+}
+.web-page .web-sidebar .nav-webTab .web-tabList.sidebar-scroll{
+    position: fixed;
+    top: 186px;
+    width: 280px;
+    background: #fff;
+    /*transform: translate3d(0,-100%,0);*/
+    transition: .3s;
+}
+.web-page .web-sidebar .nav-webTab.hide-sidebar{
+    opacity: 0;
+    visibility: hidden;
+}
+.web-page .web-main{
+    width: calc(100% - 280px);
+    padding-left: 84px;
+}
+.web-page .heading-block {
+    font-size: 42px;
+    line-height: 62px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    margin-bottom: 64px;
+}
+.web-page.en .heading-block{
+    letter-spacing: 0;
+}
+.web-page .web-sidebar .web-tabItem{
+    margin-bottom: 4px;
+}
+.web-page .web-sidebar .web-tabItem a{
+    display: flex;
+    height: 108px;
+    background: #F7F7F7;
+    align-items: center;
+    padding-left: 40px;
+    font-size: 18px;
+    line-height: 36px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+.web-page.en .web-sidebar .web-tabItem a{
+    letter-spacing: 0;
+    padding-left: 25px;
+}
+.web-page .web-sidebar .web-tabItem a span{
+    position: relative;
+}
+.web-page .web-sidebar .web-tabItem a span:after{
+    content: "";
+    position: absolute;
+    background-image: url("/wp-content/uploads/scv_icon_more_blue.png");
+    background-size: 100%;
+    width: 14px;
+    height: 8px;
+    top: 52%;
+    right: -30px;
+    transform: translateY(-50%);
+    transition: .3s;
+}
+.web-page .web-sidebar .web-tabItem a:hover span:after{
+    right: -40px;
+}
+
+/*website-production*/
+.web-page #website-production{
+    padding-bottom: 112px;
+    padding-top: 96px;
+}
+.web-page .website-production-content{
+    display: flex;
+    flex-wrap: wrap;
+}
+.web-page .website-production-content .imageContent{
+    width: 44.5%;
+    padding-top: 3px;
+}
+.web-page .website-production-content .info{
+    width: 55.5%;
+    padding-left: 48px;
+}
+.web-page #website-production .heading-block{
+    margin-bottom: 61px;
+}
+.web-page #website-production .info .text{
+    padding-left: 39px;
+    position: relative;
+    margin-bottom: 28px;
+    margin-right: -8px;
+}
+.web-page #website-production .info .text:nth-child(2){
+    margin-right: 0;
+}
+.web-page #website-production .info .text:before{
+    content: "";
+    position: absolute;
+    background-image: url("/wp-content/uploads/icon_check.png");
+    background-size: 100%;
+    width: 24px;
+    height: 24px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+.web-page .web-main .webItem{
+    border-bottom: 1px solid #E2E2E2;
+}
+.web-page .web-main .webItem:last-child{
+    border-bottom: 0;
+}
+
+/*lab-development*/
+.web-page #lab-development{
+    padding-top: 112px;
+    padding-bottom: 112px;
+}
+.web-page #lab-development .lab-development-image{
+    display: block;
+    margin-bottom: 43px;
+}
+.web-page #lab-development .lab-development-image img{
+    width: 100%;
+}
+.web-page #lab-development .subTtl-img{
+    font-size: 18px;
+    line-height: 38px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    margin-bottom: 58px;
+}
+.web-page.en #lab-development .subTtl-img{
+    letter-spacing: 0;
+}
+.web-page #lab-development .title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, rgba(39,46,100,0.15) 0%, rgba(157,73,96,0.15) 100%);
+    font-size: 22px;
+    line-height: 33px;
+    font-weight: 500;
+    height: 80px;
+    border-radius: 4px;
+    letter-spacing: 0.6px;
+    margin-bottom: 63px;
+    position: relative;
+    padding: 0 20px;
+    text-align: center;
+}
+.web-page #lab-development .title:after{
+    content: "";
+    position: absolute;
+    background-image: url("/wp-content/uploads/icon_dots.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 22px;
+    height: 58px;
+    left: 50%;
+    bottom: -50px;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+.web-page.en #lab-development .title{
+    letter-spacing: 0;
+}
+.web-page #lab-development .infoList{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 40px;
+}
+.web-page #lab-development .infoItem{
+    background: #F7F7F7;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 64px 40px 60px;
+}
+.web-page #lab-development .infoItem .icon{
+    width: 29%;
+    /*padding-top: 15px;*/
+}
+.web-page #lab-development .infoItem .info{
+    width: 71%;
+    padding-left: 31px;
+}
+.web-page #lab-development .infoItem .ttl{
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 22px;
+}
+.web-page.en #lab-development .infoItem .ttl{
+    letter-spacing: 0;
+}
+
+/*editing-processing*/
+.web-page #editing-processing{
+    padding-top: 112px;
+    padding-bottom: 0px;
+}
+.web-page #editing-processing .editing-processing-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
+}
+.web-page #editing-processing .editing-processing-item{
+    background: #F7F7F7;
+    padding: 60px 24px 22px;
+}
+.web-page #editing-processing .editing-processing-item .image{
+    display: block;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.web-page #editing-processing .editing-processing-item .ttl{
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.5px;
+    margin-bottom: 22px;
+}
+.web-page.en #editing-processing .editing-processing-item .ttl{
+    letter-spacing: 0;
+}
+
+/*production*/
+.web-page #production{
+    padding-top: 60px;
+}
+.web-page #production .production-item{
+    margin-right: 40px;
+}
+.web-page #production .slick-dots button{
+    font-size: 0;
+}
+.web-page #production .slick-dots button {
+    height: 12px;
+    width: 12px;
+    background: #D9D9D9;
+    border-radius: 50%;
+    transition: .3s;
+}
+.web-page #production .slick-dots li.slick-active button,
+.web-page #production .slick-dots button:hover{
+    background: #272E64;
+}
+.web-page #production .production-header{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+.web-page #production .arrow-slider{
+    display: flex;
+    margin-left: 29px;
+    margin-top: 6px;
+}
+.web-page #production .arrow-slider .arrow-icon{
+    width: 48px;
+    height: 48px;
+    background: #F4F4F4;
+    border-radius: 50%;
+    margin-right: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.web-page #production .slick-arrow{
+    width: 48px;
+    height: 48px;
+    background: #F4F4F4;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+.web-page #production .slick-dots{
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    max-width: calc(1400px - 280px);
+    padding-right: 100px;
+}
+.web-page #production .slick-dots li{
+    margin-right: 16px;
+    display: flex;
+}
+.web-page #production .slick-dots li:last-child{
+    margin-right: 0;
+}
+.web-page #production .production-inner{
+    width: calc(100vw + 280px + 84px);
+    position: relative;
+    margin-left: calc(-50vw - 140px - 42px);
+    left: calc(50% - 140px - 42px);
+}
+.web-page #production .production-slider{
+    max-width: calc(100% - ((100% - 1440px) / 2));
+    padding-left: 20px;
+    margin: 0 0 0 auto;
+}
+.web-page #production .production-list{
+    width: calc(100% - 280px);
+    padding-left: 84px;
+    margin: 0 0 0 auto;
+    position: static;
+}
+.web-page #production .production-item img{
+    width: 100%;
+}
+.web-page #production .slick-list.draggable{
+    padding-right: 35%;
+    margin-bottom: 40px;
+}
+.web-page #production .heading-block{
+    margin-bottom: 31px;
+    font-size: 32px;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 1500px) {
+
+    #service-subPage .header-page .heading {
+        font-size: 42px;
+        line-height: 62px;
+    }
+
+    /*technical-training*/
+    /*========================================*/
+
+    .technical-training .technical-training-list .technical-training-item .info {
+        padding-top: 0;
+    }
+
+    /*bpo-page*/
+    /*=========================================*/
+    .bpo-page .data-entry-list{
+        column-gap: 20px;
+        row-gap: 30px;
+    }
+    .bpo-page .case-study-list{
+        column-gap: 20px;
+    }
+
+
+    /*fdi-support*/
+    /*======================================*/
+    .fdi-support .support-content .title{
+        font-size: 28px;
+    }
+
+    /*web-page*/
+    /*=====================================*/
+    .web-page #production .production-slider {
+        max-width: calc(100% - ((100% - 1240px) / 2));
+    }
+    .web-page #production .slick-dots{
+        max-width: calc(1200px - 280px);
+        padding-right: 60px;
+    }
+    .web-page #production .production-list{
+        padding-left: 60px;
+    }
+    .web-page .web-main{
+        padding-left: 60px;
+    }
+    .web-page #production .production-item {
+        margin-right: 20px;
+    }
+    .web-page #production .production-inner {
+        width: calc(100vw + 280px + 60px);
+        position: relative;
+        margin-left: calc(-50vw - 140px - 30px);
+        left: calc(50% - 140px - 30px);
+    }
+
+    .web-page .website-production-content .info {
+        padding-left: 30px;
+    }
+    .web-page #website-production .info .text {
+        padding-left: 30px;
+        margin-bottom: 20px;
+        margin-right: -20px;
+    }
+    .web-page #website-production .info .text:before{
+        width: 20px;
+        height: 20px;
+    }
+    .web-page #lab-development .infoItem{
+        padding: 44px 20px 40px;
+    }
+    .web-page #lab-development .infoItem .info {
+        width: 73%;
+        padding-left: 25px;
+    }
+    .web-page .text{
+        font-size: 14px;
+        line-height: 26px;
+    }
+    .web-page #lab-development .infoItem .text{
+        font-size: 14px;
+        line-height: 26px;
+    }
+    .web-page #lab-development .subTtl-img {
+        font-size: 16px;
+        line-height: 34px;
+    }
+    .web-page #lab-development .infoItem .icon{
+        width: 27%;
+    }
+    .web-page #lab-development .title{
+        font-size: 18px;
+    }
+    .web-page #lab-development .infoItem .ttl{
+        font-size: 16px;
+    }
+    .web-page #editing-processing .editing-processing-item .image img{
+        width: 100px;
+    }
+    .web-page #editing-processing .editing-processing-item .ttl{
+        font-size: 16px;
+    }
+
+
+
+
+
+}
+
+
+@media (max-width: 1280px) {
+
+
+    #service-subPage{
+        padding-bottom: 100px;
+    }
+    #service-subPage .content-page{
+        padding-top: 120px;
+    }
+    #service-subPage .header-page {
+        padding-top: 40px;
+    }
+    #service-subPage .header-page .header-description{
+        margin-bottom: 60px;
+    }
+    #service-subPage .header-page .heading {
+        font-size: 36px;
+        line-height: 53px;
+        margin-bottom: 12px;
+    }
+    #service-subPage .header-page .subTitle{
+        font-size: 22px;
+        line-height: 22px;
+    }
+    #service-subPage .header-page .text-description p {
+        font-size: 14px;
+        line-height: 32px;
+        letter-spacing: 0.5px;
+        min-height: auto;
+    }
+    #service-subPage .header-page .headerImg-banner img{
+        min-height: 320px;
+        object-fit: cover;
+    }
+
+
+
+    /*technical-training*/
+    /*==================================*/
+    #service-subPage.technical-training .header-page .title-content {
+        padding-top: 0;
+    }
+    .technical-training .technical-training-list .technical-training-item .title {
+        font-size: 26px;
+        line-height: 38px;
+        margin-bottom: 20px;
+    }
+    .technical-training .technical-training-list .technical-training-item .ttl {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .technical-training .technical-training-list .technical-training-item .text {
+        font-size: 14px;
+        line-height: 26px;
+    }
+    .technical-training .technical-training-list .technical-training-item .text-info {
+        margin-bottom: 16px;
+    }
+
+
+    /*hr page*/
+    /*========================================*/
+    .hr-page .text {
+        font-size: 14px;
+        line-height: 26px;
+    }
+    .hr-page .companies-recruiting .company-item .title {
+        font-size: 26px;
+        line-height: 38px;
+        margin-bottom: 20px;
+    }
+    .hr-page .practical-experience-item .ttl {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .hr-page .practical-experience-item .title {
+        font-size: 26px;
+        line-height: 28px;
+        margin-bottom: 20px;
+    }
+    .hr-page .practical-experience .heading-block {
+        font-size: 32px;
+        line-height: 1.75;
+        margin-bottom: 80px;
+    }
+    .hr-page .practical-experience-list{
+        column-gap: 80px;
+        row-gap: 80px;
+    }
+    .hr-page .job-fair .heading-block {
+        font-size: 32px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    .hr-page .practical-experience .image-banner {
+        padding: 60px 80px;
+    }
+
+
+
+    /*bpo-page*/
+    /*=====================================*/
+    .bpo-page .text{
+        font-size: 14px;
+        line-height: 26px;
+    }
+    .bpo-page .heading-block{
+        font-size: 32px;
+        line-height: 1.6;
+    }
+    .bpo-page .sub-ttl {
+        font-size: 14px;
+        line-height: 26px;
+    }
+    .bpo-page .data-entry-list{
+        margin-top: 60px;
+    }
+    .bpo-page .data-entry-item{
+        padding: 60px 16px 30px;
+    }
+    .bpo-page .data-entry-item .text {
+        min-height: 104px;
+    }
+    .bpo-page .data-entry-item .image img{
+        width: 100px;
+    }
+    .bpo-page .data-entry-item .ttl{
+        font-size: 16px;
+    }
+    .bpo-page .case-study-item .ttl{
+        font-size: 18px;
+    }
+    .bpo-page .case-study{
+        padding-bottom: 100px;
+    }
+    .bpo-page .office-support {
+        padding-top: 120px;
+    }
+    .bpo-page .office-support-item .title{
+        font-size: 26px;
+        line-height: 38px;
+        margin-bottom: 15px;
+    }
+    .bpo-page .office-support-item .text-box .text {
+        font-size: 13px;
+    }
+
+
+    /*web-page*/
+    /*=====================================*/
+    .web-page .point-item .text{
+        font-size: 14px;
+        line-height: 26px;
+    }
+    .web-page .web-sidebar .web-tabItem a{
+        height: 90px;
+        font-size: 16px;
+        line-height: 36px;
+        padding-left: 20px;
+    }
+    .web-page .web-sidebar .nav-webTab .web-tabList.sidebar-scroll{
+        width: 240px;
+    }
+    .web-page .web-sidebar {
+        width: 240px;
+    }
+    .web-page .web-main {
+        width: calc(100% - 240px);
+        padding-left: 40px;
+    }
+    .web-page #editing-processing .editing-processing-item{
+        padding: 40px 15px 22px;
+    }
+    .web-page #editing-processing .editing-processing-item .image img {
+        width: 80px;
+    }
+    .web-page #editing-processing .editing-processing-item .image {
+        margin-bottom: 22px;
+    }
+    .web-page #editing-processing .editing-processing-item .ttl {
+        margin-bottom: 16px;
+    }
+    .web-page #production .production-inner {
+        width: calc(100vw + 240px + 40px);
+        position: relative;
+        margin-left: calc(-50vw - 120px - 20px);
+        left: calc(50% - 120px - 20px);
+    }
+    .web-page #production .production-list {
+        padding-left: 40px;
+        width: calc(100% - 240px);
+    }
+    .web-page #production .production-slider {
+        max-width: 100vw;
+        margin: auto;
+    }
+    .web-page #production .production-list {
+        padding-left: 40px;
+        width: calc(100% - 240px);
+    }
+    .web-page #production .slick-list.draggable {
+        padding-right: 25%;
+    }
+    .web-page .heading-block{
+        font-size: 32px;
+        line-height: 1.6;
+    }
+    .web-page #production .heading-block{
+        font-size: 24px;
+        margin-top: 5px;
+    }
+    .web-page #production .arrow-slider{
+        margin-top: 0;
+    }
+    .web-page #website-production .info .text{
+        margin-right: 0;
+    }
+    .web-page #editing-processing .editing-processing-list{
+        column-gap: 20px;
+    }
+    .web-page #lab-development .infoList{
+        column-gap: 20px;
+    }
+    .web-page #production .slick-dots {
+        max-width: 100%;
+        padding-right: 20px;
+    }
+
+
+
+    /*fdi-support*/
+    /*====================================*/
+    .fdi-support .heading-block {
+        font-size: 32px;
+        line-height: 1.75;
+        font-weight: 500;
+        letter-spacing: 1.2px;
+        margin-bottom: 60px;
+    }
+    .fdi-support .support-content .title{
+        font-size: 22px;
+    }
+    .fdi-support .support-content .text {
+        font-size: 14px;
+        line-height: 26px;
+    }
+    .fdi-support .supportContent-item {
+        padding-bottom: 80px;
+        margin-bottom: 80px;
+    }
+
+
+
+
+
+
+}
+
+
+
+
+@media (max-width: 1000px) {
+
+    #service-subPage {
+        padding-bottom: 100px;
+    }
+    #service-subPage .header-page {
+        padding-top: 40px;
+    }
+    #service-subPage .header-page .heading {
+        font-size: 28px;
+        line-height: 41px;
+        margin-bottom: 12px;
+    }
+    #service-subPage .header-page .text-description p{
+        min-height: 96px;
+    }
+    #service-subPage .header-page .subTitle{
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+
+    /*technical-training*/
+    /*==========================================*/
+    #service-subPage .content-page {
+        padding-top: 80px;
+    }
+    .technical-training .technical-training-list .technical-training-item .imageItem {
+        padding-right: 20px;
+    }
+    .technical-training .technical-training-list .technical-training-item .title {
+        font-size: 18px;
+        line-height: 26px;
+        margin-bottom: 15px;
+    }
+    .technical-training .technical-training-list .technical-training-item .ttl {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .technical-training .technical-training-list .technical-training-item .text {
+        font-size: 12px;
+        line-height: 24px;
+    }
+    .technical-training .technical-training-list .technical-training-item .text-info {
+        letter-spacing: 0.5px;
+        margin-bottom: 10px;
+    }
+    .technical-training .technical-training-list .technical-training-item{
+        margin-bottom: 60px;
+    }
+    .technical-training .technical-training-list {
+        margin-bottom: 80px;
+    }
+
+
+    /*hr-page*/
+    /*========================================*/
+    .hr-page .companies-recruiting .company-item .company-img {
+        padding-right: 20px;
+    }
+    .hr-page .companies-recruiting .company-item .title{
+        font-size: 20px;
+        line-height: 28px;
+        margin-bottom: 15px;
+    }
+    .hr-page .companies-recruiting {
+        padding-bottom: 80px;
+    }
+    .hr-page .practical-experience {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    .hr-page .practical-experience .heading-block {
+        font-size: 26px;
+        line-height: 1.75;
+        margin-bottom: 40px;
+    }
+    .hr-page .practical-experience-item .title {
+        font-size: 20px;
+        line-height: 28px;
+        margin-bottom: 15px;
+        min-height: auto !important;
+    }
+    .hr-page .practical-experience-item .text{
+        min-height: 78px;
+        margin-bottom: 35px;
+    }
+    .hr-page .practical-experience-item .ttl {
+        font-size: 14px;
+        line-height: 26px;
+        padding-left: 14px;
+    }
+    .hr-page .practical-experience-item .ttl:before{
+        width: 6px;
+        height: 6px;
+        top: 11px;
+    }
+    .hr-page .practical-experience-list {
+        column-gap: 50px;
+        row-gap: 50px;
+        margin-bottom: 80px;
+    }
+    .hr-page .practical-experience .image-banner {
+        padding: 30px;
+    }
+    .hr-page .job-fair {
+        column-gap: 50px;
+        padding-top: 80px;
+    }
+    .hr-page .job-fair .heading-block{
+        font-size: 20px;
+        line-height: 28px;
+        margin-bottom: 15px;
+    }
+
+
+    /*bpo-page*/
+    /*====================================*/
+    .bpo-page .data-entry-list{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .bpo-page .data-entry-item .image img {
+        width: 80px;
+    }
+    .bpo-page .case-study{
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    .bpo-page .case-study .title-block {
+        font-size: 22px;
+        line-height: 28px;
+        margin-bottom: 40px;
+    }
+    .bpo-page .case-study-item .ttl {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+    .bpo-page .case-study-item .image {
+        margin-bottom: 15px;
+    }
+    .bpo-page .office-support {
+        padding-top: 80px;
+    }
+    .bpo-page .office-support-list {
+        margin-top: 40px;
+        margin-bottom: 100px;
+    }
+    .bpo-page .office-support-item .imageContent {
+        padding-right: 20px;
+    }
+    .bpo-page .office-support-item .title {
+        font-size: 22px;
+        line-height: 28px;
+        margin-bottom: 15px;
+    }
+    .bpo-page .office-support-item{
+        margin-bottom: 80px;
+    }
+    .bpo-page .office-support-item .text {
+        margin-bottom: 15px;
+    }
+    .bpo-page .office-support-item .text-box {
+        background: #F7F7F7;
+        padding: 15px;
+    }
+    .bpo-page .office-support-item .text-box .ttl {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 500;
+        margin-bottom: 8px;
+    }
+
+
+    /*web-page*/
+    /*=========================================*/
+    .web-page .website-production-content .imageContent {
+        width: 100%;
+        padding-top: 0;
+        margin-bottom: 40px;
+    }
+    .web-page .website-production-content .info {
+        padding-left: 0;
+        width: 100%;
+    }
+    .web-page .text {
+        font-size: 13px;
+        line-height: 26px;
+    }
+    .web-page #lab-development {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    .web-page .heading-block {
+        font-size: 26px;
+        line-height: 1.6;
+        margin-bottom: 40px;
+    }
+    .web-page #lab-development .subTtl-img {
+        font-size: 14px;
+        line-height: 28px;
+        margin-bottom: 30px;
+    }
+    .web-page #lab-development .title {
+        font-size: 14px;
+        line-height: 28px;
+        height: 60px;
+        margin-bottom: 50px;
+    }
+    .web-page #lab-development .title:after {
+        width: 4px;
+        height: 28px;
+        bottom: -22px;
+        background-repeat: no-repeat;
+    }
+    .web-page #lab-development .lab-development-image {
+        margin-bottom: 30px;
+    }
+    .web-page #lab-development .infoList {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        column-gap: 0;
+        row-gap: 20px;
+    }
+    .web-page #editing-processing {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+    .web-page #editing-processing .editing-processing-list {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+    .web-page #production {
+        padding-top: 80px;
+    }
+    .web-page #production .arrow-slider .arrow-icon{
+        width: 40px;
+        height: 40px;
+        margin-right: 15px;
+    }
+    .web-page #production .slick-list.draggable {
+        padding-right: 30%;
+    }
+    .web-page .web-sidebar .web-tabItem a {
+        height: 80px;
+        font-size: 14px;
+        line-height: 36px;
+        padding-left: 30px;
+    }
+    .web-page #lab-development .infoItem .icon {
+        width: 80px;
+    }
+    .web-page #lab-development .infoItem .info {
+        width: calc(100% - 80px);
+        padding-left: 25px;
+    }
+    .web-page #lab-development .infoItem .ttl{
+        margin-bottom: 12px;
+    }
+    .web-page .point-item .title {
+        font-size: 22px;
+        line-height: 32px;
+        margin-bottom: 20px;
+    }
+
+
+
+    /*fdi-support*/
+    /*====================================*/
+    .fdi-support .heading-block{
+        font-size: 26px;
+    }
+    .fdi-support .support-content .imageContent {
+        padding-right: 20px;
+    }
+    .fdi-support .support-content .title {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 10px;
+    }
+    .fdi-support .support-content{
+        align-items: flex-start;
+    }
+
+
+
+
+}
+
+
+
+
+
+@media (max-width: 768px) {
+
+    #service-subPage .header-page {
+        padding-top: 30px;
+    }
+    #service-subPage .header-page .header-description{
+        grid-template-columns: repeat(1, 1fr);
+        margin-bottom: 45px;
+    }
+    #service-subPage .header-page .subTitle {
+        font-size: 20px;
+        line-height: 20px;
+    }
+    #service-subPage .header-page .heading {
+        font-size: 28px;
+        line-height: 42px !important;
+        margin-bottom: 13px;
+        letter-spacing: 0.8px;
+    }
+    #service-subPage .header-page .title-content {
+        padding: 0 !important;
+        margin-bottom: 24px;
+    }
+    #service-subPage .header-page .text-description p {
+        font-size: 14px;
+        line-height: 28px;
+        letter-spacing: 0.45px;
+        min-height: auto !important;
+    }
+    #service-subPage.web-page .header-page .text-description p{
+        padding-right: 0px;
+    }
+    #service-subPage .content-page {
+        padding-top: 95px;
+    }
+    #service-subPage {
+        padding-bottom: 60px;
+    }
+    #service-subPage .header-page .headerImg-banner img{
+        min-height: auto;
+    }
+
+
+
+
+    /*technical-training*/
+    /*==============================================*/
+    .technical-training .technical-training-list .technical-training-item{
+        grid-template-columns: repeat(1, 1fr);
+        margin-bottom: 80px;
+    }
+    .technical-training .technical-training-list .technical-training-item .imageItem {
+        padding-right: 0;
+        order: 2;
+    }
+    .technical-training .technical-training-list .technical-training-item .info{
+        order: 1;
+        margin-bottom: 44px;
+    }
+    .technical-training .technical-training-list .technical-training-item .text {
+        font-size: 14px;
+        line-height: 28px;
+    }
+    .technical-training .technical-training-list .technical-training-item .title {
+        font-size: 26px;
+        line-height: 38px;
+        margin-bottom: 33px;
+    }
+    .technical-training .technical-training-list .technical-training-item .ttl {
+        font-size: 18px;
+        line-height: 28px;
+        margin-bottom: 11px;
+    }
+    .technical-training .technical-training-list .technical-training-item .text-info {
+        margin-bottom: 21px;
+    }
+    .technical-training .technical-training-list {
+        margin-bottom: 96px;
+        border-bottom: 1px solid #E2E2E2;
+        padding-bottom: 80px;
+    }
+
+
+    /*hr-page*/
+    /*============================*/
+    .hr-page .text {
+        font-size: 14px;
+        line-height: 28px;
+    }
+    .hr-page .practical-experience {
+        padding-top: 76px;
+        padding-bottom: 80px;
+    }
+    .hr-page .companies-recruiting .company-item {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .hr-page .companies-recruiting .company-item .company-img {
+        padding-right: 0;
+        order: 2;
+    }
+    .hr-page .companies-recruiting .company-item .company-img img{
+        width: 100%;
+    }
+    .hr-page .companies-recruiting .company-item .company-info {
+        padding-bottom: 0;
+        order: 1;
+        margin-bottom: 39px;
+    }
+    .hr-page .companies-recruiting .company-item .title {
+        font-size: 22px;
+        line-height: 34px;
+        margin-bottom: 11px;
+        letter-spacing: 0.8px;
+    }
+    .hr-page .practical-experience .heading-block {
+        font-size: 26px;
+        line-height: 1.75;
+        margin-bottom: 63px;
+        letter-spacing: 0.8px;
+    }
+    .hr-page .practical-experience-list {
+        column-gap: 0;
+        row-gap: 51px;
+        margin-bottom: 96px;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .hr-page .practical-experience-item .ttl {
+        font-size: 16px;
+        line-height: 26px;
+        padding-left: 19px;
+        letter-spacing: 0.5px;
+    }
+    .hr-page .practical-experience-item .ttl:before{
+        top: 9px;
+    }
+    .hr-page .practical-experience-item .title {
+        font-size: 22px;
+        line-height: 30px;
+        margin-bottom: 22px;
+        letter-spacing: 0.8px;
+        min-height: auto !important;
+    }
+    .hr-page .practical-experience-item .text {
+        min-height: auto;
+        margin-bottom: 44px;
+    }
+    .hr-page .practical-experience .image-banner {
+        padding: 15px;
+    }
+
+    .hr-page .job-fair {
+        column-gap: 0;
+        padding-top: 80px;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .hr-page .job-fair .heading-block {
+        font-size: 26px;
+        line-height: 1.5;
+        margin-bottom: 12px;
+        letter-spacing: 0.8px;
+    }
+    .hr-page .job-fair .job-fair-info {
+        padding-bottom: 28px;
+    }
+
+
+    /*bpo-page*/
+    /*=====================================*/
+    #service-subPage.bpo-page .content-page {
+        padding-top: 48px;
+    }
+    .bpo-page .tabList{
+        display: block;
+    }
+    .bpo-page .tabList .tabItem{
+        display: flex;
+        margin-bottom: 16px;
+    }
+    .bpo-page .tabList .tabItem:last-child{
+        margin-bottom: 0;
+    }
+    .bpo-page .tabList .tabItem a{
+        display: flex;
+        height: 72px;
+        background: #F7F7F7;
+        justify-content: center;
+        align-items: center;
+        padding-left: 16px;
+        font-size: 16px;
+        line-height: 30px;
+        letter-spacing: 0.5px;
+        padding-right: 31px;
+    }
+    .bpo-page .tabList .tabItem a span{
+        display: inline-block;
+        position: relative;
+    }
+    .bpo-page .tabList .tabItem a span:after{
+        content: "";
+        position: absolute;
+        background-image: url("/wp-content/uploads/arrow-drop.png");
+        background-size: 100%;
+        width: 7px;
+        height: 12px;
+        right: -14px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .bpo-page .tabList .tabItem a:hover span:after{
+        top: 80%;
+    }
+
+    .bpo-page .heading-block {
+        font-size: 26px;
+        line-height: 38px;
+        letter-spacing: 0.9px;
+        margin-bottom: 12px;
+    }
+    .bpo-page .data-entry{
+        padding-top: 79px;
+    }
+    .bpo-page .sub-ttl {
+        font-size: 14px;
+        line-height: 28px;
+    }
+    .bpo-page .data-entry-list {
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 45px;
+        column-gap: 16px;
+        row-gap: 32px;
+    }
+    .bpo-page .data-entry-item .image img {
+        width: 100px;
+    }
+    .bpo-page .data-entry-item {
+        padding: 32px 12px 30px;
+    }
+    .bpo-page .data-entry-item .image {
+        margin-bottom: 22px;
+    }
+    .bpo-page .data-entry-item .text {
+        min-height: auto;
+        font-size: 12px;
+        line-height: 21px;
+    }
+    .bpo-page .data-entry-item .ttl {
+        font-size: 16px;
+        margin-bottom: 12px;
+        line-height: 28px;
+    }
+    .bpo-page .data-entry-item:nth-child(4) .ttl{
+        min-height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .bpo-page .case-study {
+        padding-top: 84px;
+        padding-bottom: 81px;
+    }
+    .bpo-page .case-study .title-block {
+        font-size: 22px;
+        line-height: 28px;
+        margin-bottom: 34px;
+        text-align: left;
+    }
+    .bpo-page .case-study-list {
+        column-gap: 0;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 24px;
+    }
+    .bpo-page .case-study-item{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+    .bpo-page .case-study-item .image {
+        margin-bottom: 0;
+    }
+    .bpo-page .case-study-item .ttl {
+        font-size: 18px;
+        padding: 0 0 0 18px;
+        line-height: 1.75;
+        justify-content: flex-start;
+    }
+    .bpo-page .office-support-item .imageContent {
+        padding-right: 0;
+        margin-bottom: 28px;
+    }
+    .bpo-page .office-support-item {
+        margin-bottom: 56px;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .bpo-page .office-support-list {
+        margin-top: 45px;
+        margin-bottom: 100px;
+    }
+    .bpo-page .text {
+        font-size: 14px;
+        line-height: 28px;
+    }
+    .bpo-page .office-support-item .title{
+        font-size: 22px;
+        line-height: 1.75;
+        margin-bottom: 17px;
+        letter-spacing: 0.8px;
+    }
+    .bpo-page .office-support-item:nth-child(3) .title{
+        padding-right: 20px;
+    }
+    .bpo-page .office-support-item .text {
+        margin-bottom: 9px;
+    }
+    .bpo-page .office-support-item .text-box .text {
+        font-size: 14px;
+        line-height: 28px;
+    }
+    .bpo-page .office-support-item .text-box .ttl {
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 500;
+        margin-bottom: 12px;
+    }
+    .bpo-page .office-support-item .text-box {
+        padding: 32px 17px 39px;
+        margin-top: 28px;
+    }
+    .bpo-page .office-support-item:nth-child(3) .info {
+        padding-top: 0;
+    }
+
+
+    /*web-page*/
+    /*====================================*/
+    .web-page .point-list {
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        column-gap: 0;
+        position: relative;
+        padding-top: 0;
+        padding-bottom: 56px;
+        row-gap: 37px;
+        border-bottom: 1px solid #E2E2E2;
+    }
+    .web-page .point-item:nth-child(1) {
+        padding-right: 0;
+    }
+    .web-page .point-item .text {
+        font-size: 14px;
+        line-height: 28px;
+        letter-spacing: 0.4px;
+    }
+    .web-page .point-item .title {
+        font-size: 20px;
+        line-height: 28px;
+        margin-bottom: 14px;
+        letter-spacing: 0.5px;
+    }
+    #service-subPage.web-page .content-page {
+        padding-top: 40px;
+    }
+    .web-page .pointContent {
+        padding-bottom: 0;
+    }
+    .web-page .point-item:nth-child(2) {
+        padding-right: 0;
+    }
+    .web-page .point-list:after{
+        display: none;
+    }
+    .web-page .web-content {
+        border-top: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .web-page .web-sidebar .padding-sidebar{
+        height: 0;
+    }
+    .web-page .web-sidebar .nav-webTab{
+        position: static;
+    }
+    .web-page .web-sidebar {
+        width: 100%;
+        padding-top: 80px;
+    }
+    .web-page .web-sidebar .web-tabItem {
+        margin-bottom: 16px;
+        display: flex;
+        margin-right: 8px;
+    }
+    .web-page .web-sidebar .nav-webTab .web-tabList{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .web-page .web-sidebar .web-tabItem:last-child{
+        margin-bottom: 0;
+    }
+    .web-page .web-sidebar .web-tabItem a {
+        height: 72px;
+        font-size: 16px;
+        line-height: 36px;
+        padding-left: 16px !important;
+        padding-right: 30px;
+    }
+    .web-page .web-sidebar .web-tabItem a span:after{
+        background-image: url("/wp-content/uploads/arrow-drop.png");
+        background-size: 100%;
+        width: 7px;
+        height: 12px;
+        right: -14px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .web-page .web-sidebar .web-tabItem a:hover span:after {
+        right: -14px;
+        top: 80%;
+    }
+    .web-page .web-sidebar .nav-webTab .web-tabList.sidebar-scroll {
+        width: auto;
+        position: static;
+    }
+    .web-page .web-main {
+        width: 100%;
+        padding-left: 0;
+    }
+    .web-page .heading-block {
+        font-size: 26px;
+        line-height: 38px;
+        margin-bottom: 32px;
+        letter-spacing: 0.8px;
+    }
+    .web-page #website-production {
+        padding-bottom: 81px;
+        padding-top: 79px;
+    }
+    .web-page #website-production .heading-block {
+        margin-bottom: 33px;
+    }
+    .web-page .text {
+        font-size: 14px;
+        line-height: 28px;
+    }
+    .web-page .website-production-content .imageContent{
+        margin-bottom: 27px;
+    }
+    .web-page #website-production .info .text{
+        padding-left: 40px;
+        margin-bottom: 17px;
+    }
+    .web-page #website-production .info .text br{
+        display: none;
+    }
+    .web-page #website-production .info .text:before {
+        width: 24px;
+        height: 24px;
+    }
+    .web-page #website-production .info .text:last-child{
+        margin-bottom: 0;
+    }
+    .web-page #lab-development .subTtl-img {
+        font-size: 18px;
+        line-height: 1.75;
+        margin-bottom: 57px;
+    }
+    .web-page #lab-development .title {
+        font-size: 22px;
+        line-height: 1.75;
+        height: auto;
+        margin-bottom: 80px;
+        text-align: center;
+        padding: 29px 10px;
+    }
+    .web-page #lab-development .title:after {
+        width: 22px;
+        height: 57px;
+        bottom: -43px;
+    }
+    .web-page #lab-development .infoList {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 16px;
+        row-gap: 0;
+    }
+    .web-page #lab-development .infoItem .icon {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        margin-bottom: 25px;
+    }
+    .web-page #lab-development .infoItem .icon img{
+        width: 100px;
+    }
+    .web-page #lab-development .infoItem .info {
+        width: 100%;
+        padding-left: 0;
+    }
+    .web-page #lab-development .infoItem {
+        padding: 32px 12px 30px;
+        display: block;
+    }
+    .web-page #lab-development .infoItem .ttl {
+        font-size: 16px;
+        line-height: 1.75;
+        min-height: 56px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .web-page #lab-development .infoItem .icon .image{
+        display: block;
+    }
+    .web-page #lab-development .infoItem .text {
+        font-size: 12px;
+        line-height: 21px;
+    }
+    .web-page #editing-processing .editing-processing-item .image img {
+        width: 100px;
+    }
+    .web-page #editing-processing .editing-processing-item .image{
+        margin-bottom: 23px;
+    }
+    .web-page #editing-processing .editing-processing-item .text{
+        font-size: 12px;
+        line-height: 21px;
+    }
+    .web-page #editing-processing .editing-processing-list {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 16px;
+        row-gap: 32px;
+    }
+    .web-page #editing-processing .editing-processing-item {
+        padding: 32px 12px 30px;
+    }
+    .web-page #editing-processing .editing-processing-item .ttl {
+        font-size: 16px;
+        line-height: 28px;
+        margin-bottom: 12px;
+    }
+    .web-page #editing-processing {
+        padding-bottom: 2px;
+    }
+    .web-page #production .production-list {
+        padding-left: 0;
+        width: calc(100% + 12px);
+        margin-right: -12px;
+    }
+    .web-page #production .production-slider {
+        max-width: 100%;
+        margin: auto;
+        padding: 0;
+    }
+    .web-page #production .production-inner {
+        width: 100%;
+        position: relative;
+        margin-left: 0;
+        left: 0;
+    }
+    .web-page #production .production-item {
+        margin-right: 16px;
+    }
+    .web-page #production .slick-list.draggable {
+        padding-right: 4%;
+        margin-bottom: 24px;
+    }
+    .web-page #production .arrow-slider{
+        margin-left: 32px;
+    }
+    .web-page #production .arrow-slider .arrow-icon {
+        width: 48px;
+        height: 48px;
+        margin-right: 16px;
+    }
+    .web-page #production .arrow-slider {
+        margin-bottom: 32px;
+    }
+    .web-page #production .heading-block {
+        margin-bottom: 0;
+        margin-top: 10px;
+        font-size: 22px;
+        line-height: 28px;
+    }
+    .web-page #production {
+        padding-top: 75px;
+    }
+    .web-page #production .slick-dots{
+        padding-right: 12px;
+    }
+
+
+    /*fdi-support*/
+    /*==========================================*/
+    .fdi-support .heading-block {
+        font-size: 26px;
+        line-height: 46px;
+        letter-spacing: 0.8px;
+        margin-bottom: 45px;
+    }
+    #service-subPage.fdi-support .content-page {
+        padding-top: 91px;
+    }
+    .fdi-support .support-content {
+        grid-template-columns: repeat(1,1fr);
+    }
+    .fdi-support .support-content .imageContent {
+        padding-right: 0;
+        margin-bottom: 29px;
+    }
+    .fdi-support .support-content .subInfo{
+        padding: 15px;
+    }
+    .fdi-support .support-content .title {
+        font-size: 22px;
+        line-height: 1.75;
+        margin-bottom: 20px;
+        letter-spacing: 0.7px;
+    }
+    .fdi-support .support-content .text {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+    .fdi-support .supportContent-item {
+        padding-bottom: 77px;
+        margin-bottom: 76px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
