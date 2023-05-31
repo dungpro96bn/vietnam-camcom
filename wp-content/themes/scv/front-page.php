@@ -8,7 +8,7 @@ $current_language = $sitepress->get_current_language();
 ?>
 
 
-<div id="homepage">
+<div id="homepage <?php if ($current_language != "ja") { echo "en";}?>">
 
     <div class="mainBanner">
         <div class="inner">
@@ -165,7 +165,7 @@ $current_language = $sitepress->get_current_language();
         </div>
     </div>
 
-    <div class="news">
+    <div class="news <?php if ($current_language != "ja") { echo "en";}?>">
         <div class="inner">
             <div class="news-container">
                 <div class="heading-news" data-aos="fade-up">

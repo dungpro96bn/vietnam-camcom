@@ -19,8 +19,9 @@
 			?></title>
 <!--		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;700;900&display=swap" rel="stylesheet">-->
 <!--        <link rel="stylesheet" href="https://use.typekit.net/rpr7ugj.css">-->
+<!--        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">-->
         <script src="<?php bloginfo('template_directory'); ?>/assets/js/noto-san.js"></script>
-        <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/assets/css/font-proxima-nova.css">
+<!--        <link rel="stylesheet" href="--><?php //bloginfo('template_directory'); ?><!--/assets/css/font-proxima-nova.css">-->
 
         <link rel="stylesheet" media="all" href="<?php bloginfo('template_directory'); ?>/assets/css/aos.css" rel="stylesheet">
         <link rel="stylesheet" media="all" href="<?php bloginfo('template_directory'); ?>/css/slick.css">

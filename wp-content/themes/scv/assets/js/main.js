@@ -84,6 +84,12 @@ jQuery(function ($) {
     });
 
 
+    $(".wpcf7-previous").click(function(event) {
+        event.preventDefault();
+        history.back(1);
+    });
+
+
     //Scroll top
     $('#page-top a').click(function(event){
         event.preventDefault();

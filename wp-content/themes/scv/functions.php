@@ -198,34 +198,3 @@ function urlLanguage (){
         echo $urlLanguage = home_url();
     endif;
 }
-
-
-function my_error_message_ja( $error, $key, $rule ) {
-    if ( $key === 'family-name' || $key === 'tel' || $key === 'email' || $key === 'message' && $rule === 'noempty' ) {
-        return '必須項目に入力してください';
-    }
-    return $error;
-}
-add_filter( 'mwform_error_message_mw-wp-form-431', 'my_error_message_ja', 10, 3 );
-
-function my_error_message_vi( $error, $key, $rule ) {
-    if ( $key === 'family-name' || $key === 'tel' || $key === 'email' || $key === 'message' || $key === 'privacy' && $rule === 'noempty' ) {
-        return 'Vui lòng điền vào phần được yêu cầu';
-    }
-    if ( $key === 'privacy' && $rule === 'required' ) {
-        return 'Vui lòng kiểm tra điều khoản';
-    }
-    return $error;
-}
-add_filter( 'mwform_error_message_mw-wp-form-448', 'my_error_message_vi', 10, 3 );
-
-function my_error_message_en( $error, $key, $rule ) {
-    if ( $key === 'family-name' || $key === 'tel' || $key === 'email' || $key === 'message' || $key === 'privacy' && $rule === 'noempty' ) {
-        return 'Please fill in the required fields';
-    }
-    if ( $key === 'privacy' && $rule === 'required' ) {
-        return 'Please tick the terms';
-    }
-    return $error;
-}
-add_filter( 'mwform_error_message_mw-wp-form-469', 'my_error_message_en', 10, 3 );

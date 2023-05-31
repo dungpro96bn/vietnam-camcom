@@ -183,7 +183,7 @@ html.is-ready .mainBanner .subTitle-img{
 }
 .mainBanner .banner .sliderHeading .title{
     font-size: 260px;
-    line-height: 200px;
+    line-height: 216px;
     position: absolute;
     width: auto;
     white-space: nowrap;
@@ -285,7 +285,6 @@ h3.heading-block:after{
 }
 .link-page .link-more{
     color: #272E64;
-    font-family: "proxima-nova", sans-serif;
     display: flex;
     align-items: center;
 }
@@ -412,7 +411,6 @@ h3.heading-block.ttl-white:after{
 }
 .service .serviceInfo .serviceItem .link-more{
     font-weight: 400;
-    font-family: "proxima-nova", sans-serif;
     display: flex;
     align-items: center;
     width: 160px;
@@ -468,7 +466,6 @@ h3.heading-block.ttl-white:after{
 .news .newsList .newsItem .data{
     font-size: 18px;
     line-height: 30px;
-    font-family: "proxima-nova", sans-serif;
     color: #272E64;
     width: 112px;
     letter-spacing: 0.8px;
@@ -584,7 +581,6 @@ h3.heading-block.ttl-white:after{
 /*}*/
 .groups .groupItem .link-more{
     color: #272E64;
-    font-family: "proxima-nova", sans-serif;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -605,12 +601,9 @@ h3.heading-block.ttl-white:after{
         padding-bottom: 30px;
     }
 
-    .mainBanner .hero-title{
-        font-size: 50px;
-        line-height: 78px;
-    }
     .mainBanner .banner .sliderHeading .title{
         font-size: 200px;
+        line-height: 209px;
     }
 
     .about-us{
@@ -676,8 +669,8 @@ h3.heading-block.ttl-white:after{
 @media (max-width: 1280px) {
 
     .mainBanner .hero-title{
-        font-size: 40px;
-        line-height: 62px;
+        font-size: 50px;
+        line-height: 1.7;
     }
 
 
@@ -777,8 +770,8 @@ h3.heading-block.ttl-white:after{
         padding-bottom: 40px;
     }
     .mainBanner .hero-title {
-        font-size: 34px;
-        line-height: 54px;
+        font-size: 44px;
+        line-height: 1.7;
         margin-bottom: 25px;
     }
     /*.mainBanner .scroll-action{*/
@@ -800,7 +793,7 @@ h3.heading-block.ttl-white:after{
     }
     .mainBanner .banner .sliderHeading .title {
         font-size: 120px;
-        line-height: 120px;
+        line-height: 130px;
         -webkit-animation: about_copyloop_tb 50s linear 0s infinite;
         animation: about_copyloop_tb 50s linear 0s infinite;
     }
@@ -928,6 +921,9 @@ h3.heading-block.ttl-white:after{
         line-height: 60px;
         padding-bottom: 32px;
     }
+    .en h3.heading-block{
+        font-size: 48px;
+    }
     h3.heading-block:after {
         width: calc(100% - 61px);
         height: 3px;
@@ -974,13 +970,16 @@ h3.heading-block.ttl-white:after{
         margin-bottom: 2px;
         letter-spacing: 1px;
     }
+    .mainBanner .en .hero-title{
+        font-size: 26px;
+    }
     .mainBanner .scroll-action {
         bottom: 48px;
         right: 0px;
     }
     .mainBanner .banner .sliderHeading .title {
         font-size: 105px;
-        line-height: 100px;
+        line-height: 105px;
         -webkit-animation: about_copyloop_tb 30s linear 0s infinite;
         animation: about_copyloop_tb 30s linear 0s infinite;
         letter-spacing: 3px;
@@ -1209,7 +1208,7 @@ h3.heading-block.ttl-white:after{
         padding-bottom: 68px;
     }
     .groups h3.heading-block {
-        font-size: 48px;
+        font-size: 42px;
         padding-bottom: 33px;
         margin-bottom: 55px;
     }
@@ -1276,7 +1275,7 @@ h3.heading-block.ttl-white:after{
 @media (max-width: 370px) {
 
     .mainBanner .hero-title{
-        font-size: 22px;
+        font-size: 20px !important;
         line-height: 36px;
     }
     .mainBanner .subHeading{
