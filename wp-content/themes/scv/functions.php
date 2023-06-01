@@ -19,6 +19,10 @@ function my_custom_login_stylesheet() {
 }
 add_action( 'login_enqueue_scripts', 'my_custom_login_stylesheet' );
 
+add_action( 'admin_enqueue_scripts', 'load_admin_style' );
+function load_admin_style() {
+    wp_enqueue_style( 'style-admin', get_template_directory_uri() . '/assets/css/style-admin.css', false, '1.0.0' );
+}
 
 function pine_add_page_slug_body_class( $classes ) {
     global $post;

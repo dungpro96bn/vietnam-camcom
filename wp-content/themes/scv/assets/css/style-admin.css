@@ -128,6 +128,25 @@ body.login .privacy-policy-page-link{
     border-left: 4px solid #ef547e;
 }
 
+.index-php #wpwrap{
+    background-image: url("../../images/bg-login04.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+}
+.index-php #wpwrap:before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #f0f0f1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: .4;
+}
 
 @media (max-width: 768px) {
     body.login .privacy-policy-page-link{
