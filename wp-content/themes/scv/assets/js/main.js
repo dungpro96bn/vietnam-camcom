@@ -86,7 +86,10 @@ jQuery(function ($) {
 
     $(".wpcf7-previous").click(function(event) {
         event.preventDefault();
-        history.back(1);
+        // history.back(1);
+        var strHref = window.location.href,
+            href = strHref.replace('confirm/', '');
+        window.location.replace(href);
     });
 
 
