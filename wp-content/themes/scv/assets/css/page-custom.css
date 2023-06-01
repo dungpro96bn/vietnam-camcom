@@ -592,7 +592,6 @@ body .wp-pagenavi a.first:after{
 }
 #contact-form .cf7sr-g-recaptcha{
     display: inline-block !important;
-    margin-bottom: 60px;
 }
 #contact-form .box-policy a{
     text-decoration: underline;
@@ -629,12 +628,29 @@ body .wp-pagenavi a.first:after{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 60px;
 }
 #contact-form .form-submit .btn-submit{
     width: auto;
+    position: relative;
 }
 #contact-form .form-submit .btn-submit div{
     display: block !important;
+}
+#contact-form .form-submit .btn-submit .icon-loading{
+    position: absolute;
+    width: 30px;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: .2s;
+}
+#contact-form .submitting .form-submit .btn-submit .icon-loading,
+#contact-form .resetting .form-submit .btn-submit .icon-loading{
+    opacity: 1;
+    visibility: visible;
 }
 #contact-form .box-policy .wpcf7-form-control-wrap{
     position: static;
@@ -729,7 +745,9 @@ body .wp-pagenavi a.first:after{
 .page-complete #contact-form{
     padding-bottom: 79px;
 }
-
+#contact-form .wpcf7-response-output{
+    display: none;
+}
 
 
 /*about*/

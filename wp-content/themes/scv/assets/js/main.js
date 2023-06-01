@@ -211,7 +211,9 @@ jQuery(function ($) {
         });
     });
 
-
+    $(".page-confirm .btn-submit.btn-send").click(function () {
+        sessionStorage.setItem('sendmail', 'complete');
+    });
 
 
     // const scroller = new LocomotiveScroll({
