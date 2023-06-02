@@ -64,7 +64,7 @@ $current_language = $sitepress->get_current_language();
         <div class="footer-bottom">
             <div class="copy-right">
                 <address class="copyright">
-                    <small>VIETNAM CAMCOM Co., Ltd</small>
+                    <small>© VIETNAM CAMCOM Co., Ltd</small>
                 </address>
             </div>
         </div>

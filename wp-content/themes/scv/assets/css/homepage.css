@@ -259,6 +259,9 @@ h3.heading-block:after{
 .about-us .aboutInfo h3.heading-block{
     margin-bottom: 42px;
 }
+.about-us h3.heading-block small{
+    font-size: 30px;
+}
 .about-us .aboutInfo .infoInner{
     max-width: 548px;
 }
@@ -678,6 +681,9 @@ h3.heading-block.ttl-white:after{
     .about-us .link-page {
         padding-top: 30px;
     }
+    .about-us h3.heading-block small{
+        font-size: 24px;
+    }
 
     .service .serviceInfo {
         padding-top: 10px;
@@ -819,7 +825,9 @@ h3.heading-block.ttl-white:after{
         line-clamp: 5;
         -webkit-box-orient: vertical;
     }
-
+    .about-us .aboutInfo h3.heading-block small {
+        font-size: 20px;
+    }
 
     .service {
         padding-top: 100px;
@@ -918,7 +926,7 @@ h3.heading-block.ttl-white:after{
 @media (max-width: 768px) {
 
     h3.heading-block {
-        font-size: 56px;
+        font-size: 50px;
         line-height: 60px;
         padding-bottom: 32px;
     }
@@ -1024,6 +1032,9 @@ h3.heading-block.ttl-white:after{
         padding-top: 0;
         padding-right: 0;
         margin-bottom: 50px;
+    }
+    .about-us .aboutInfo h3.heading-block small {
+        font-size: 16px;
     }
     .about-us .aboutInfo .text {
         overflow: hidden;
@@ -1286,7 +1297,11 @@ h3.heading-block.ttl-white:after{
     .mainBanner .banner-container{
         padding-right: 70px;
     }
-
+    .about-us .aboutInfo h3.heading-block small {
+        font-size: 20px;
+        line-height: 40px;
+        display: block;
+    }
 }
 
 

@@ -83,6 +83,44 @@
 .technical-training .technical-training-list .technical-training-item .info{
     /*padding-top: 37px;*/
 }
+.technical-training .technical-training-list .technical-training-item .info .link-to{
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 500;
+    color: #272E64;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 20px;
+}
+.technical-training .technical-training-list .technical-training-item .info .link-to:hover{
+    text-decoration: underline;
+}
+.technical-training .technical-training-list .technical-training-item .info .link-to:after{
+    content: "";
+    position: relative;
+    background-image: url("/wp-content/uploads/icon_share.png");
+    background-size: 100%;
+    width: 14px;
+    height: 14px;
+    right: 0;
+    top: 0;
+    display: inline-block;
+    margin-left: 8px;
+}
+.technical-training .technical-training-list .technical-training-item .header-img{
+    position: relative;
+    padding-right: 200px;
+}
+.technical-training .technical-training-list .technical-training-item .header-img:after{
+    content: "";
+    position: absolute;
+    background-image: url("/wp-content/uploads/viecjp.png");
+    background-size: 100%;
+    width: 194px;
+    height: 80px;
+    right: 0;
+    top: -17px;
+}
 .technical-training .technical-training-list .technical-training-item .title{
     font-size: 32px;
     line-height: 47px;
@@ -415,6 +453,10 @@
 .bpo-page .office-support-list{
     margin-top: 62px;
     margin-bottom: 146px;
+}
+.bpo-page .office-support-banner{
+    padding: 92px 161px;
+    background: #F7F7F7;
 }
 .bpo-page .office-support-item{
     display: grid;
@@ -1198,6 +1240,9 @@
     .bpo-page .office-support-item .text-box .text {
         font-size: 13px;
     }
+    .bpo-page .office-support-banner{
+        padding: 60px 80px;
+    }
 
 
     /*web-page*/
@@ -1366,7 +1411,14 @@
     .technical-training .technical-training-list {
         margin-bottom: 80px;
     }
-
+    .technical-training .technical-training-list .technical-training-item .header-img:after{
+        width: 150px;
+        height: 61px;
+    }
+    .technical-training .technical-training-list .technical-training-item .header-img {
+        position: relative;
+        padding-right: 160px;
+    }
 
     /*hr-page*/
     /*========================================*/
@@ -1459,6 +1511,9 @@
     .bpo-page .office-support-list {
         margin-top: 40px;
         margin-bottom: 100px;
+    }
+    .bpo-page .office-support-banner {
+        padding: 30px;
     }
     .bpo-page .office-support-item .imageContent {
         padding-right: 20px;
@@ -1904,6 +1959,9 @@
     .bpo-page .office-support-list {
         margin-top: 45px;
         margin-bottom: 100px;
+    }
+    .bpo-page .office-support-banner {
+        padding: 15px;
     }
     .bpo-page .text {
         font-size: 14px;

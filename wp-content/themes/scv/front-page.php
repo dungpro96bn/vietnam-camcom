@@ -95,7 +95,7 @@ $current_language = $sitepress->get_current_language();
             <div class="aboutUs-content">
                 <div class="aboutInfo <?php if ($current_language != "ja") { echo "en";}?>" data-aos="fade-right">
                     <div class="infoInner">
-                        <h3 class="heading-block en"><span>About VIETNAM CAMCOM</span></h3>
+                        <h3 class="heading-block en"><span>About <small>VIETNAM CAMCOM</small></span></h3>
                         <div class="text">
                             <?php echo get_field('description_about_us'); ?>
                         </div>
@@ -120,8 +120,8 @@ $current_language = $sitepress->get_current_language();
     <div class="service">
         <div class="serviceImage" data-aos="fade-right">
             <picture id="service-image-00" class="image is-open">
-                <source srcset="/wp-content/uploads/home_service_img01_pc.png">
-                <img class="sizes" src="/wp-content/uploads/home_service_img01_pc.png" alt="">
+                <source srcset="/wp-content/uploads/home_service_banner_pc.png">
+                <img class="sizes" src="/wp-content/uploads/home_service_banner_pc.png" alt="">
             </picture>
             <?php
             if( have_rows('service_list') ):?>
