@@ -95,7 +95,7 @@ $current_language = $sitepress->get_current_language();
             <div class="aboutUs-content">
                 <div class="aboutInfo <?php if ($current_language != "ja") { echo "en";}?>" data-aos="fade-right">
                     <div class="infoInner">
-                        <h3 class="heading-block en"><span>About Us</span></h3>
+                        <h3 class="heading-block en"><span>About VIETNAM CAMCOM</span></h3>
                         <div class="text">
                             <?php echo get_field('description_about_us'); ?>
                         </div>
