@@ -531,6 +531,7 @@ h3.heading-block.ttl-white:after{
 .groups h3.heading-block{
     padding-bottom: 27px;
     margin-bottom: 65px;
+    text-transform: uppercase;
 }
 .groups h3.heading-block .link-page{
     display: none;
