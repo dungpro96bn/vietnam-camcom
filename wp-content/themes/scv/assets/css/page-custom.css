@@ -69,6 +69,16 @@
 #company .infoCompany-item .info{
     width: 77%;
 }
+#company .infoCompany-item a{
+    color: #272E64;
+    margin-bottom: 8px;
+}
+#company .infoCompany-item a:last-child{
+    margin-bottom: 0;
+}
+#company .infoCompany-item a:hover{
+    text-decoration: underline;
+}
 #company .gmap{
     position: relative;
     padding-bottom: 56.25%;
