@@ -166,6 +166,7 @@ function languageString ()
         $var['text_contact_banner'] = "Nếu bạn muốn biết thêm thông tin, xin vui lòng liên hệ với chúng tôi ở đây.";
         $var['title_archive_news_page'] = "Tin Tức";
         $var['view_more'] = "Xem thêm";
+        $var['cat_news'] = "Tin tức";
     } elseif ($current_language == 'en'){
         $var['btn_contact'] = "Contact";
         $var['btn_language'] = "Language";
@@ -176,6 +177,7 @@ function languageString ()
         $var['text_contact_banner'] = "If you would like more information, please contact us here.";
         $var['title_archive_news_page'] = "NEWS";
         $var['view_more'] = "View more";
+        $var['cat_news'] = "News";
     } else{
         $var['btn_contact'] = "お問い合わせ";
         $var['btn_language'] = "言語";
@@ -186,6 +188,7 @@ function languageString ()
         $var['text_contact_banner'] = "詳細情報など希望される方は、".$brSp."こちらからお問い合わせください";
         $var['title_archive_news_page'] = "NEWS";
         $var['view_more'] = "View more";
+        $var['cat_news'] = "News";
     }
 
     return $var;

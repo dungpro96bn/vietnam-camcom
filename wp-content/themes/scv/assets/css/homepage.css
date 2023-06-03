@@ -259,8 +259,15 @@ h3.heading-block:after{
 .about-us .aboutInfo h3.heading-block{
     margin-bottom: 42px;
 }
+.about-us .aboutInfo h3.heading-block span{
+    display: flex;
+    align-items: center;
+}
 .about-us h3.heading-block small{
     font-size: 30px;
+    position: relative;
+    bottom: -2px;
+    padding-left: 40px;
 }
 .about-us .aboutInfo .infoInner{
     max-width: 548px;
@@ -683,6 +690,8 @@ h3.heading-block.ttl-white:after{
     }
     .about-us h3.heading-block small{
         font-size: 24px;
+        padding-left: 25px;
+        bottom: -4px;
     }
 
     .service .serviceInfo {
@@ -1035,6 +1044,11 @@ h3.heading-block.ttl-white:after{
     }
     .about-us .aboutInfo h3.heading-block small {
         font-size: 16px;
+        bottom: 0px;
+        padding-left: 12px;
+    }
+    .about-us .aboutInfo h3.heading-block span{
+        flex-wrap: wrap;
     }
     .about-us .aboutInfo .text {
         overflow: hidden;
@@ -1301,6 +1315,7 @@ h3.heading-block.ttl-white:after{
         font-size: 20px;
         line-height: 40px;
         display: block;
+        padding-left: 0;
     }
 }
 

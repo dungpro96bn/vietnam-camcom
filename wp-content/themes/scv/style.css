@@ -640,6 +640,23 @@ body.page-complete .contact-footer{
 #footer .inner{
     position: relative;
 }
+#footer .social-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 25%;
+    margin: 40px 0 0 auto;
+}
+#footer .social-list a{
+    font-size: 30px;
+    color: #fff;
+}
+#footer .social-list .social-item{
+    margin-left: 15px;
+}
+#footer .social-list .social-item:first-child{
+    margin-left: 0;
+}
 
 #page-top{
     position: absolute;
@@ -765,7 +782,7 @@ body.page-complete .contact-footer{
 
 
 
-@media (max-width: 1500px) {
+@media (max-width: 1600px) {
 
     #header-menu .header-nav,
     #header-menu .header-nav.scroll-header{
@@ -798,6 +815,18 @@ body.page-complete .contact-footer{
 }
 
 
+@media (max-width: 1440px) {
+
+    #header-menu #navList-menu .menu-item a{
+        padding: 46px 15px;
+    }
+    #header-menu #navList-menu .menu-item.menu-item-has-children>a:after{
+        right: 0px;
+    }
+
+
+}
+
 
 @media (max-width: 1280px) {
 
@@ -824,7 +853,7 @@ body.page-complete .contact-footer{
     }
     #header-menu #nav-container {
         width: calc(100% - 250px);
-        padding-right: 15px;
+        padding-right: 0px;
     }
     #header-menu .action-container .contact-btn{
         font-size: 13px;
@@ -843,8 +872,9 @@ body.page-complete .contact-footer{
         padding-right: 15px;
         padding-left: 15px;
     }
-    #header-menu  #navList-menu .menu-item a{
-        padding: 40px 15px;
+    #header-menu #navList-menu .menu-item a{
+        padding: 40px 14px;
+        font-size: 12px;
     }
     #header-menu .action-container .language-site .title-language{
         top: 12px;
@@ -1502,7 +1532,9 @@ body.page-complete .contact-footer{
     #page-top{
         display: none;
     }
-
+    #footer .social-list{
+        width: 100%;
+    }
 
     body:not(.home) #footer {
         padding-top: 167px;

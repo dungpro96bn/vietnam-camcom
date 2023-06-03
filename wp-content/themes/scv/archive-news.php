@@ -29,7 +29,7 @@ $current_language = $sitepress->get_current_language();
                             <li class="newsItem" data-aos="fade-up">
                                 <a href="<?php the_permalink(); ?>" class="link-news">
                                     <p class="data en"><?php echo get_the_date(); ?></p>
-                                    <p class="tag"><span>お知らせ</span></p>
+                                    <p class="tag"><span><?php echo $var['cat_news']; ?></span></p>
                                     <p class="text"><?php the_title(); ?></p>
                                     <span class="link-more"><img src="/wp-content/uploads/scv_icon_more_blue.png" alt=""></span>
                                 </a>

@@ -14,7 +14,7 @@ $current_language = $sitepress->get_current_language();
                     <div class="post-inner">
                         <div class="date-tag" data-aos="fade-up">
                             <p class="date-time en"><?php echo get_the_date(); ?></p>
-                            <p class="category"><span>お知らせ</span></p>
+                            <p class="category"><span><?php echo $var['cat_news']; ?></span></p>
                         </div>
                         <h2 class="heading-block" data-aos="fade-up"><?php the_title(); ?></h2>
                         <div class="info-content" data-aos="fade-up">

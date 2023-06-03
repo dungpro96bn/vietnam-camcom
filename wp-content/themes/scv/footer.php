@@ -60,6 +60,11 @@ $current_language = $sitepress->get_current_language();
                 }
                 ?>
             </div>
+            <ul class="social-list">
+                <li class="social-item">
+                    <a href="https://www.facebook.com/VIETNAM.CAMCOM" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                </li>
+            </ul>
         </div>
         <div class="footer-bottom">
             <div class="copy-right">

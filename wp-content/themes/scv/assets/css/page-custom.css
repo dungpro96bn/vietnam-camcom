@@ -69,6 +69,18 @@
 #company .infoCompany-item .info{
     width: 77%;
 }
+#company .gmap{
+    position: relative;
+    padding-bottom: 56.25%;
+    margin-top: 80px;
+}
+#company .gmap iframe{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
 
 
 /*privacy-policy*/
@@ -1406,6 +1418,20 @@ body.page-about main{
     border-bottom: 1px solid #E2E2E2;
     padding-bottom: 112px;
 }
+#recruit .social-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding-top: 20px;
+}
+#recruit .social-list .social-item{
+    margin-left: 15px;
+}
+#recruit .social-list a{
+    color: #3b5998;
+    font-size: 30px;
+}
+
 
 #recruit #recruitment-type{
     padding-top: 112px;
