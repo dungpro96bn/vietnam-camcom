@@ -624,6 +624,7 @@ body.page-complete .contact-footer{
 }
 #footer .footer__navList .footer__navSub:nth-child(1){
     width: 50%;
+    padding-right: 40px;
 }
 #footer .footer__navList .footer__navSub:nth-child(2){
     width: 50%;
@@ -1580,6 +1581,7 @@ body.page-complete .contact-footer{
 
     #footer .footer__navList .footer__navSub {
         width: 100% !important;
+        padding-right: 0 !important;
     }
 
 
