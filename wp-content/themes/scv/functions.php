@@ -174,7 +174,7 @@ function languageString ()
         $var['subTitle_01_banner_home'] = "CAMCOM GROUP";
         $var['subTitle_02_banner_home'] = "VIETNAM CAMCOM";
         $var['title_contact_banner'] = "Contact";
-        $var['text_contact_banner'] = "If you would like more information, please contact us here.";
+        $var['text_contact_banner'] = "If you have any inquiries or questions, please feel free to contact us.";
         $var['title_archive_news_page'] = "NEWS";
         $var['view_more'] = "View more";
         $var['cat_news'] = "News";
