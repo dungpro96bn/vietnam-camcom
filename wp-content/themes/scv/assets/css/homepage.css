@@ -1208,7 +1208,8 @@ h3.heading-block.ttl-white:after{
     .news .newsList .newsItem .data {
         font-size: 14px;
         line-height: 18px;
-        width: 83px;
+        width: auto;
+        margin-right: 10px;
         letter-spacing: 0.6px;
         top: 3px;
     }
