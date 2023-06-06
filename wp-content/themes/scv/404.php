@@ -9,6 +9,27 @@ if($current_language != 'ja'){
 }
 ?>
 
+<?php
+if ($current_language == 'ja'):?>
+    <script>
+        var plang = location.pathname.split('/')[1];
+        var urlHref = location.href,
+            result = urlHref.replace("requirements", "recruit");
+        if(plang === "requirements"){
+            location.href = result;
+        }
+    </script>
+<?php else: ?>
+    <script>
+        var plang = location.pathname.split('/')[2];
+        var urlHref = location.href,
+            result = urlHref.replace("requirements", "recruit");
+        if(plang === "requirements"){
+            location.href = result;
+        }
+    </script>
+<?php endif; ?>
+
 <div class="inner">
     <div id="404" class="404">
         <div class="not-found-box">

@@ -770,6 +770,33 @@ body .wp-pagenavi a.first:after{
 #contact-form .wpcf7-response-output{
     display: none;
 }
+#contact-form .cf7sr-recaptcha .wpcf7-not-valid-tip{
+    font-size: 0 !important;
+}
+#contact-form .form-main.ja .cf7sr-recaptcha .wpcf7-not-valid-tip:after{
+    content: "reCAPTCHAをクリックしてください";
+    position: relative;
+    text-align: center;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+}
+#contact-form .form-main.en .cf7sr-recaptcha .wpcf7-not-valid-tip:after{
+    content: "reCAPTCHA is required";
+    position: relative;
+    text-align: center;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+}
+#contact-form .form-main.vi .cf7sr-recaptcha .wpcf7-not-valid-tip:after{
+    content: "Vui lòng chọn reCAPTCHA";
+    position: relative;
+    text-align: center;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+}
 
 
 /*about*/
