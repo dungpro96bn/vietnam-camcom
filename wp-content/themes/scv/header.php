@@ -167,6 +167,14 @@ EOM;
 	endif;
 	?>
 
+    <script type="text/javascript" >
+        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+        ga('create', 'UA-154007697-1', 'auto');
+        // Plugins
+        ga('send', 'pageview');
+    </script>
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
+    <!-- All in One SEO Pack -->
 
 	<body <?php body_class(); ?>>
 		<div class="outer page" data-scroll-container>
