@@ -1551,7 +1551,32 @@ body.page-about main{
 #recruit{
     padding-bottom: 150px;
 }
-
+.fb-contact{
+    padding-top: 80px;
+}
+.fb-contact a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #272E64;
+    border-radius: 80px;
+    max-width: 420px;
+    height: 96px;
+    font-size: 18px;
+    line-height: 30px;
+    position: relative;
+    margin: auto;
+}
+.fb-contact a:hover{
+    background: #272E64;
+    color: #fff;
+}
+.fb-contact a .image{
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    transform: translateY(-50%);
+}
 
 
 
@@ -1778,6 +1803,9 @@ body.page-about main{
     #recruit .headerImg-banner .t2 {
         font-size: 24px;
         line-height: 30px;
+    }
+    #recruit .headerImg-banner .t2 img{
+        height: 30px;
     }
     #recruit .recruit-sidebar {
         width: 240px;
@@ -2536,7 +2564,7 @@ body.page-about main{
     #recruit .headerImg-banner .t1 {
         font-size: 30px;
         line-height: 45px;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
         letter-spacing: 1px;
         padding-right: 2px;
     }
@@ -2544,7 +2572,9 @@ body.page-about main{
         font-size: 26px;
         line-height: 30px;
     }
-
+    #recruit .headerImg-banner .t2 img{
+        height: 28px;
+    }
     #recruit .recruit-sidebar {
         width: 100%;
         padding-top: 48px;
@@ -2727,6 +2757,16 @@ body.page-about main{
     }
     #recruit {
         padding-bottom: 60px;
+    }
+    .fb-contact a{
+        height: 66px;
+        font-size: 16px;
+        max-width: 360px;
+    }
+    .fb-contact a .image{
+        width: 40px;
+        height: 40px;
+        left: 12px;
     }
 
 
