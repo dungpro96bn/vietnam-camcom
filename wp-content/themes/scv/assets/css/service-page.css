@@ -43,7 +43,7 @@
     padding-top: 9px;
 }
 #service-subPage.technical-training .header-page .title-content{
-    padding-right: 60px;
+    /*padding-right: 60px;*/
 }
 #service-subPage.technical-training.en .header-page .title-content{
     padding-top: 0;
@@ -161,9 +161,125 @@
     height: 100%;
 }
 
+.technical-training .tabList{
+    display: flex;
+}
+.technical-training .tabList .tabItem{
+    display: flex;
+    margin-right: 16px;
+}
+.technical-training .tabList .tabItem:last-child{
+    margin-bottom: 0;
+}
+.technical-training .tabList .tabItem a{
+    display: flex;
+    height: 80px;
+    background: #F7F7F7;
+    justify-content: center;
+    align-items: center;
+    padding-left: 40px;
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: 0.5px;
+    padding-right: 91px;
+}
+.technical-training .tabList .tabItem:nth-child(2) a{
+    padding-right: 74px;
+}
+.technical-training .tabList .tabItem a span{
+    display: inline-block;
+    position: relative;
+}
+.technical-training .tabList .tabItem a span:after{
+    content: "";
+    position: absolute;
+    background-image: url("/wp-content/uploads/arrow-drop.png");
+    background-size: 100%;
+    width: 8px;
+    height: 14px;
+    right: -32px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: .3s;
+}
+.technical-training .tabList .tabItem a:hover span:after{
+    top: 80%;
+}
+.technical-training .entry-header{
+    padding: 95px 0;
+}
+.technical-training .entry-header .heading-block {
+    font-size: 42px;
+    line-height: 62px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    margin-bottom: 22px;
+}
+.technical-training .entry-header .sub-ttl{
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.5px;
+}
+.technical-training.en .entry-header .heading-block,
+.technical-training.en .entry-header .sub-ttl{
+    letter-spacing: 0;
+}
+.technical-training .job-fair{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 114px;
+    padding-top: 162px;
+    align-items: center;
+    border-top: 1px solid #E2E2E2;
+    margin-top: 160px;
+}
+.technical-training .job-fair .job-fair-info{
+    padding-bottom: 7px;
+}
+.technical-training .job-fair .heading-block{
+    font-size: 42px;
+    line-height: 62px;
+    font-weight: 500;
+    margin-bottom: 24px;
+    letter-spacing: 1.2px;
+}
+.technical-training.en .job-fair .heading-block{
+    letter-spacing: 0;
+}
+.technical-training .job-fair .job-fair-image img{
+    width: 100%;
+}
+.technical-training .job-fair .link-to {
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 500;
+    color: #272E64;
+    display: inline-block;
+    position: relative;
+    margin-top: 20px;
+}
+.technical-training .job-fair .link-to:after {
+    content: "";
+    position: relative;
+    background-image: url("/wp-content/uploads/icon_share.png");
+    background-size: 100%;
+    width: 14px;
+    height: 14px;
+    right: 0;
+    top: 0;
+    display: inline-block;
+    margin-left: 8px;
+}
+.technical-training .job-fair .text {
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.5px;
+}
+.technical-training.en .job-fair .text{
+    letter-spacing: 0;
+}
 
-
-/*hr-page*/
+    /*hr-page*/
 /*===================================*/
 .hr-page .text{
     font-size: 16px;
@@ -1152,7 +1268,21 @@
     .technical-training .technical-training-list .technical-training-item .text-info {
         margin-bottom: 16px;
     }
-
+    .technical-training .job-fair .heading-block{
+        font-size: 26px;
+        line-height: 38px;
+        margin-bottom: 20px;
+    }
+    .technical-training .job-fair{
+        column-gap: 60px;
+    }
+    .technical-training .job-fair .text {
+        font-size: 14px;
+        line-height: 28px;
+    }
+    .technical-training .job-fair .link-to{
+        font-size: 16px;
+    }
 
     /*hr page*/
     /*========================================*/
@@ -1419,6 +1549,21 @@
         position: relative;
         padding-right: 160px;
     }
+    .technical-training .job-fair {
+        column-gap: 20px;
+        padding-top: 80px;
+        margin-top: 80px;
+    }
+    .technical-training .job-fair .heading-block{
+        font-size: 18px;
+        line-height: 26px;
+        margin-bottom: 15px;
+    }
+    .technical-training .job-fair .link-to {
+        font-size: 14px;
+        margin-top: 15px;
+    }
+
 
     /*hr-page*/
     /*========================================*/
@@ -1695,7 +1840,7 @@
         padding-right: 0px;
     }
     #service-subPage .content-page {
-        padding-top: 95px;
+        padding-top: 50px;
     }
     #service-subPage {
         padding-bottom: 60px;
@@ -1742,6 +1887,52 @@
         margin-bottom: 96px;
         border-bottom: 1px solid #E2E2E2;
         padding-bottom: 80px;
+    }
+    .technical-training .job-fair{
+        grid-template-columns: repeat(1,1fr);
+        column-gap: 0;
+        row-gap: 40px;
+    }
+    .technical-training .job-fair .heading-block{
+        font-size: 26px;
+        line-height: 38px;
+        margin-bottom: 33px;
+    }
+    .technical-training .job-fair .link-to {
+        font-size: 16px;
+        margin-top: 20px;
+    }
+    .technical-training .entry-header .heading-block{
+        font-size: 26px;
+        line-height: 38px;
+        letter-spacing: 0.9px;
+        margin-bottom: 12px;
+    }
+    .technical-training .entry-header .sub-ttl{
+        font-size: 14px;
+        line-height: 28px;
+    }
+    .technical-training .entry-header {
+        padding: 80px 0 50px;
+    }
+    .technical-training .tabList .tabItem a{
+        display: flex;
+        height: 72px;
+        background: #F7F7F7;
+        justify-content: center;
+        align-items: center;
+        padding-left: 16px;
+        font-size: 16px;
+        line-height: 30px;
+        letter-spacing: 0.5px;
+        padding-right: 60px !important;
+    }
+    .technical-training .tabList {
+        display: block;
+    }
+    .technical-training .tabList .tabItem {
+        display: flex;
+        margin-bottom: 16px;
     }
 
 
