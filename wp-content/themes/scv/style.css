@@ -271,12 +271,12 @@ body .en,
 body .ttl-en,
 body .title-en,
 body .number {
-    font-family: 'Noto Sans CJK JP', sans-serif;
+    font-family: noto-sans-cjk-jp, sans-serif;
 }
 body .en input,
 body .en textarea,
 body .en select{
-    font-family: 'Noto Sans CJK JP', sans-serif;
+    font-family: noto-sans-cjk-jp, sans-serif;
 }
 .inner{
     max-width: 1440px;
@@ -824,7 +824,9 @@ body.page-complete .contact-footer{
     #header-menu #navList-menu .menu-item.menu-item-has-children>a:after{
         right: 0px;
     }
-
+    #header-menu .header-nav.scroll-header #navList-menu .menu-item a{
+        padding: 30px 15px;
+    }
 
 }
 

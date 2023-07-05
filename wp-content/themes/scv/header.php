@@ -17,11 +17,17 @@
 				echo ' | ' . sprintf(__('Page %s', 'cTpl'), max($paged, $page));
 			}
 			?></title>
-<!--		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;700;900&display=swap" rel="stylesheet">-->
-<!--        <link rel="stylesheet" href="https://use.typekit.net/rpr7ugj.css">-->
-<!--        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">-->
-        <script src="<?php bloginfo('template_directory'); ?>/assets/js/noto-san.js"></script>
-<!--        <link rel="stylesheet" href="--><?php //bloginfo('template_directory'); ?><!--/assets/css/font-proxima-nova.css">-->
+
+        <script>
+            (function(d) {
+                var config = {
+                        kitId: 'awg6uyv',
+                        scriptTimeout: 3000,
+                        async: true
+                    },
+                    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+            })(document);
+        </script>
 
         <link rel="stylesheet" media="all" href="<?php bloginfo('template_directory'); ?>/assets/css/aos.css" rel="stylesheet">
         <link rel="stylesheet" media="all" href="<?php bloginfo('template_directory'); ?>/css/slick.css">
@@ -44,9 +50,6 @@
 		wp_head();
 		?>
 
-		<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">-->
-		<!--    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>-->
-		<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.152.2/three.min.js"></script>-->
         <script src="<?php bloginfo('template_directory'); ?>/assets/js/aos.js"></script>
         <script src="<?php bloginfo('template_directory'); ?>/js/slick.min.js"></script>
 		<script src="<?php bloginfo('template_directory'); ?>/assets/js/main.js"></script>
