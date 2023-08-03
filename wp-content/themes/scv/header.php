@@ -89,86 +89,93 @@
 
 	</head>
 
-	<?php
-	if($_SERVER['REMOTE_ADDR'] != '127.0.0.1'):
-	$ip = $_SERVER['REMOTE_ADDR'];
-	$details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
-	$country = $details->country;
+    <?php
+    if($_SERVER['REMOTE_ADDR'] != '127.0.0.1'):
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
+        $country = $details->country;
 
-	if($country == "JP"):
-	echo <<<EOM
+        if($country == "JP"):
+            echo <<<EOM
         <script>
-            var check = sessionStorage.getItem("checkLocation");
-			var plang = location.pathname.split('/')[1];
-            if(check === "Done" && plang === "vi"){
-				sessionStorage.setItem("checkLocation", "jp");
-	  			var lang = "vi";
-                var plang = location.pathname.split('/')[1];
-                location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname.replace('/' + plang + '/', '/') + location.search;
-            } else if(check === "Done" && plang === "en"){
-				sessionStorage.setItem("checkLocation", "jp");
-				var lang = "en";
-                var plang = location.pathname.split('/')[1];
-                location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname.replace('/' + plang + '/', '/') + location.search;
-            } else if(check === "Done" && plang != "vi" && plang != "en"){
-                sessionStorage.setItem("checkLocation", "jp");
-			}
+			setTimeout((function() {
+				var check = sessionStorage.getItem("checkLocation");
+				var plang = location.pathname.split('/')[1];
+				if(check === "Done" && plang === "vi"){
+					sessionStorage.setItem("checkLocation", "jp");
+					var lang = "vi";
+					var plang = location.pathname.split('/')[1];
+					location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname.replace('/' + plang + '/', '/') + location.search;
+				} else if(check === "Done" && plang === "en"){
+					sessionStorage.setItem("checkLocation", "jp");
+					var lang = "en";
+					var plang = location.pathname.split('/')[1];
+					location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname.replace('/' + plang + '/', '/') + location.search;
+				} else if(check === "Done" && plang != "vi" && plang != "en"){
+					sessionStorage.setItem("checkLocation", "jp");
+				}
+			}), 100);
         </script>
 EOM;
-	elseif($country == "VN"):
-	echo <<<EOM
+        elseif($country == "VN"):
+            echo <<<EOM
         <script>
-            var check = sessionStorage.getItem("checkLocation");
-			var plang = location.pathname.split('/')[1];
-            if(check === "Done" && plang === "en"){
-				sessionStorage.setItem("checkLocation", "vi");
-                var lang = "en";
-                var plang = location.pathname.split('/')[1];
-                location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname.replace('/' + plang + '/', '/') + location.search;
-            } else if(check === "Done" && plang === ""){
-				sessionStorage.setItem("checkLocation", "vi");
-				var lang = "vi";
-                var plang = location.pathname.split('/')[1];
-                location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname.replace('/' + plang + '/', '/') + location.search;
-			} else if(check === "Done" && plang != "" && plang != "en"){
-				sessionStorage.setItem("checkLocation", "vi");
-				var lang = "vi";
-                var plang = location.pathname.split('/')[1];
-                location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname.replace('/' + plang + '/', '/') + location.search;
-			} else if(check === "Done" && plang != "vi" && plang != "en" && plang != ""){
-				sessionStorage.setItem("checkLocation", "vi");
-			}
+			setTimeout((function() {
+				var check = sessionStorage.getItem("checkLocation");
+				var plang = location.pathname.split('/')[1];
+				console.log(plang);
+				if(check === "Done" && plang === "en"){
+					sessionStorage.setItem("checkLocation", "vi");
+					var lang = "en";
+					var plang = location.pathname.split('/')[1];
+					location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname.replace('/' + plang + '/', '/') + location.search;
+				} else if(check === "Done" && plang === ""){
+					sessionStorage.setItem("checkLocation", "vi");
+					var lang = "vi";
+					var plang = location.pathname.split('/')[1];
+					location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname.replace('/' + plang + '/', '/') + location.search;
+				} else if(check === "Done" && plang != "" && plang != "en"){
+					sessionStorage.setItem("checkLocation", "vi");
+					var lang = "vi";
+					var plang = location.pathname.split('/')[1];
+					location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname.replace('/' + plang + '/', '/') + location.search;
+				} else if(check === "Done" && plang != "vi" && plang != "en" && plang != ""){
+					sessionStorage.setItem("checkLocation", "vi");
+				}
+			}), 100);
         </script>
 EOM;
-	else:
-	echo <<<EOM
+        else:
+            echo <<<EOM
         <script>
-			var check = sessionStorage.getItem("checkLocation");
-			var plang = location.pathname.split('/')[1];
-			if(check === "Done" && plang === "vi"){
-				sessionStorage.setItem("checkLocation", "en");
-                var lang = "vi";
-                var plang = location.pathname.split('/')[1];
-                location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname.replace('/' + plang + '/', '/') + location.search;
-            } else if(check === "Done" && plang === ""){
-				sessionStorage.setItem("checkLocation", "en");
-				var lang = "en";
-                var plang = location.pathname.split('/')[1];
-                location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname.replace('/' + plang + '/', '/') + location.search;
-			} else if(check === "Done" && plang != "" && plang != "vi"){
-				sessionStorage.setItem("checkLocation", "vi");
-				var lang = "vi";
-                var plang = location.pathname.split('/')[1];
-                location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname.replace('/' + plang + '/', '/') + location.search;
-			} else if(check === "Done" && plang != "vi" && plang != "en" && plang != ""){
-				sessionStorage.setItem("checkLocation", "en");
-			}
+			setTimeout((function() {
+				var check = sessionStorage.getItem("checkLocation");
+				var plang = location.pathname.split('/')[1];
+				if(check === "Done" && plang === "vi"){
+					sessionStorage.setItem("checkLocation", "en");
+					var lang = "vi";
+					var plang = location.pathname.split('/')[1];
+					location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname.replace('/' + plang + '/', '/') + location.search;
+				} else if(check === "Done" && plang === ""){
+					sessionStorage.setItem("checkLocation", "en");
+					var lang = "en";
+					var plang = location.pathname.split('/')[1];
+					location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname.replace('/' + plang + '/', '/') + location.search;
+				} else if(check === "Done" && plang != "" && plang != "vi"){
+					sessionStorage.setItem("checkLocation", "vi");
+					var lang = "vi";
+					var plang = location.pathname.split('/')[1];
+					location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname.replace('/' + plang + '/', '/') + location.search;
+				} else if(check === "Done" && plang != "vi" && plang != "en" && plang != ""){
+					sessionStorage.setItem("checkLocation", "en");
+				}
+			}), 100);
         </script>
 EOM;
-	endif;
+        endif;
 
-	endif;
-	?>
+    endif;
+    ?>
 
     <script type="text/javascript" >
         window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
