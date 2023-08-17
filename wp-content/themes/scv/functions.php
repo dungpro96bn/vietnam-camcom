@@ -159,7 +159,7 @@ function languageString ()
     if ($current_language == 'vi') {
         $var['btn_contact'] = "Liên hệ";
         $var['btn_language'] = "Ngôn ngữ";
-        $var['company_name'] = "Công ty TNHH CAMCOM Việt Nam";
+        $var['company_name'] = "Công ty TNHH VIỆT NAM CAMCOM";
         $var['subTitle_01_banner_home'] = "CAMCOM GROUP";
         $var['subTitle_02_banner_home'] = "VIETNAM CAMCOM";
         $var['title_contact_banner'] = "Liên hệ";

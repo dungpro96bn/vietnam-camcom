@@ -400,6 +400,9 @@ body .en select{
     padding: 46px 24px;
     transition: unset;
 }
+#header-menu #navList-menu .menu-item.menu-item-has-children > a{
+    pointer-events: none;
+}
 #header-menu .header-nav.scroll-header #navList-menu .menu-item a{
     padding: 30px 24px;
 }
