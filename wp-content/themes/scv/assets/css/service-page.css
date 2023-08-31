@@ -1,4 +1,3 @@
-
 /*header-page*/
 /*============================================*/
 #service-subPage{
@@ -63,7 +62,7 @@
 
 
 
-    /*technical-training*/
+/*technical-training*/
 /*===============================================*/
 .technical-training .technical-training-list{
     margin-bottom: 160px;
@@ -114,12 +113,13 @@
 .technical-training .technical-training-list .technical-training-item .header-img:after{
     content: "";
     position: absolute;
-    background-image: url("/wp-content/uploads/viecjp.png");
+    background-image: url("/wp-content/uploads/cropped-logo-mintoku.png");
     background-size: 100%;
+    background-repeat: no-repeat;
     width: 194px;
     height: 80px;
     right: 0;
-    top: -17px;
+    top: 18px;
 }
 .technical-training .technical-training-list .technical-training-item .title{
     font-size: 32px;
@@ -279,7 +279,7 @@
     letter-spacing: 0;
 }
 
-    /*hr-page*/
+/*hr-page*/
 /*===================================*/
 .hr-page .text{
     font-size: 16px;
@@ -1257,6 +1257,9 @@
         line-height: 38px;
         margin-bottom: 20px;
     }
+    .technical-training .technical-training-list .technical-training-item .header-img:after{
+        top: 13px;
+    }
     .technical-training .technical-training-list .technical-training-item .ttl {
         font-size: 16px;
         line-height: 26px;
@@ -1544,6 +1547,7 @@
     .technical-training .technical-training-list .technical-training-item .header-img:after{
         width: 150px;
         height: 61px;
+        top: 8px;
     }
     .technical-training .technical-training-list .technical-training-item .header-img {
         position: relative;
@@ -1874,6 +1878,9 @@
         font-size: 26px;
         line-height: 38px;
         margin-bottom: 33px;
+    }
+    .technical-training .technical-training-list .technical-training-item .header-img:after{
+        top: 16px;
     }
     .technical-training .technical-training-list .technical-training-item .ttl {
         font-size: 18px;
