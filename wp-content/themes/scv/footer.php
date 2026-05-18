@@ -4,13 +4,26 @@
 global $sitepress;
 $var = languageString();
 $current_language = $sitepress->get_current_language();
+
+if($current_language == 'vi' || $current_language == 'en'){
+	$urlSite = "https://vietnam-camcom.com/".$current_language;
+} else{
+	$urlSite = "https://vietnam-camcom.com";
+}
+
 ?>
 
 <?php get_sidebar(); ?>
 
+<?php 
+$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$slug = basename(rtrim($path, '/'));
+
+?>
+
 <?php if (!is_front_page()) : ?>
-    <div class="inner contact-footer">
-        <a href="<?php echo home_url(); ?>/contact/" class="contactBanner">
+    <form action="<?php echo $urlSite; ?>/contact/?services=<?php echo $slug; ?>" method="POST" class="inner contact-footer">
+        <button class="contactBanner">
             <div class="contact-content">
                 <h2 class="heading-block en"><span><?php echo $var['title_contact_banner']; ?></span></h2>
                 <p class="sub-title"><?php echo $var['text_contact_banner']; ?></p>
@@ -22,8 +35,8 @@ $current_language = $sitepress->get_current_language();
                     </div>
                 </div>
             </div>
-        </a>
-    </div>
+        </button>
+    </form>
 <?php endif; ?>
 
 
@@ -49,6 +62,13 @@ $current_language = $sitepress->get_current_language();
                         </picture>
                     </a>
                     <p class="subtitle-logo"><?php echo $var['company_name']; ?></p>
+                    <div class="security-footer">
+                        <picture class="image">
+                            <source srcset="/wp-content/uploads/iso-logo.png 2x">
+                            <img class="sizes" width="201" src="/wp-content/uploads/iso-logo.png" alt="">
+                        </picture>
+                        <p class="ttl-iso">ISO/IEC 27001: 2022</p>
+                    </div>
                 </div>
                 <?php
                 if ($current_language == "vi") {

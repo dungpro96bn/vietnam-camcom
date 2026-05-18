@@ -1,0 +1,911 @@
+/*------------------------------------------------------------
+common
+------------------------------------------------------------*/
+body {
+    font-family: 'Noto Sans JP', 'Century Gothic', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 游ゴシック体, YuGothic, "Yu Gothic Medium", 游ゴシック, 'Yu Gothic', メイリオ, Meiryo, sans-serif;
+}
+
+#labor-management {
+    font-size: 13px;
+    font-weight: 500;
+    color: #000;
+    overflow: hidden;
+    background: #fff;
+    position: relative;
+}
+
+#labor-management * {
+    box-sizing: border-box;
+}
+
+#labor-management a {
+    transition: opacity .3s;
+}
+
+#labor-management a[href^="tel:"] {
+    display: inline-block;
+    transition: none;
+}
+
+#labor-management a:hover {
+    text-decoration: none;
+}
+
+#labor-management a:focus-visible {
+    outline: none;
+}
+
+#labor-management img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+#labor-management .js-fadein {
+    opacity: 0;
+    transform: translate(0, 20px);
+    transition-property: opacity, transform;
+    transition-duration: 1s;
+}
+
+#labor-management .scroll-in {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+#labor-management .pc-br {
+    display: inline;
+}
+
+#labor-management .sp-br {
+    display: none;
+}
+
+#labor-management .inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+.labor-management .content-page {
+    padding-top: 0px !important;
+}
+/*SECTION01*/
+.labor-management .section1{
+    background: #F7F7F7;
+}
+
+.labor-management .section1 .section1-inner{
+    padding-top:129px;
+}
+
+.labor-management .section1 .section1-inner h2 span{
+    display: block;
+}
+
+.labor-management .section1 .section1-inner h2 span:first-child{
+    font-size: 20px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.6px;
+    text-align: center;
+    color: #fff;
+    width: fit-content;
+    margin:0 auto;
+    padding: 14px 48px;
+    border-radius: 33px;
+    background-image: linear-gradient(to left, #272e64, #9d4960);
+    position: relative;
+    z-index: 0;
+}
+
+.labor-management .section1 .section1-inner h2 span:first-child:after{
+    content:"";
+    background-image: url("/wp-content/themes/scv/images/labor-management/polygon1.png");
+    width: 34px;
+    height: 30px;
+    background-size: cover;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    bottom:-11px;
+    z-index: -1;
+}
+
+.labor-management .section1 .section1-inner h2 span:nth-child(2){
+    font-size: 50px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.47;
+    letter-spacing: 1.5px;
+    text-align: center;
+    color: #333;
+    margin:6px 0 8px 0;
+}
+
+.labor-management .section1 .section1-inner h2 span:nth-child(3){
+    font-size: 20px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.6px;
+    text-align: center;
+    color: #954760;
+}
+
+.labor-management .section1 .section1-inner .chart{
+    display: block;
+    max-width: 1341px;
+    margin:-48px auto 0;
+}
+
+.labor-management .section1 .section1-inner .chart img{
+    width: 100%;
+}
+
+/*SECTION2*/
+.labor-management .section2{
+    background-image: url("/wp-content/themes/scv/images/labor-management/bg2.png");
+    background-size: cover;
+    margin-top: -25px;
+    background-position: center;
+}
+
+.labor-management .section2 .section2-inner{
+    padding:67px 0 57px;
+}
+
+.labor-management .section2 .section2-inner h2 span{
+    display: block;
+}
+
+.labor-management .section2 .section2-inner h2 span:first-child{
+    font-size: 24px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.72px;
+    text-align: left;
+    color: #333;
+    width: fit-content;
+    padding: 10px 49px 11px 50px;
+    border-radius: 33px;
+    background-color: #fff;
+    margin:0 auto;
+    position: relative;
+    z-index: 0;
+}
+.labor-management .section2 .section2-inner h2 span:first-child:after{
+    content:"";
+    background-image: url("/wp-content/themes/scv/images/labor-management/Polygon4.png");
+    width: 34px;
+    height: 30px;
+    background-size: cover;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    bottom:-11px;
+    z-index: -1;
+}
+
+.labor-management .section2 .section2-inner h2 span:nth-child(2){
+    font-size: 70px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.05;
+    letter-spacing: 1.4px;
+    text-align: center;
+    color: #fff;
+    margin:21px 0 2px;
+}
+
+.labor-management .section2 .section2-inner h2 span:nth-child(2) small{
+    font-size: 45px;
+}
+
+.labor-management .section2 .section2-inner h2 span:nth-child(3){
+    font-size: 40px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.84;
+    letter-spacing: 1.2px;
+    text-align: center;
+    color: #fff;
+}
+
+/*SECTION3*/
+.labor-management .section3{
+    background-image: url("/wp-content/themes/scv/images/labor-management/sec3-bg.png");
+    background-size: cover;
+}
+
+.labor-management .section3 .section3-inner{
+    padding:238px 0 120px 0;
+    max-width: 1280px;
+    margin:0 auto;
+    width: calc(100% - 40px);
+}
+.labor-management .section3 .section3-inner .section3-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 183px;
+}
+.labor-management .section3 .section3-inner .section3-list .section-item{
+    width: 46.0875%;
+    position: relative;
+    z-index: 0;
+    background-color: #f7f7f7;
+}
+.labor-management .section3 .section3-inner .section3-list .section-item .box-img .num{
+    width: 75px;
+    left: -25px;
+    top: -25px;
+    position: absolute;
+}
+.labor-management .section3 .section3-inner .section3-list .section-item .box-img{
+    width: 428px;
+    position: absolute;
+    z-index: 1;
+    left:50%;
+    transform: translateX(-50%);
+    top:-91px;
+}
+
+.labor-management .section3 .section3-inner .section3-list .section-item .box-text{
+    padding: 185px 40px 60px;
+}
+.labor-management .section3 .section3-inner .section3-list .section-item .box-text h3{
+    font-size: 32px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 0.96px;
+    text-align: center;
+    color: #2c3573;
+    margin-bottom:25px;
+}
+
+.labor-management .section3 .section3-inner .section3-list .section-item .box-text p{
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: 0.48px;
+    text-align: left;
+    color: #333;
+}
+
+.labor-management .section3{
+    position: relative;
+}
+
+.labor-management .section3 .rec{
+    width: 101px;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    top:-1px;
+}
+
+/*SECTION4*/
+.labor-management .section4{
+    background-color: #f7f7f7;
+}
+.labor-management .section4 .section4-inner{
+    padding:91px 0 131px;
+    max-width: 960px;
+    margin:0 auto;
+}
+
+.labor-management .section4 .section4-inner h2{
+    font-size: 50px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.47;
+    letter-spacing: 1.5px;
+    text-align: center;
+    color: #333;
+}
+.labor-management .section4 .section4-inner h2 span:first-child{
+    font-family: "proxima-nova", sans-serif;
+    font-size: 93px;
+    position: relative;
+    top: 7px;
+}
+
+.labor-management .section4 .section4-inner h2 span:nth-child(2){
+    font-size:70px;
+}
+
+.labor-management .section4 .section4-inner .sub-t{
+    font-size: 20px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.6px;
+    text-align: center;
+    color: #954760;
+}
+
+.labor-management .section4 .section4-inner .case-list{
+    margin-top:56px;
+}
+
+.labor-management .section4 .section4-inner .case-list .case-item{
+    padding: 48px 40px 40px;
+    background-color: #fff;
+}
+
+.labor-management .section4 .section4-inner .case-list .case-item .box-1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.labor-management .section4 .section4-inner .case-list .case-item .box-1 .avatar{
+    width: 160px;
+    object-fit: contain;
+}
+
+.labor-management .section4 .section4-inner .case-list .case-item .box-1 .box-text{
+    width: calc(100% - 160px - 36px);
+}
+
+.labor-management .section4 .section4-inner .case-list .case-item .box-1 .box-text .ttl{
+    font-size: 32px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.41;
+    letter-spacing: 0.96px;
+    text-align: left;
+    color: #954760;
+}
+
+.labor-management .section4 .section4-inner .case-list .case-item .box-1 .box-text .text{
+    padding: 22px 27px 22px 31px;
+    border-radius: 15px;
+    background-color: #e8e8e8;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 0.42px;
+    text-align: left;
+    color: #333;
+    margin-top:13px;
+    position: relative;
+    z-index: 0;
+}
+
+.labor-management .section4 .section4-inner .case-list .case-item .box-1 .box-text .text:before{
+    content:"";
+    background-image: url("/wp-content/themes/scv/images/labor-management/recl.png");
+    width: 26px;
+    height: 30px;
+    background-size: cover;
+    top:50%;
+    transform: translateY(-50%);
+    left:-15px;
+    z-index: -1;
+    position: absolute;
+}
+
+.labor-management .section4 .section4-inner .case-list .case-item .box-2{
+    padding: 40px 42px 40px 40px;
+    background-color: #fffbe0;
+    position: relative;
+    margin-top:62px;
+}
+
+.labor-management .section4 .section4-inner .case-list .case-item .box-2 .ttl{
+    font-size: 28px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.89;
+    letter-spacing: 0.84px;
+    text-align: left;
+    color: #333;
+    position: absolute;
+    left:40px;
+    top:-28px;
+}
+
+.labor-management .section4 .section4-inner .case-list .case-item .box-2 .ttl img{
+    width: 48.5px;
+    margin-right: 8.5px;
+    position: relative;
+    top: -3px;
+}
+
+.labor-management .section4 .section4-inner .case-list .case-item .box-2 .text{
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: 0.48px;
+    text-align: left;
+    color: #333;
+}
+.labor-management .section4 .section4-inner .case-list .case-item:first-child{
+    margin-bottom:82px;
+}
+.labor-management .section4 .section4-inner .case-list .case-item{
+    position: relative;
+}
+.labor-management .section4 .section4-inner .case-list .case-item .case{
+    font-size: 22px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.66px;
+    text-align: left;
+    color: #fff;
+    width: fit-content;
+    padding: 5px 39px 11px 40px;
+    border-radius: 22px;
+    background-image: linear-gradient(to right, #272e64, #9d4960);
+    font-family: "proxima-nova", sans-serif;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -16px;
+}
+
+.labor-management .section4 .section4-inner .case-list .case-item .case span{
+    font-size: 32px;
+    margin-left:6px;
+}
+
+/*SECTION5*/
+.labor-management .section5 .section5-inner{
+    padding:120px 0;
+    max-width: 1400px;
+    margin:0 auto;
+}
+
+.labor-management .section5 .section5-inner h2{
+    font-size: 50px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.47;
+    letter-spacing: 1.5px;
+    text-align: center;
+    color: #333;
+}
+
+.labor-management .section5 .section5-inner .line-list{
+    margin-top:61px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.labor-management .section5 .section5-inner .line-list .line-item .line-item-inner{
+    padding: 60px 24px 24px;
+}
+
+.labor-management .section5 .section5-inner .line-list .line-item{
+    width: 22.86%;
+    background-color: #f7f7f7;
+}
+
+.labor-management .section5 .section5-inner .line-list .line-item .line-item-inner img{
+    width: 120px;
+    display: block;
+    margin:0 auto;
+}
+
+.labor-management .section5 .section5-inner .line-list .line-item .line-item-inner .ttl{
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.54px;
+    text-align: center;
+    color: #333;
+    margin:40px 0 25px;
+}
+
+.labor-management .section5 .section5-inner .line-list .line-item .line-item-inner .text{
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: 0.48px;
+    text-align: left;
+    color: #333;
+}
+
+/*SECTION6*/
+.labor-management .section6{
+    border-radius: 4px;
+    background: linear-gradient(90deg, #272e6433 8%, #9d496033 100%);
+}
+
+.labor-management .section6 .section6-inner{
+    padding:96px 0 120px;
+    max-width: 1036px;
+    margin:0 auto;
+}
+
+.labor-management .section6 .section6-inner h2{
+    font-size: 50px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.47;
+    letter-spacing: 1.5px;
+    text-align: center;
+    color: #333;
+    margin-bottom:82px;
+}
+
+.labor-management .section6 .section6-inner .accordion-item{
+    padding: 0px 0px 0px 64px;
+    border-radius: 16px;
+    border: solid 2px #f0f0f0;
+    background-color: #fff;
+}
+
+.labor-management .section6 .section6-inner .accordion-item .accordion-header{
+    font-size: 22px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.64;
+    letter-spacing: 0.66px;
+    text-align: left;
+    color: #333;
+    padding-bottom: 32px;
+    position: relative;
+    padding-top:29px;
+}
+
+.labor-management .section6 .section6-inner .accordion-item .accordion-header svg{
+    position: absolute;
+    width: 40px;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.labor-management .section6 .section6-inner .accordion-item .accordion-header.is-open svg rect#Rectangle_257{
+    opacity: 0;
+}
+
+.labor-management .section6 .section6-inner .accordion-item .accordion-content{
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: 0.48px;
+    text-align: left;
+    color: #333;
+    padding-top:32px;
+    padding-right:64px;
+    border-top:1px solid  #e2e2e2;
+    padding-bottom: 28px;
+    display: none;
+}
+
+.labor-management .section6 .section6-inner .accordion-item{
+    margin-bottom:24px;
+}
+
+
+
+.labor-management .section6 .section6-inner .accordion-item:last-child{
+    margin-bottom:0;
+}
+
+
+
+@media print, screen and (max-width: 1025px){
+    .labor-management .section1 .section1-inner .chart {
+        margin: 15px auto 0;
+    }
+
+    .labor-management .section2 {
+        margin-top: -14px;
+    }
+
+    .labor-management .section3 .section3-inner .section3-list .section-item {
+        width: 100%;
+    }
+
+    .labor-management .section3 .section3-inner {
+        max-width: 80%;
+    }
+    .labor-management .section4 .section4-inner{
+        width: calc(100% - 40px);
+    }
+    .labor-management .section4 .section4-inner .case-list .case-item .box-1 .avatar {
+        width: 200px;
+    }
+    .labor-management .section4 .section4-inner .case-list .case-item .box-1 .box-text {
+        width: calc(100% - 200px - 36px);
+    }
+    .labor-management .section5 .section5-inner{
+        width: calc(100% - 40px);
+    }
+    .labor-management .section5 .section5-inner .line-list .line-item {
+        width: 48%;
+    }
+    .labor-management .section5 .section5-inner .line-list{
+        row-gap: 30px;
+    }
+    .labor-management .section6 .section6-inner .accordion-item .accordion-header{
+        padding-right: 135px;
+    }
+    .labor-management .section6 .section6-inner{
+        width: calc(100% - 40px);
+    }
+}
+
+
+
+
+@media print, screen and (max-width: 767px) {
+
+    #labor-management .sp-br {
+        display: inline;
+    }
+
+    #labor-management .pc-br {
+        display: none;
+    }
+
+    /*SECTION1*/
+    .labor-management .section1 .section1-inner {
+        padding-top: 70px;
+    }
+    .labor-management .section1 .section1-inner h2 span:first-child{
+        font-size: 16px;
+        padding: 9px 24px 9px 20px;
+    }
+    .labor-management .section1 .section1-inner h2 span:first-child:after{
+        bottom: -8px;
+    }
+
+    .labor-management .section1 .section1-inner h2 span:nth-child(2){
+        font-size: 27px;
+        margin: 20px 0 12px 0;
+    }
+    .labor-management .section1 .section1-inner h2 span:nth-child(3){
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    .labor-management .section1 .section1-inner .chart {
+        margin: 12.5px 12.5px 0;
+    }
+
+    /*SECTION2*/
+    .labor-management .section2 .section2-inner {
+        padding: 40px 0 40px;
+    }
+
+    .labor-management .section2 .section2-inner h2 span:first-child{
+        font-size: 14px;
+        padding: 8px 19px;
+    }
+
+    .labor-management .section2 .section2-inner h2 span:first-child:after{
+        bottom: -9px;
+    }
+
+    .labor-management .section2 {
+        margin-top: -12px;
+    }
+    .labor-management .section2 .section2-inner h2 span:nth-child(2){
+        font-size: 40px;
+        margin: 21px 0 2px;
+    }
+    .labor-management .section2 .section2-inner h2 span:nth-child(2) small{
+        font-size: 22.5px;
+    }
+    .labor-management .section2 .section2-inner h2 span:nth-child(3){
+        font-size: 24px;
+    }
+
+    /*SECTION3*/
+    .labor-management .section3 .section3-inner{
+        padding: 145px 0px 80px;
+        max-width: unset;
+        width: calc(100% - 24px);
+    }
+    .labor-management .section3 .section3-inner .section3-list .section-item .box-img{
+        width: 260px;
+        top: -61px;
+    }
+    .labor-management .section3 .section3-inner .section3-list .section-item .box-img .num {
+        width: 42px;
+        left: -18px;
+        top: -18px;
+    }
+    .labor-management .section3 .section3-inner .section3-list .section-item .box-text{
+        padding: 105px 20px 32px;
+    }
+    .labor-management .section3 .section3-inner .section3-list .section-item .box-text h3{
+        font-size: 18px;
+        margin-bottom: 21px;
+    }
+    .labor-management .section3 .section3-inner .section3-list .section-item .box-text p{
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    .labor-management .section3 .section3-inner .section3-list{
+        row-gap: 115px;
+    }
+
+    /*SECTION4*/
+    .labor-management .section4 .section4-inner {
+        padding: 60px 0 55px;
+    }
+    .labor-management .section4 .section4-inner h2 span:first-child{
+        font-size: 51.5px;
+        top:4px;
+    }
+    .labor-management .section4 .section4-inner h2 span:nth-child(2) {
+        font-size: 40px;
+    }
+    .labor-management .section4 .section4-inner h2{
+        font-size: 27px;
+    }
+    .labor-management .section4 .section4-inner .sub-t{
+        font-size: 16px;
+    }
+    .labor-management .section4 .section4-inner .case-list .case-item .box-1 .box-text {
+        width: calc(100%);
+    }
+    .labor-management .section4 .section4-inner {
+        width: calc(100% - 24px);
+    }
+    .labor-management .section4 .section4-inner .case-list .case-item {
+        padding: 35px 24px 20px;
+    }
+    .labor-management .section4 .section4-inner .case-list .case-item .box-1{
+        justify-content: center;
+    }
+    .labor-management .section4 .section4-inner .case-list .case-item .box-1 .avatar {
+        width: 80px;
+        margin-bottom:12px;
+    }
+    .labor-management .section4 .section4-inner .case-list .case-item .box-1 .box-text .ttl{
+        font-size: 20px;
+        text-align: center;
+    }
+    .labor-management .section4 .section4-inner .case-list .case-item .box-1 .box-text .text{
+        padding: 20px 15px 20px;
+        margin-top: 17px;
+    }
+    .labor-management .section4 .section4-inner .case-list .case-item .box-1 .box-text .text:before {
+        top: -8px;
+        transform: translateX(-50%) rotate(-150deg);
+        left: 50%;
+    }
+    .labor-management .section4 .section4-inner .case-list .case-item .box-2{
+        padding: 32px 16px 20px;
+        margin-top: 39px;
+    }
+    .labor-management .section4 .section4-inner .case-list .case-item .box-2 .text{
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    .labor-management .section4 .section4-inner .case-list .case-item .box-2 .ttl{
+        font-size: 20px;
+        left: 20px;
+        top: -19px;
+    }
+    .labor-management .section4 .section4-inner .case-list .case-item .box-2 .ttl img {
+        width: 32px;
+        margin-right: 5.5px;
+        position: relative;
+        top: -3px;
+    }
+    .labor-management .section4 .section4-inner .case-list .case-item .case{
+        font-size: 15px;
+    }
+    .labor-management .section4 .section4-inner .case-list .case-item .case span{
+        font-size: 24px;
+    }
+    .labor-management .section4 .section4-inner .case-list .case-item .case{
+        font-size: 15px;
+        padding: 3px 22px 8px;
+    }
+    .labor-management .section4 .section4-inner .case-list .case-item:first-child {
+        margin-bottom: 54px;
+    }
+    .labor-management .section3 .rec {
+        top: -16px;
+    }
+
+    /*SECTION5*/
+    .labor-management .section5 .section5-inner {
+        width: calc(100% - 24px);
+        padding: 60px 0;
+    }
+    .labor-management .section5 .section5-inner h2 {
+        font-size: 27px;
+    }
+    .labor-management .section5 .section5-inner .line-list {
+        margin-top: 49px;
+        row-gap: 32px;
+    }
+    .labor-management .section5 .section5-inner .line-list .line-item .line-item-inner{
+        padding: 32px 12px;
+    }
+    .labor-management .section5 .section5-inner .line-list .line-item .line-item-inner img {
+        width: 100px;
+    }
+    .labor-management .section5 .section5-inner .line-list .line-item .line-item-inner .ttl{
+        font-size: 16px;
+        margin: 24px 0 16px;
+    }
+    .labor-management .section5 .section5-inner .line-list .line-item .line-item-inner .text{
+        font-size: 12px;
+        letter-spacing: 0.36px;
+        line-height: 1.75;
+    }
+
+    /*SECTION6*/
+    .labor-management .section6 .section6-inner {
+        width: calc(100% - 24px);
+        padding: 60px 0 50px;
+    }
+    .labor-management .section6 .section6-inner h2{
+        font-size: 26px;
+        margin-bottom: 26px;
+    }
+    .labor-management .section6 .section6-inner .accordion-item {
+        padding: 0px 0px 0px 16px;
+    }
+    .labor-management .section6 .section6-inner .accordion-item .accordion-header{
+        padding-bottom: 32px;
+        padding-top: 32px;
+        padding-right: 54px;
+    }
+    .labor-management .section6 .section6-inner .accordion-item .accordion-header {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+    .labor-management .section6 .section6-inner .accordion-item .accordion-header svg{
+        width: 32px;
+        right: 16px;
+    }
+    .labor-management .section6 .section6-inner .accordion-item .accordion-content{
+        font-size: 14px;
+        padding-bottom: 32px;
+        padding-right: 16px;
+        line-height: 1.29;
+    }
+    .labor-management .section6 .section6-inner .accordion-item {
+        padding: 0px 0px 0px 24px;
+    }
+}
+
+@media (max-width: 350px){
+    .labor-management .section2 .section2-inner h2 span:first-child {
+        font-size: 12px;
+    }
+}

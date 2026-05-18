@@ -401,7 +401,7 @@ body .en select{
     transition: unset;
 }
 #header-menu #navList-menu .menu-item.menu-item-has-children > a{
-    pointer-events: none;
+	pointer-events: none;
 }
 #header-menu .header-nav.scroll-header #navList-menu .menu-item a{
     padding: 30px 24px;
@@ -413,7 +413,7 @@ body .en select{
     position: absolute;
     background: linear-gradient(90deg, rgba(39,46,100,1) 0%, rgba(157,73,96,1) 100%);
     padding: 20px 0;
-    top: 80px;
+    top: calc(100% + 20px);
     width: 270px;
     left: 0;
     opacity: 0;
@@ -427,7 +427,7 @@ body .en select{
     border-radius: 0;
 }
 #header-menu .header-nav.scroll-header #navList-menu .menu-item .sub-menu{
-    top: 55px;
+    top: calc(100% + 20px);
 }
 #header-menu .header-nav.scroll-header #navList-menu .menu-item.menu-item-has-children:hover .sub-menu{
     top: 100%;
@@ -564,6 +564,19 @@ body.page-complete .contact-footer{
 }
 #footer .footer-logo{
     padding-top: 5px;
+}
+#footer .footer-logo .security-footer{
+    margin-top: 25px;
+}
+#footer .footer-logo .security-footer .image{
+    display: flex;
+    margin-bottom: 10px;
+}
+#footer .footer-logo .security-footer .ttl-iso{
+    font-size: 19px;
+    line-height: 1.6;
+    font-weight: 400;
+    font-family: Meiryo, sans-serif;
 }
 #footer .footer-logo a{
     display: block;
@@ -712,7 +725,9 @@ body.page-complete .contact-footer{
     position: relative;
     margin-bottom: -211px;
     transition: .3s;
-    overflow: hidden;
+	overflow: hidden;
+	width: 100%;
+	text-align: left;
 }
 .contactBanner:before{
     content: "";

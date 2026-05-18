@@ -62,7 +62,7 @@
 
 
 
-/*technical-training*/
+    /*technical-training*/
 /*===============================================*/
 .technical-training .technical-training-list{
     margin-bottom: 160px;
@@ -75,6 +75,7 @@
 }
 .technical-training .technical-training-list .technical-training-item:last-child{
     margin-bottom: 0;
+	padding-top:60px
 }
 .technical-training .technical-training-list .technical-training-item .imageItem{
     padding-right: 60px;
@@ -115,11 +116,11 @@
     position: absolute;
     background-image: url("/wp-content/uploads/cropped-logo-mintoku.png");
     background-size: 100%;
-    background-repeat: no-repeat;
+	background-repeat: no-repeat;
     width: 194px;
     height: 80px;
     right: 0;
-    top: 18px;
+	top: 18px;
 }
 .technical-training .technical-training-list .technical-training-item .title{
     font-size: 32px;
@@ -151,6 +152,15 @@
 .technical-training .technical-training-list .technical-training-item .text-info:last-child{
     margin-bottom: 0;
 }
+
+.technical-training .banner-link{
+	text-align: center;
+	margin-bottom: 100px;
+}
+.technical-training .banner-link a:hover{
+	opacity: .7;
+}
+
 .technical-training .video-content{
     position: relative;
     padding-bottom: 56.3%;
@@ -279,7 +289,7 @@
     letter-spacing: 0;
 }
 
-/*hr-page*/
+    /*hr-page*/
 /*===================================*/
 .hr-page .text{
     font-size: 16px;
@@ -291,6 +301,7 @@
 }
 .hr-page .companies-recruiting{
     padding-bottom: 160px;
+	margin-top:50px
 }
 .hr-page .companies-recruiting .company-item{
     display: grid;
@@ -1257,9 +1268,9 @@
         line-height: 38px;
         margin-bottom: 20px;
     }
-    .technical-training .technical-training-list .technical-training-item .header-img:after{
-        top: 13px;
-    }
+	.technical-training .technical-training-list .technical-training-item .header-img:after{
+		top: 13px;
+	}
     .technical-training .technical-training-list .technical-training-item .ttl {
         font-size: 16px;
         line-height: 26px;
@@ -1547,7 +1558,7 @@
     .technical-training .technical-training-list .technical-training-item .header-img:after{
         width: 150px;
         height: 61px;
-        top: 8px;
+		top: 8px;
     }
     .technical-training .technical-training-list .technical-training-item .header-img {
         position: relative;
@@ -1879,9 +1890,9 @@
         line-height: 38px;
         margin-bottom: 33px;
     }
-    .technical-training .technical-training-list .technical-training-item .header-img:after{
-        top: 16px;
-    }
+	.technical-training .technical-training-list .technical-training-item .header-img:after{
+		top: 16px;
+	}
     .technical-training .technical-training-list .technical-training-item .ttl {
         font-size: 18px;
         line-height: 28px;

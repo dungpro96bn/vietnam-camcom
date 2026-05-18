@@ -24,7 +24,7 @@ $current_language = $sitepress->get_current_language();
                 </div>
 
                 <div class="link-page" data-aos="fade-up">
-                    <a href="<?php echo home_url(); ?>/news/" class="btn-link en">一覧へ戻る</a>
+                    <a href="<?php echo home_url(); ?>/news/" class="btn-link en"><?php echo $var['btn_back'];?></a>
                 </div>
             </div>
 

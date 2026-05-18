@@ -802,6 +802,10 @@ body:not(.home) main{
 
 
 /* form-lp */
+.form-lp .cf7sr-g-recaptcha{
+	display: flex;
+	justify-content: center;
+}
 .form-lp{
 	max-width: 1180px;
     margin: auto;
@@ -812,8 +816,14 @@ body:not(.home) main{
 	flex-wrap: wrap;
 	margin-bottom: 50px;
 }
-.form-lp .field-input .ttl-field{
+.form-lp .field-input > p{
 	width: 30%;
+	font-size: 18px;
+	line-height: 30px;
+	display: flex;
+	align-items: center;
+}
+.form-lp .field-input .ttl-field{
 	font-size: 18px;
 	line-height: 30px;
 	display: flex;
@@ -841,7 +851,9 @@ body:not(.home) main{
     align-items: center;
 	margin-right: 28px;
 }
-.form-lp .field-input input[type="text"]{
+.form-lp .field-input input[type="text"],
+.form-lp .field-input input.wpcf7-email,
+.form-lp .field-input input.wpcf7-tel{
 	border: 1px solid #707070;
 	height: 60px;
 	padding: 5px 20px;
@@ -853,7 +865,8 @@ body:not(.home) main{
 	height: 20px;
 	margin: 0 15px 0 0;
 }
-.form-lp .field-input .mwform-radio-field .mwform-radio-field-text{
+.form-lp .field-input .mwform-radio-field .mwform-radio-field-text,
+.form-lp .field-input .wpcf7-list-item-label{
 	font-size: 18px;
 	line-height: 30px;
 	position: relative;
@@ -912,10 +925,13 @@ body:not(.home) main{
 	padding-left: 15px;
 }
 .form-lp .field-input.field-due-date .subContainer{
-	display: flex;
+	display: none;
 	flex-wrap: wrap;
 	margin-top: 20px;
 	margin-bottom: 40px;
+}
+.form-lp .field-input.field-due-date .subContainer.show{
+	display: flex;
 }
 .form-lp .field-input.field-due-date .subInput-container{
 	margin-right: 40px;
@@ -1002,7 +1018,40 @@ body:not(.home) main{
 	display: inline-block;
 	width: auto;
 }
+#lp .form-lp .privacy .wpcf7-list-item-label{
+	display: none;
+}
+#lp .wpcf7-response-output{
+	max-width: 600px;
+    margin: auto;
+    padding: 0 20px;
+}
+#lp .form-lp .link-page{
+	display: flex;
+    justify-content: center;
+}
+#lp .form-lp .link-page > p{
+	position: relative;
+	width: 100%;
+    max-width: 400px;
+}
+#lp .form-lp .link-page .wpcf7-spinner{
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	transform: translateY(-50%);
+	margin: 0;
+}
+#lp .form-lp .cf7sr-recaptcha .wpcf7-not-valid-tip{
+	text-align: center;
+}
+#lp .form-lp .privacy .wpcf7-not-valid-tip{
+	position: absolute;
+	width: 150px;
+	left: 16px;
+	bottom: -24px;
 
+}
 
 @media (max-width: 1280px) {
 
@@ -1484,8 +1533,10 @@ body:not(.home) main{
         padding-bottom: 0;
     }
 
-	.form-lp .field-input .ttl-field {
+	.form-lp .field-input > p{
 		width: 100%;
+	}
+	.form-lp .field-input .ttl-field {
 		font-size: 16px;
 		line-height: 30px;
 		display: flex;
@@ -1558,6 +1609,12 @@ body:not(.home) main{
 	.form-lp .field-input.field-due-date .subInput-container{
 		width: 100%;
 		margin-bottom: 20px;
+	}
+	.form-lp .field-input.field-due-date .subInput-container .wpcf7-form-control-wrap{
+		font-size: 16px;
+		height: 45px;
+		width: 100%;
+		max-width: 120px;
 	}
 	.form-lp .field-input.field-due-date .subInput-container:last-child{
 		margin-bottom: 0;

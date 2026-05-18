@@ -157,6 +157,7 @@ function languageString ()
     $brSp = "<br class='sp-br'/>";
 
     if ($current_language == 'vi') {
+		$var['btn_back'] = "Quay Lại";
         $var['btn_contact'] = "Liên hệ";
         $var['btn_language'] = "Ngôn ngữ";
         $var['company_name'] = "Công ty TNHH VIỆT NAM CAMCOM";
@@ -168,6 +169,7 @@ function languageString ()
         $var['view_more'] = "Xem thêm";
         $var['cat_news'] = "Tin tức";
     } elseif ($current_language == 'en'){
+		$var['btn_back'] = "Back";
         $var['btn_contact'] = "Contact";
         $var['btn_language'] = "Language";
         $var['company_name'] = "VIETNAM CAMCOM Co., Ltd";
@@ -189,6 +191,7 @@ function languageString ()
         $var['title_archive_news_page'] = "NEWS";
         $var['view_more'] = "View more";
         $var['cat_news'] = "News";
+		$var['btn_back'] = "一覧へ戻る";
     }
 
     return $var;

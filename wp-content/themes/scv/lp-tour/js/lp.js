@@ -21,27 +21,27 @@ jQuery(function ($) {
 
 
     // fadein
-    // $(window).on('load', function () {
-    //     $(window).scroll(function () {
-    //         $('#lp .js-fadein').each(function () {
-    //             var ptop = $(this).offset().top;
-    //             var scroll = $(window).scrollTop();
-    //             var windowHeight = $(window).height();
-    //             if (scroll > ptop - windowHeight + 100) {
-    //                 $(this).addClass('scroll-in');
-    //             }
-    //         });
-    //     });
-    //
-    //     $('#lp .js-fadein').each(function () {
-    //         var ptop = $(this).offset().top;
-    //         var firstView = $(window).scrollTop();
-    //         var windowHeight = $(window).height();
-    //         if (firstView > ptop - windowHeight) {
-    //             $(this).addClass('scroll-in');
-    //         }
-    //     });
-    // });
+    $(window).on('load', function () {
+        $(window).scroll(function () {
+            $('#lp .js-fadein').each(function () {
+                var ptop = $(this).offset().top;
+                var scroll = $(window).scrollTop();
+                var windowHeight = $(window).height();
+                if (scroll > ptop - windowHeight + 100) {
+                    $(this).addClass('scroll-in');
+                }
+            });
+        });
+
+        $('#lp .js-fadein').each(function () {
+            var ptop = $(this).offset().top;
+            var firstView = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            if (firstView > ptop - windowHeight) {
+                $(this).addClass('scroll-in');
+            }
+        });
+    });
 
     //scroll
     $(function () {
@@ -84,5 +84,37 @@ jQuery(function ($) {
 		$(".ttl-radio .plan01").prop('checked', false);
 		$(".sub-plan01").prop('checked', false);
 	});
+	
+	$(document).ready(function() {
+		if ($('.mw_wp_form').hasClass('mw_wp_form_complete')) {
+			$('html, body').animate({
+				scrollTop: $('#contact-lp').offset().top
+			}, 0);
+		}
+	});
+	
+	var isMobileVersion = document.getElementsByClassName('error');
+    if (isMobileVersion.length > 0) {
+        var scroll = $('#contact-lp').offset();
+        var target_top = scroll.top - 100;
+        $('html, body').animate({scrollTop: target_top}, 0, 'swing');
+    }
+	
+	$(document).ready(function() {
+		const $form = $('#mw_wp_form_mw-wp-form-1475');
+
+		$form.on('keydown', function(event) {
+			if (event.key === 'Enter') {
+				event.preventDefault();
+			}
+		});
+
+		const $submitButton = $form.find('button[type="submit"]');
+
+		$submitButton.on('click', function() {
+			$form.submit(); 
+		});
+	});
+	
 
 });

@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 	<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MQCHJP3');</script>
+<!-- End Google Tag Manager -->
+
 		<meta charset="<?php bloginfo('charset'); ?>">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width,minimum-scale=0.5">
+		<meta name="facebook-domain-verification" content="tm70gapdrnlhemdigsbuz8ufda3zif" />
 		<!--    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1">-->
 		<title><?php
 			global $page, $paged;
@@ -17,17 +26,22 @@
 				echo ' | ' . sprintf(__('Page %s', 'cTpl'), max($paged, $page));
 			}
 			?></title>
-
-        <script>
-            (function(d) {
-                var config = {
-                        kitId: 'awg6uyv',
-                        scriptTimeout: 3000,
-                        async: true
-                    },
-                    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-            })(document);
-        </script>
+<!--		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;700;900&display=swap" rel="stylesheet">-->
+<!--        <link rel="stylesheet" href="https://use.typekit.net/rpr7ugj.css">-->
+<!--        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">-->
+<!--         <script src="<?php bloginfo('template_directory'); ?>/assets/js/noto-san.js"></script> -->
+<!-- 		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> -->
+		<script>
+			(function(d) {
+				var config = {
+					kitId: 'awg6uyv',
+					scriptTimeout: 3000,
+					async: true
+				},
+					h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+			})(document);
+		</script>
+<!--        <link rel="stylesheet" href="--><?php //bloginfo('template_directory'); ?><!--/assets/css/font-proxima-nova.css">-->
 
         <link rel="stylesheet" media="all" href="<?php bloginfo('template_directory'); ?>/assets/css/aos.css" rel="stylesheet">
         <link rel="stylesheet" media="all" href="<?php bloginfo('template_directory'); ?>/css/slick.css">
@@ -50,6 +64,9 @@
 		wp_head();
 		?>
 
+		<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">-->
+		<!--    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>-->
+		<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.152.2/three.min.js"></script>-->
         <script src="<?php bloginfo('template_directory'); ?>/assets/js/aos.js"></script>
         <script src="<?php bloginfo('template_directory'); ?>/js/slick.min.js"></script>
 		<script src="<?php bloginfo('template_directory'); ?>/assets/js/main.js"></script>
@@ -89,14 +106,19 @@
 
 	</head>
 
-    <?php
-    if($_SERVER['REMOTE_ADDR'] != '127.0.0.1'):
-        $ip = $_SERVER['REMOTE_ADDR'];
-        $details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
-        $country = $details->country;
+	<?php
+	if($_SERVER['REMOTE_ADDR'] != '127.0.0.1'):
+	
+	$ip = $_SERVER['REMOTE_ADDR'];
+	$token = 'efb4143f71c606';
+	$url = "http://ipinfo.io/{$ip}/json?token={$token}";
 
-        if($country == "JP"):
-            echo <<<EOM
+	$response = file_get_contents($url);
+	$details = json_decode($response);
+	$country = $details->country ?? 'Unknown';
+
+	if($country == "JP"):
+	echo <<<EOM
         <script>
 			setTimeout((function() {
 				var check = sessionStorage.getItem("checkLocation");
@@ -117,8 +139,8 @@
 			}), 100);
         </script>
 EOM;
-        elseif($country == "VN"):
-            echo <<<EOM
+	elseif($country == "VN"):
+	echo <<<EOM
         <script>
 			setTimeout((function() {
 				var check = sessionStorage.getItem("checkLocation");
@@ -145,8 +167,8 @@ EOM;
 			}), 100);
         </script>
 EOM;
-        else:
-            echo <<<EOM
+	else:
+	echo <<<EOM
         <script>
 			setTimeout((function() {
 				var check = sessionStorage.getItem("checkLocation");
@@ -172,10 +194,10 @@ EOM;
 			}), 100);
         </script>
 EOM;
-        endif;
+	endif;
 
-    endif;
-    ?>
+	endif;
+	?>
 
     <script type="text/javascript" >
         window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
@@ -187,7 +209,11 @@ EOM;
     <!-- All in One SEO Pack -->
 
 	<body <?php body_class(); ?>>
-		<div class="outer page" data-scroll-container>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MQCHJP3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+		<div class="outer page" data-scroll-container <?php echo $_SERVER['REMOTE_ADDR']; ?>>
 			<header id="header-menu" class="header-menu">
 				<div class="header-nav">
 					<div class="header-logo">
@@ -240,21 +266,60 @@ EOM;
 								<a class="contact-btn <?php if ($current_language != "ja") { echo "en";}?>" href="<?php echo home_url(); ?>/contact/"><?php echo $var['btn_contact']; ?></a>
 							</div>
 							<script type="text/javascript">
-								function doGTranslate(lang_pair) {
-									if(lang_pair.value)lang_pair=lang_pair.value;
-									if(lang_pair=='')
-										return;
-									var lang=lang_pair.split('|')[1];
-									var plang=location.pathname.split('/')[1];
-                                    if(plang != "" && plang != "en" && plang != "vi"){
-                                        location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname;
-                                    } else if(lang == "ja" && (plang == "en" || plang == "vi")){
-                                        location.href = location.protocol + '//' + location.host + '/' + location.pathname.replace('/' + plang + '/', '/') + location.search;
-                                    } else{
+                                function getCurrentLangFromPath() {
+                                    var firstPath = location.pathname.split('/')[1];
+
+                                    if (firstPath === 'vi') return 'vi';
+                                    if (firstPath === 'en') return 'en';
+
+                                    return 'ja';
+                                }
+
+                                function syncLanguageUI() {
+                                    var currentLang = getCurrentLangFromPath();
+                                    var currentValue = 'ja|' + currentLang;
+
+                                    var select = document.getElementById('language');
+                                    if (select) {
+                                        select.value = currentValue;
+                                    }
+
+                                    document.querySelectorAll('input[type="radio"][name="language"]').forEach(function (radio) {
+                                        radio.checked = radio.value === currentValue;
+                                    });
+                                }
+
+                                function doGTranslate(lang_pair) {
+                                    if (lang_pair.value) lang_pair = lang_pair.value;
+                                    if (lang_pair === '') return;
+
+                                    var lang = lang_pair.split('|')[1];
+                                    var plang = location.pathname.split('/')[1];
+                                    
+                                    if (lang === getCurrentLangFromPath()) {
+                                        syncLanguageUI();
+                                        return;
+                                    }
+
+                                    if (plang !== "" && plang !== "en" && plang !== "vi") {
+                                        if (lang === "ja") {
+                                            location.href = location.protocol + '//' + location.host + location.pathname + location.search;
+                                        } else {
+                                            location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname + location.search;
+                                        }
+                                    } else if (lang === "ja" && (plang === "en" || plang === "vi")) {
+                                        location.href = location.protocol + '//' + location.host + location.pathname.replace('/' + plang + '/', '/') + location.search;
+                                    } else {
                                         location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname.replace('/' + plang + '/', '/') + location.search;
                                     }
-								}
-							</script>
+                                }
+
+                                document.addEventListener('DOMContentLoaded', syncLanguageUI);
+                                
+                                window.addEventListener('pageshow', function () {
+                                    syncLanguageUI();
+                                });
+                            </script>
 						</div>
 					</div>
 					<div class="btn-openMenu">

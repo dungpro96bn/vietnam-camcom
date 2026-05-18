@@ -77,7 +77,7 @@ jQuery(function ($) {
             var dest = url.split('#');
             var target = dest[1];
             var target_offset = $('#' + target).offset();
-            var target_top = target_offset.top;
+            var target_top = target_offset.top - 200 ;
             $('html, body').animate({scrollTop: target_top}, 500, 'swing');
             return false;
         });
@@ -87,22 +87,34 @@ jQuery(function ($) {
     $(".wpcf7-previous").click(function(event) {
         event.preventDefault();
         // history.back(1);
-        var strHref = window.location.href,
-            href = strHref.replace('confirm/', '');
-        window.location.replace(href);
+        var dataServices = $(".field-group:first-child .input-field").text().trim();
+        var paramSubmit = sessionStorage.getItem('paramSubmit');
+		var strHref = window.location.href,
+			href = strHref.replace('confirm/', '');
+		window.location.replace(href);
+		sessionStorage.setItem('dataServices', dataServices);
+		sessionStorage.removeItem('paramSubmit');
     });
 
 
-    //Scroll top
-    $('#page-top a').click(function(event){
-        event.preventDefault();
-        var speed = 500;
-        var href= $(this).attr("href");
-        var target = $(href == "#" || href == "" ? 'html' : href);
-        var position = target.offset().top;
-        $("html, body").animate({scrollTop:position}, speed, "swing");
-        return false;
-    });
+	//Scroll top
+	$('#page-top a').click(function(event){
+		event.preventDefault();
+
+		var speed = 500;
+		var href = $(this).attr("href");
+		var target = $(href == "#" || href == "" ? 'html' : href);
+
+		if (!target.length) return false;
+
+		var position = target.offset().top;
+
+		$("html, body").animate({
+			scrollTop: position
+		}, speed, "swing");
+
+		return false;
+	});
 
     setTimeout(function(){
         $('#contact-form .field-group .error').each(function () {
@@ -217,6 +229,10 @@ jQuery(function ($) {
     $(".page-confirm .btn-submit.btn-send").click(function () {
         sessionStorage.setItem('sendmail', 'complete');
     });
+	
+	$("#footer .footer__navSub__item a, #header-menu .action-container .contact-btn").click(function(){
+		sessionStorage.setItem('contactService', 'no-service');
+	});
 
 
     // const scroller = new LocomotiveScroll({
