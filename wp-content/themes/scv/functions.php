@@ -194,7 +194,134 @@ function languageString ()
 		$var['btn_back'] = "一覧へ戻る";
     }
 
+    // ===== VCC redesign — nav / footer labels =====
+    if ($current_language == 'vi') {
+        $var['nav_home']      = 'Trang chủ';
+        $var['nav_about']     = 'Về chúng tôi';
+        $var['nav_services']  = 'Dịch vụ';
+        $var['nav_news']      = 'Tin tức';
+        $var['nav_recruit']   = 'Tuyển dụng';
+        $var['svc_hr']        = 'Giới thiệu nguồn nhân lực';
+        $var['svc_bpo']       = 'Dịch vụ BPO';
+        $var['svc_web']       = 'Phát triển WEB & nội dung';
+        $var['svc_fdi']       = 'Hỗ trợ mở rộng thị trường VN';
+        $var['svc_labor']     = 'Hỗ trợ quản lý lao động';
+        $var['menu_label']    = 'Menu';
+    } elseif ($current_language == 'en') {
+        $var['nav_home']      = 'Home';
+        $var['nav_about']     = 'About us';
+        $var['nav_services']  = 'Services';
+        $var['nav_news']      = 'News';
+        $var['nav_recruit']   = 'Careers';
+        $var['svc_hr']        = 'Human resources';
+        $var['svc_bpo']       = 'BPO service';
+        $var['svc_web']       = 'WEB & content development';
+        $var['svc_fdi']       = 'Vietnam market expansion';
+        $var['svc_labor']     = 'Labor management support';
+        $var['menu_label']    = 'Menu';
+    } else {
+        $var['nav_home']      = 'ホーム';
+        $var['nav_about']     = '私たちについて';
+        $var['nav_services']  = 'サービス';
+        $var['nav_news']      = 'ニュース';
+        $var['nav_recruit']   = '採用情報';
+        $var['svc_hr']        = '人材紹介';
+        $var['svc_bpo']       = 'BPOサービス';
+        $var['svc_web']       = 'WEB・コンテンツ制作';
+        $var['svc_fdi']       = 'ベトナム進出支援';
+        $var['svc_labor']     = '労務管理支援';
+        $var['menu_label']    = 'メニュー';
+    }
+
+    // ===== VCC redesign — homepage chrome (strings not stored in ACF) =====
+    if ($current_language == 'vi') {
+        $var['home_hm1']        = 'Năm thành lập';
+        $var['home_hm2']        = 'Năm kinh nghiệm nhân sự';
+        $var['home_hm3']        = 'Lĩnh vực dịch vụ';
+        $var['home_circle_lab'] = 'Vòng tuần hoàn';
+        $var['home_circle_big'] = 'Nhân lực<br />Việt&nbsp;&ndash;&nbsp;Nhật';
+        $var['home_node_jp']    = 'Nhật Bản';
+        $var['home_node_vn']    = 'Việt Nam';
+        $var['home_iso_sub']    = 'Chứng nhận an toàn thông tin';
+        $var['home_iso_cert']   = 'Chứng nhận hệ thống quản lý an toàn thông tin';
+        $var['home_news_empty'] = 'Chưa có tin tức.';
+    } elseif ($current_language == 'en') {
+        $var['home_hm1']        = 'Established';
+        $var['home_hm2']        = 'Years of HR expertise';
+        $var['home_hm3']        = 'Service fields';
+        $var['home_circle_lab'] = 'Circulation';
+        $var['home_circle_big'] = 'Vietnam&nbsp;&ndash;&nbsp;Japan<br />talent';
+        $var['home_node_jp']    = 'Japan';
+        $var['home_node_vn']    = 'Vietnam';
+        $var['home_iso_sub']    = 'Information security certified';
+        $var['home_iso_cert']   = 'Information Security Management System certification';
+        $var['home_news_empty'] = 'No news yet.';
+    } else {
+        $var['home_hm1']        = '設立';
+        $var['home_hm2']        = '人材の経験年数';
+        $var['home_hm3']        = 'サービス領域';
+        $var['home_circle_lab'] = '循環';
+        $var['home_circle_big'] = 'ベトナム&nbsp;&ndash;&nbsp;日本<br />人材';
+        $var['home_node_jp']    = '日本';
+        $var['home_node_vn']    = 'ベトナム';
+        $var['home_iso_sub']    = '情報セキュリティ認証';
+        $var['home_iso_cert']   = '情報セキュリティマネジメントシステム認証';
+        $var['home_news_empty'] = 'ニュースはまだありません。';
+    }
+
+    // ===== VCC redesign — footer labels =====
+    if ($current_language == 'vi') {
+        $var['foot_tagline']   = 'Phát triển con người, sáng tạo nên "công việc có giá trị", tạo ra vòng tuần hoàn nhân lực bền vững giữa Việt Nam và Nhật Bản.';
+        $var['foot_country']   = 'Việt Nam';
+        $var['foot_company']   = 'Công ty';
+        $var['foot_strengths'] = 'Thế mạnh';
+        $var['foot_support']   = 'Hỗ trợ';
+        $var['foot_privacy']   = 'Chính sách bảo mật';
+        $var['foot_infosec']   = 'Chính sách bảo mật thông tin';
+        $var['foot_overview']  = 'Tổng quan công ty';
+    } elseif ($current_language == 'en') {
+        $var['foot_tagline']   = 'Developing people and creating "work that matters" — building a sustainable cycle of human resources between Vietnam and Japan.';
+        $var['foot_country']   = 'Vietnam';
+        $var['foot_company']   = 'Company';
+        $var['foot_strengths'] = 'Strengths';
+        $var['foot_support']   = 'Support';
+        $var['foot_privacy']   = 'Privacy Policy';
+        $var['foot_infosec']   = 'Information Security Policy';
+        $var['foot_overview']  = 'Company overview';
+    } else {
+        $var['foot_tagline']   = '人を育て、「価値ある仕事」を創造し、ベトナムと日本の間に持続可能な人材循環を生み出します。';
+        $var['foot_country']   = 'ベトナム';
+        $var['foot_company']   = '会社';
+        $var['foot_strengths'] = '強み';
+        $var['foot_support']   = 'サポート';
+        $var['foot_privacy']   = 'プライバシーポリシー';
+        $var['foot_infosec']   = '情報セキュリティ方針';
+        $var['foot_overview']  = '会社概要';
+    }
+
     return $var;
+}
+
+/* ============================================================
+   VCC redesign — asset loading + ACF body fields
+   ============================================================ */
+function scv_vcc_assets() {
+    $uri = get_template_directory_uri();
+    $dir = get_template_directory();
+    wp_enqueue_script(
+        'vcc-light',
+        $uri . '/vcc/js/camcom-light.js',
+        array(),
+        file_exists($dir . '/vcc/js/camcom-light.js') ? filemtime($dir . '/vcc/js/camcom-light.js') : '1.0',
+        true
+    );
+}
+add_action('wp_enqueue_scripts', 'scv_vcc_assets', 20);
+
+// ACF field groups for the converted (template-based) pages.
+$scv_acf = get_template_directory() . '/inc/acf-vcc-fields.php';
+if (file_exists($scv_acf)) {
+    require_once $scv_acf;
 }
 
 

@@ -2,9 +2,9 @@
 Contributors: mndpsingh287
 Tags: wp-file-manager, elfinder,file manager, ftp, wp-filemanager,file manager, wp-filemanager, Upload Files, WP File Manager, File Manage, Edit Files, Delete Files, FTP, filemanager, wpfilemanager, ftp, file transfer, update, create, delete, view, rename, editor, Cpanel, Control Panel, Admin, Shortcode, explorer, file explorer, filemanager
 Requires at least: 4.0
-Tested up to: 6.2
+Tested up to: 6.9.4
 Requires PHP: 5.2.4
-Stable tag: 7.1.9
+Stable tag: 8.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -74,21 +74,22 @@ Key Features in the Free File Manager plugin include:
 * **File system:** Local file system storage drivers.
 * **Edit file:** User can edit text files and images.
 * **Frontend Access:** User can access frontend using shortcode.
-* **Admin Email Notifications.** Admin will get a Notification whenever a file is updated. 
-* **Admin Email Notifications.** Admin will get a Notification whenever a file is Downloaded. 
-* **Admin Email Notifications.** Admin will get a Notification whenever a file is Edited. 
-* **Google Drive Integration**   drag drop, copy paste all other operations between file manager and google drive.
-* **Dropbox Integration**        drag drop, copy paste all other operations between file manager and dropbox.
+* **File Upload Email Notifications:** Admin will get a Notification whenever a file is Uploaded.
+* **File Download Notifications:** Admin will get a Notification whenever a file is Downloaded.
+* **File Edit Email Notifications:** Admin will get a Notification whenever a file is Edited.
+* **Google Drive Integration:**   drag drop, copy paste all other operations between file manager and google drive.
+* **Dropbox Integration:**        drag drop, copy paste all other operations between file manager and dropbox.
 
 
-> <strong>[Buy Pro Version](https://filemanagerpro.io/product/file-manager/?utm_source=Wordpress.org&utm_medium=Website&utm_campaign=File%20Manager%20Pro)</strong> with various features & support.
+> <strong>[Buy Pro Version](https://filemanagerpro.io/file-manager-pricing/?utm_source=Wordpress.org&utm_medium=Website&utm_campaign=File%20Manager%20Pro)</strong> with various features & support.
 > <strong>[Contact us](https://filemanagerpro.io/contact/?utm_source=Wordpress.org&utm_medium=Website&utm_campaign=File%20Manager%20Pro)</strong> for Support Only Pro Version Users.
 > <strong>[Documentation](https://filemanagerpro.io/documentation/?utm_source=Wordpress.org&utm_medium=Website&utm_campaign=File%20Manager%20Pro)</strong> Click Here.
 > <strong>[Addons](https://filemanagerpro.io/addons/?utm_source=Wordpress.org&utm_medium=Website&utm_campaign=File%20Manager%20Pro)</strong> with various features & support.
-**[Upgrade to Pro Version](https://filemanagerpro.io/product/file-manager/?utm_source=Wordpress.org&utm_medium=Website&utm_campaign=File%20Manager%20Pro)**
+**[Upgrade to Pro Version](https://filemanagerpro.io/file-manager-pricing/?utm_source=Wordpress.org&utm_medium=Website&utm_campaign=File%20Manager%20Pro)**
 
 = Premium Addons =
 
+<strong>[File Manager Cloudflare R2](https://filemanagerpro.io/product/file-manager-cloudflare-r2/?utm_source=Wordpress&utm_medium=Website&utm_campaign=File%20Manager%20Pro)</strong> provides you ability to edit, delete, upload, download, copy and paste files and folders in Cloudflare R2 bucket.
 <strong>[File Manager Digital Ocean](https://filemanagerpro.io/product/digital-ocean-add-on/?utm_source=Wordpress.org&utm_medium=Website&utm_campaign=File%20Manager%20Pro)</strong> provides you ability to edit, delete, upload, download, copy and paste files and folders in Digital Ocean.
 <strong>[File Manager Google Drive](https://filemanagerpro.io/product/file-manager-google-drive/?utm_source=Wordpress.org&utm_medium=Website&utm_campaign=File%20Manager%20Pro)</strong> provides you ability to edit, delete, upload, download, copy and paste files and folders in Google Drive.
 <strong>[File Manager OneDrive](https://filemanagerpro.io/product/file-manager-one-drive/?utm_source=Wordpress.org&utm_medium=Website&utm_campaign=File%20Manager%20Pro)</strong> provides you ability to edit, delete, upload, download, copy and paste files and folders in OneDrive from File Manager.
@@ -138,6 +139,57 @@ Yes, You can archive any files and folders as zip then simple download it. Pleas
 
 
 == Changelog ==
+= 8.0.4 (21st Apr, 2026) =
+* Fixed elFinder bgcolor escaping issue
+
+= 8.0.3 (24 Mar, 2026) =
+* Security fixes.
+
+= 8.0.2 (26th May, 2025) =
+* Core libraries updated.
+
+= 8.0.1 (08th Jan, 2025) =
+* Checked compatibility with WordPress 6.7.1
+
+= 8.0 (06th Aug, 2024) =
+* Broken Image Fixes
+
+= 7.2.10 (29th July, 2024) =
+* Compatible with WordPress 6.6.1
+
+= 7.2.9 (6th June, 2024) =
+* Trash Folder & Security Fixes.
+
+= 7.2.8 (31 May, 2024) =
+* Security Fixes.
+
+= 7.2.7 (07 May, 2024) =
+* Fixed image preview issue.
+* Checked compatibility with WordPress 6.5.2
+
+= 7.2.6 (01 April, 2024) =
+* Directory Traversal issue resolved.
+
+= 7.2.5 (14 Mar, 2024) =
+* Improved Language check.
+
+= 7.2.4 (28 Feb, 2024) =
+* Fixed Language issue.
+
+= 7.2.3 (26 Feb, 2024) =
+* Fixed Language issue.
+
+= 7.2.2 (18 Jan, 2024) =
+* Fixed Security issue.
+
+= 7.2.1 (26th Oct, 2023) =
+* Directory Traversal issue resolved.
+* Checked compatibility with wordpress 6.3.2
+
+= 7.2 (18th August, 2023) =
+* Api Update
+* Checked compatibility with wordpress 6.3 
+
 = 7.1.9 (4th May, 2023) =
 * Minor updations
 * Checked compatibility with wordpress 6.2 

@@ -4,102 +4,56 @@
 global $sitepress;
 $var = languageString();
 $current_language = $sitepress->get_current_language();
-
-if($current_language == 'vi' || $current_language == 'en'){
-	$urlSite = "https://vietnam-camcom.com/".$current_language;
-} else{
-	$urlSite = "https://vietnam-camcom.com";
-}
-
 ?>
 
-<?php get_sidebar(); ?>
-
-<?php 
-$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-$slug = basename(rtrim($path, '/'));
-
-?>
-
-<?php if (!is_front_page()) : ?>
-    <form action="<?php echo $urlSite; ?>/contact/?services=<?php echo $slug; ?>" method="POST" class="inner contact-footer">
-        <button class="contactBanner">
-            <div class="contact-content">
-                <h2 class="heading-block en"><span><?php echo $var['title_contact_banner']; ?></span></h2>
-                <p class="sub-title"><?php echo $var['text_contact_banner']; ?></p>
-                <div class="link-page">
-                    <div class="link-more en">
-                        <span class="box-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Group_65" data-name="Group 65" width="28" height="16.059" viewBox="0 0 28 16.059"><defs><clipPath id="clip-path"><rect id="Rectangle_75" data-name="Rectangle 75" width="28" height="16.059" fill="#fff"/></clipPath></defs><g id="Group_64" data-name="Group 64" transform="translate(0 0)" clip-path="url(#clip-path)"><path id="Path_99" data-name="Path 99" d="M27.44,6.641,21.258.3a.989.989,0,1,0-1.419,1.379l5.213,5.361H.989a.989.989,0,1,0,0,1.979H25.065l-5.226,5.361a.989.989,0,1,0,1.419,1.379L27.44,9.415a2,2,0,0,0,0-2.774" transform="translate(0 0.001)" fill="#fff"/></g></svg>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </button>
-    </form>
-<?php endif; ?>
-
-
-
-<footer id="footer" class="footer">
-    <div class="bg-footer"></div>
-    <div class="inner">
-        <div id="page-top" class="page-top">
-            <a href="#" class="page-top-anchor en">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="16.059" viewBox="0 0 28 16.059">
-                    <defs><clipPath id="clip-path"><rect id="Rectangle_75" data-name="Rectangle 75" width="28" height="16.059" fill="#fff"/></clipPath></defs>
-                    <g id="Group_64" data-name="Group 64" clip-path="url(#clip-path)"><path id="Path_99" data-name="Path 99" d="M27.44,6.641,21.258.3a.989.989,0,1,0-1.419,1.379l5.213,5.361H.989a.989.989,0,1,0,0,1.979H25.065l-5.226,5.361a.989.989,0,1,0,1.419,1.379L27.44,9.415a2,2,0,0,0,0-2.774" transform="translate(0 0.001)" fill="#fff"/></g>
-                </svg>
-                <span>Page top</span></a>
-        </div>
-        <div class="footer-top">
-            <div class="footer-inner-top <?php if ($current_language != "ja") { echo "en";}?>">
-                <div class="footer-logo">
-                    <a href="<?php echo home_url(); ?>">
-                        <picture>
-                            <source srcset="<?php bloginfo('template_directory'); ?>/images/scv_logo_footer.svg">
-                            <img class="sizes" src="<?php bloginfo('template_directory'); ?>/images/scv_logo_footer.svg" alt="<?php bloginfo('name'); ?>">
-                        </picture>
-                    </a>
-                    <p class="subtitle-logo"><?php echo $var['company_name']; ?></p>
-                    <div class="security-footer">
-                        <picture class="image">
-                            <source srcset="/wp-content/uploads/iso-logo.png 2x">
-                            <img class="sizes" width="201" src="/wp-content/uploads/iso-logo.png" alt="">
-                        </picture>
-                        <p class="ttl-iso">ISO/IEC 27001: 2022</p>
-                    </div>
-                </div>
-                <?php
-                if ($current_language == "vi") {
-                    dynamic_sidebar('footer-menu-bottom-vi');
-                } elseif ($current_language == "en") {
-                    dynamic_sidebar('footer-menu-bottom-en');
-                } else {
-                    dynamic_sidebar('footer-menu-bottom-ja');
-                }
-                ?>
-            </div>
-            <ul class="social-list">
-                <li class="social-item">
-                    <a href="https://www.facebook.com/VIETNAM.CAMCOM" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                </li>
-            </ul>
-        </div>
-        <div class="footer-bottom">
-            <div class="copy-right">
-                <address class="copyright">
-                    <small>© VIETNAM CAMCOM Co., Ltd</small>
-                </address>
-            </div>
-        </div>
-    </div>
-
-</footer><!-- #footer -->
-</div>
-</div><!-- .outer -->
+<!-- ================= FOOTER ================= -->
+<footer>
+	<div class="container">
+		<div class="foot-top">
+			<div class="foot-brand">
+				<a href="<?php echo home_url('/'); ?>" class="brand">
+					<img class="brand-logo" src="<?php echo get_template_directory_uri(); ?>/images/scv_logo_header.svg" alt="VIETNAM CAMCOM" />
+				</a>
+				<p><?php echo esc_html($var['foot_tagline']); ?></p>
+				<div class="addr">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+					<span><?php echo esc_html($var['company_name']); ?> · <?php echo esc_html($var['foot_country']); ?></span>
+				</div>
+			</div>
+			<div class="foot-col">
+				<h4><?php echo $var['nav_services']; ?></h4>
+				<a href="<?php echo home_url('/hr/'); ?>"><?php echo $var['svc_hr']; ?></a>
+				<a href="<?php echo home_url('/bpo/'); ?>"><?php echo $var['svc_bpo']; ?></a>
+				<a href="<?php echo home_url('/web/'); ?>"><?php echo $var['svc_web']; ?></a>
+				<a href="<?php echo home_url('/fdi-support/'); ?>"><?php echo $var['svc_fdi']; ?></a>
+				<a href="<?php echo home_url('/labor-management/'); ?>"><?php echo $var['svc_labor']; ?></a>
+			</div>
+			<div class="foot-col">
+				<h4><?php echo $var['foot_company']; ?></h4>
+				<a href="<?php echo home_url('/about/'); ?>"><?php echo $var['nav_about']; ?></a>
+				<a href="<?php echo home_url('/'); ?>#strengths"><?php echo $var['foot_strengths']; ?></a>
+				<a href="<?php echo home_url('/news/'); ?>"><?php echo $var['nav_news']; ?></a>
+				<a href="<?php echo home_url('/recruit/'); ?>"><?php echo $var['nav_recruit']; ?></a>
+				<a href="https://cam-com.inc/" target="_blank" rel="noopener">Camcom Group</a>
+			</div>
+			<div class="foot-col">
+				<h4><?php echo $var['foot_support']; ?></h4>
+				<a href="<?php echo home_url('/contact/'); ?>"><?php echo $var['btn_contact']; ?></a>
+				<a href="<?php echo home_url('/privacy/'); ?>"><?php echo $var['foot_privacy']; ?></a>
+				<a href="<?php echo home_url('/security/'); ?>"><?php echo $var['foot_infosec']; ?></a>
+				<a href="<?php echo home_url('/company/'); ?>"><?php echo $var['foot_overview']; ?></a>
+			</div>
+		</div>
+		<div class="foot-bottom">
+			<p>&copy; <?php echo date('Y'); ?> VIETNAM CAMCOM Co., Ltd. All rights reserved.</p>
+			<div class="socials">
+				<a href="https://www.facebook.com/VIETNAM.CAMCOM" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg></a>
+				<a href="https://cam-com.inc/" target="_blank" rel="noopener" aria-label="Website"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></a>
+			</div>
+		</div>
+	</div>
+</footer>
 
 <?php wp_footer(); ?>
-
 </body>
 </html>

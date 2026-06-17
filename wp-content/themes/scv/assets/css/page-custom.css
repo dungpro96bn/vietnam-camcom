@@ -3335,7 +3335,7 @@ body.page-about main {
 }
 #privacy-policy.security .info.security-item .security-info .image{
     display: flex;
-    width: 45%;
+    width: 15%;
     align-items: flex-start;
 }
 #privacy-policy.security .info.security-item .security-info .text-info{
@@ -3384,4 +3384,3 @@ body.page-about main {
     }
 
 }
-

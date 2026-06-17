@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-	<head>
+<head>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -9,327 +9,132 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-MQCHJP3');</script>
 <!-- End Google Tag Manager -->
 
-		<meta charset="<?php bloginfo('charset'); ?>">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width,minimum-scale=0.5">
-		<meta name="facebook-domain-verification" content="tm70gapdrnlhemdigsbuz8ufda3zif" />
-		<!--    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1">-->
-		<title><?php
-			global $page, $paged;
-			wp_title('|', true, 'right');
-			bloginfo('name');
-			$site_description = get_bloginfo('description', 'display');
-			if ($site_description && (is_home() || is_front_page())) {
-				echo " | $site_description";
-			}
-			if ($paged >= 2 || $page >= 2) {
-				echo ' | ' . sprintf(__('Page %s', 'cTpl'), max($paged, $page));
-			}
-			?></title>
-<!--		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;700;900&display=swap" rel="stylesheet">-->
-<!--        <link rel="stylesheet" href="https://use.typekit.net/rpr7ugj.css">-->
-<!--        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">-->
-<!--         <script src="<?php bloginfo('template_directory'); ?>/assets/js/noto-san.js"></script> -->
-<!-- 		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> -->
-		<script>
-			(function(d) {
-				var config = {
-					kitId: 'awg6uyv',
-					scriptTimeout: 3000,
-					async: true
-				},
-					h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-			})(document);
-		</script>
-<!--        <link rel="stylesheet" href="--><?php //bloginfo('template_directory'); ?><!--/assets/css/font-proxima-nova.css">-->
+	<meta charset="<?php bloginfo('charset'); ?>">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="facebook-domain-verification" content="tm70gapdrnlhemdigsbuz8ufda3zif" />
+	<title><?php
+		global $page, $paged;
+		wp_title('|', true, 'right');
+		bloginfo('name');
+		$site_description = get_bloginfo('description', 'display');
+		if ($site_description && (is_home() || is_front_page())) {
+			echo " | $site_description";
+		}
+		if ($paged >= 2 || $page >= 2) {
+			echo ' | ' . sprintf(__('Page %s', 'cTpl'), max($paged, $page));
+		}
+		?></title>
+	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-        <link rel="stylesheet" media="all" href="<?php bloginfo('template_directory'); ?>/assets/css/aos.css" rel="stylesheet">
-        <link rel="stylesheet" media="all" href="<?php bloginfo('template_directory'); ?>/css/slick.css">
-		<link rel="stylesheet" media="all" href="<?php bloginfo('stylesheet_url'); ?>?ver=<?php echo rand(); ?>">
-		<link rel="stylesheet" media="all" href="<?php bloginfo('template_directory'); ?>/assets/css/homepage.css">
-        <link rel="stylesheet" media="all" href="<?php bloginfo('template_directory'); ?>/assets/css/service-page.css">
-        <link rel="stylesheet" media="all" href="<?php bloginfo('template_directory'); ?>/assets/css/page-custom.css">
-		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-		
-		<script>
-			if(!sessionStorage.getItem("checkLocation")){
-				sessionStorage.setItem("checkLocation", "Done");
-			}
-		</script>
-		
-		<script src="<?php bloginfo('template_directory'); ?>/assets/js/fontawesome.js" crossorigin="anonymous"></script>
-		<?php
-		wp_deregister_script('jquery');
-		wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js', array(), '2.2.4');
-		wp_head();
-		?>
-
-		<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">-->
-		<!--    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>-->
-		<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.152.2/three.min.js"></script>-->
-        <script src="<?php bloginfo('template_directory'); ?>/assets/js/aos.js"></script>
-        <script src="<?php bloginfo('template_directory'); ?>/js/slick.min.js"></script>
-		<script src="<?php bloginfo('template_directory'); ?>/assets/js/main.js"></script>
-
-		<?php if (is_admin_bar_showing()): ?>
-		<style type="text/css" media="screen">
-			html {
-				margin-top: 32px !important;
-			}
-			#header-menu .header-nav.scroll-header{
-				top: 32px !important;
-			}
-			@media (max-width: 1000px){
-				#header-menu .right-header{
-					height: calc(100vh - 32px) !important;
-				}
-			}
-			@media screen and (max-width: 782px) {
-				html {
-					margin-top: 46px !important;
-				}
-				#header-menu .header-nav.scroll-header{
-					top: 46px !important;
-				}
-				#header-menu .right-header{
-					height: calc(100vh - 46px) !important;
-				}
-			}
-		</style>
-		<?php endif; ?>
-
-		<?php
-		global $sitepress;
-		$var = languageString();
-		$current_language = $sitepress->get_current_language();
-		?>
-
-	</head>
+    <link rel="stylesheet" media="all" href="<?php bloginfo('template_directory'); ?>/assets/css/camcom-light.css">
+    <link rel="stylesheet" media="all" href="<?php bloginfo('template_directory'); ?>/assets/css/camcom-hr.css">
 
 	<?php
-	if($_SERVER['REMOTE_ADDR'] != '127.0.0.1'):
-	
-	$ip = $_SERVER['REMOTE_ADDR'];
-	$token = 'efb4143f71c606';
-	$url = "http://ipinfo.io/{$ip}/json?token={$token}";
-
-	$response = file_get_contents($url);
-	$details = json_decode($response);
-	$country = $details->country ?? 'Unknown';
-
-	if($country == "JP"):
-	echo <<<EOM
-        <script>
-			setTimeout((function() {
-				var check = sessionStorage.getItem("checkLocation");
-				var plang = location.pathname.split('/')[1];
-				if(check === "Done" && plang === "vi"){
-					sessionStorage.setItem("checkLocation", "jp");
-					var lang = "vi";
-					var plang = location.pathname.split('/')[1];
-					location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname.replace('/' + plang + '/', '/') + location.search;
-				} else if(check === "Done" && plang === "en"){
-					sessionStorage.setItem("checkLocation", "jp");
-					var lang = "en";
-					var plang = location.pathname.split('/')[1];
-					location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname.replace('/' + plang + '/', '/') + location.search;
-				} else if(check === "Done" && plang != "vi" && plang != "en"){
-					sessionStorage.setItem("checkLocation", "jp");
-				}
-			}), 100);
-        </script>
-EOM;
-	elseif($country == "VN"):
-	echo <<<EOM
-        <script>
-			setTimeout((function() {
-				var check = sessionStorage.getItem("checkLocation");
-				var plang = location.pathname.split('/')[1];
-				console.log(plang);
-				if(check === "Done" && plang === "en"){
-					sessionStorage.setItem("checkLocation", "vi");
-					var lang = "en";
-					var plang = location.pathname.split('/')[1];
-					location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname.replace('/' + plang + '/', '/') + location.search;
-				} else if(check === "Done" && plang === ""){
-					sessionStorage.setItem("checkLocation", "vi");
-					var lang = "vi";
-					var plang = location.pathname.split('/')[1];
-					location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname.replace('/' + plang + '/', '/') + location.search;
-				} else if(check === "Done" && plang != "" && plang != "en"){
-					sessionStorage.setItem("checkLocation", "vi");
-					var lang = "vi";
-					var plang = location.pathname.split('/')[1];
-					location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname.replace('/' + plang + '/', '/') + location.search;
-				} else if(check === "Done" && plang != "vi" && plang != "en" && plang != ""){
-					sessionStorage.setItem("checkLocation", "vi");
-				}
-			}), 100);
-        </script>
-EOM;
-	else:
-	echo <<<EOM
-        <script>
-			setTimeout((function() {
-				var check = sessionStorage.getItem("checkLocation");
-				var plang = location.pathname.split('/')[1];
-				if(check === "Done" && plang === "vi"){
-					sessionStorage.setItem("checkLocation", "en");
-					var lang = "vi";
-					var plang = location.pathname.split('/')[1];
-					location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname.replace('/' + plang + '/', '/') + location.search;
-				} else if(check === "Done" && plang === ""){
-					sessionStorage.setItem("checkLocation", "en");
-					var lang = "en";
-					var plang = location.pathname.split('/')[1];
-					location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname.replace('/' + plang + '/', '/') + location.search;
-				} else if(check === "Done" && plang != "" && plang != "vi"){
-					sessionStorage.setItem("checkLocation", "vi");
-					var lang = "vi";
-					var plang = location.pathname.split('/')[1];
-					location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname.replace('/' + plang + '/', '/') + location.search;
-				} else if(check === "Done" && plang != "vi" && plang != "en" && plang != ""){
-					sessionStorage.setItem("checkLocation", "en");
-				}
-			}), 100);
-        </script>
-EOM;
-	endif;
-
-	endif;
+	// jQuery is still used by footer contact form + page.php scripts.
+	wp_deregister_script('jquery');
+	wp_enqueue_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js', array(), '2.2.4');
+	wp_head();
 	?>
 
-    <script type="text/javascript" >
-        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-        ga('create', 'UA-154007697-1', 'auto');
-        // Plugins
-        ga('send', 'pageview');
-    </script>
-    <script async src="https://www.google-analytics.com/analytics.js"></script>
-    <!-- All in One SEO Pack -->
+    <?php if (is_admin_bar_showing()): ?>
+        <style type="text/css" media="screen">
+            body {
+                margin-top: 32px !important;
+            }
+            @media (max-width: 1000px){
+                #header-menu .right-header{
+                    height: calc(100vh - 32px) !important;
+                }
+            }
+            @media screen and (max-width: 782px) {
+                html {
+                    margin-top: 46px !important;
+                }
+                #header-menu .header-nav.scroll-header{
+                    top: 46px !important;
+                }
+                #header-menu .right-header{
+                    height: calc(100vh - 46px) !important;
+                }
+            }
+        </style>
+    <?php endif; ?>
 
-	<body <?php body_class(); ?>>
+	<?php
+	global $sitepress;
+	$var = languageString();
+	$current_language = $sitepress->get_current_language();
+	?>
+</head>
+
+<body <?php body_class('vcc'); ?> id="top">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MQCHJP3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
-		<div class="outer page" data-scroll-container <?php echo $_SERVER['REMOTE_ADDR']; ?>>
-			<header id="header-menu" class="header-menu">
-				<div class="header-nav">
-					<div class="header-logo">
-						<a class="link-logo" href="<?php echo home_url(); ?>">
-							<picture class="logo-pc">
-								<source srcset="<?php bloginfo('template_directory'); ?>/images/scv_logo_header.svg">
-								<img class="sizes" src="<?php bloginfo('template_directory'); ?>/images/scv_logo_header.svg" alt="<?php bloginfo('name'); ?>">
-							</picture>
-							<picture class="logo-sp">
-								<source srcset="<?php bloginfo('template_directory'); ?>/images/scv_logo_footer.svg">
-								<img class="sizes" src="<?php bloginfo('template_directory'); ?>/images/scv_logo_footer.svg" alt="<?php bloginfo('name'); ?>">
-							</picture>
-						</a>
-					</div><!-- .header-logo -->
-					<div class="right-header header-megamenu <?php if ($current_language != "ja") { echo "en";}?>">
-						<?php wp_nav_menu(
-                            array(
-                                'menu_class'      => 'navMenu',
-                                'menu_id'         => 'navList-menu',
-                                'container'       => 'div',
-                                'container_id'    => 'nav-container'
-                            )
-                        ); ?>
-						<div class="action-container">
-							<div class="language-site">
-                                <div class="label-click">
-                                    <label class="title-language en" for="language">Language</label>
-                                    <select class="en" id="language" name="language" onchange="doGTranslate(this);">
-                                        <option value="ja|ja" <?php if($current_language == "ja"){echo "selected";} ?>>JA</option>
-                                        <option value="ja|vi" <?php if($current_language == "vi"){echo "selected";} ?>>VI</option>
-                                        <option value="ja|en" <?php if($current_language == "en"){echo "selected";} ?>>EN</option>
-                                    </select>
-                                </div>
-								<div class="list-language en">
-									<label class="item-language">
-										<input type="radio" name="language" <?php if($current_language == "ja"){echo "checked";} ?> onchange="doGTranslate(this);" value="ja|ja" placeholder="JA">
-										<span class="name-language en">JA</span>
-									</label>
-									<label class="item-language">
-										<input type="radio" name="language" <?php if($current_language == "vi"){echo "checked";} ?> onchange="doGTranslate(this);" value="ja|vi" placeholder="VI">
-										<span class="name-language en">VI</span>
-									</label>
-									<label class="item-language">
-										<input type="radio" name="language" <?php if($current_language == "en"){echo "checked";} ?> onchange="doGTranslate(this);" value="ja|en" placeholder="EN">
-										<span class="name-language en">EN</span>
-									</label>
-								</div>
-							</div>
-							<div class="contact-action">
-								<a class="contact-btn <?php if ($current_language != "ja") { echo "en";}?>" href="<?php echo home_url(); ?>/contact/"><?php echo $var['btn_contact']; ?></a>
-							</div>
-							<script type="text/javascript">
-                                function getCurrentLangFromPath() {
-                                    var firstPath = location.pathname.split('/')[1];
+<div class="bg-field" aria-hidden="true">
+	<div class="blob a"></div>
+	<div class="blob b"></div>
+</div>
 
-                                    if (firstPath === 'vi') return 'vi';
-                                    if (firstPath === 'en') return 'en';
+<!-- ================= NAV ================= -->
+<header class="nav">
+	<div class="container nav-inner">
+		<a href="<?php echo home_url('/'); ?>" class="brand">
+            <img class="brand-logo" src="https://vietnam-camcom.com/wp-content/themes/scv/images/scv_logo_header.svg" alt="VIETNAM CAMCOM" />
+		</a>
+		<nav class="nav-links">
+			<a href="<?php echo home_url('/about/'); ?>"><?php echo $var['nav_about']; ?></a>
+			<div class="nav-drop">
+				<button type="button"><?php echo $var['nav_services']; ?> <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></button>
+				<div class="dropdown">
+					<a href="<?php echo home_url('/hr/'); ?>"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9"/></svg></span><?php echo $var['svc_hr']; ?></a>
+					<a href="<?php echo home_url('/bpo/'); ?>"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span><?php echo $var['svc_bpo']; ?></a>
+					<a href="<?php echo home_url('/web/'); ?>"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m18 16 4-4-4-4M6 8l-4 4 4 4M14.5 4l-5 16"/></svg></span><?php echo $var['svc_web']; ?></a>
+					<a href="<?php echo home_url('/fdi-support/'); ?>"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg></span><?php echo $var['svc_fdi']; ?></a>
+					<a href="<?php echo home_url('/labor-management/'); ?>"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></span><?php echo $var['svc_labor']; ?></a>
+				</div>
+			</div>
+			<a href="<?php echo home_url('/news/'); ?>"><?php echo $var['nav_news']; ?></a>
+			<a href="<?php echo home_url('/recruit/'); ?>"><?php echo $var['nav_recruit']; ?></a>
+		</nav>
+		<div class="nav-right">
+			<div class="lang">
+				<button type="button" value="ja|ja" onclick="doGTranslate(this)" <?php if ($current_language == 'ja') echo 'class="on"'; ?>>JA</button>
+				<button type="button" value="ja|vi" onclick="doGTranslate(this)" <?php if ($current_language == 'vi') echo 'class="on"'; ?>>VI</button>
+				<button type="button" value="ja|en" onclick="doGTranslate(this)" <?php if ($current_language == 'en') echo 'class="on"'; ?>>EN</button>
+			</div>
+			<a href="<?php echo home_url('/contact/'); ?>" class="btn btn-primary"><?php echo $var['btn_contact']; ?> <span class="arr">&rarr;</span></a>
+			<button class="menu-btn" aria-label="<?php echo esc_attr($var['menu_label']); ?>"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+		</div>
+	</div>
+</header>
 
-                                    return 'ja';
-                                }
+<script type="text/javascript">
+	function getCurrentLangFromPath() {
+		var firstPath = location.pathname.split('/')[1];
+		if (firstPath === 'vi') return 'vi';
+		if (firstPath === 'en') return 'en';
+		return 'ja';
+	}
+	function doGTranslate(el) {
+		var lang_pair = el && el.value ? el.value : el;
+		if (lang_pair === '') return;
+		var lang = lang_pair.split('|')[1];
+		var plang = location.pathname.split('/')[1];
+		if (lang === getCurrentLangFromPath()) return;
+		if (plang !== "" && plang !== "en" && plang !== "vi") {
+			if (lang === "ja") {
+				location.href = location.protocol + '//' + location.host + location.pathname + location.search;
+			} else {
+				location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname + location.search;
+			}
+		} else if (lang === "ja" && (plang === "en" || plang === "vi")) {
+			location.href = location.protocol + '//' + location.host + location.pathname.replace('/' + plang + '/', '/') + location.search;
+		} else {
+			location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname.replace('/' + plang + '/', '/') + location.search;
+		}
+	}
+</script>
 
-                                function syncLanguageUI() {
-                                    var currentLang = getCurrentLangFromPath();
-                                    var currentValue = 'ja|' + currentLang;
-
-                                    var select = document.getElementById('language');
-                                    if (select) {
-                                        select.value = currentValue;
-                                    }
-
-                                    document.querySelectorAll('input[type="radio"][name="language"]').forEach(function (radio) {
-                                        radio.checked = radio.value === currentValue;
-                                    });
-                                }
-
-                                function doGTranslate(lang_pair) {
-                                    if (lang_pair.value) lang_pair = lang_pair.value;
-                                    if (lang_pair === '') return;
-
-                                    var lang = lang_pair.split('|')[1];
-                                    var plang = location.pathname.split('/')[1];
-                                    
-                                    if (lang === getCurrentLangFromPath()) {
-                                        syncLanguageUI();
-                                        return;
-                                    }
-
-                                    if (plang !== "" && plang !== "en" && plang !== "vi") {
-                                        if (lang === "ja") {
-                                            location.href = location.protocol + '//' + location.host + location.pathname + location.search;
-                                        } else {
-                                            location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname + location.search;
-                                        }
-                                    } else if (lang === "ja" && (plang === "en" || plang === "vi")) {
-                                        location.href = location.protocol + '//' + location.host + location.pathname.replace('/' + plang + '/', '/') + location.search;
-                                    } else {
-                                        location.href = location.protocol + '//' + location.host + '/' + lang + location.pathname.replace('/' + plang + '/', '/') + location.search;
-                                    }
-                                }
-
-                                document.addEventListener('DOMContentLoaded', syncLanguageUI);
-                                
-                                window.addEventListener('pageshow', function () {
-                                    syncLanguageUI();
-                                });
-                            </script>
-						</div>
-					</div>
-					<div class="btn-openMenu">
-						<div class="toggle-btn">
-							<span></span>
-						</div>
-					</div>
-
-				</div><!-- .header-nav -->
-			</header><!-- #header-menu -->
-			<!--    <canvas class="bg_canvas" data-engine="three.js r145" width="2048" height="570"></canvas>-->
-			<div>
-				<main role="main">
+<main role="main">

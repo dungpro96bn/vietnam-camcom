@@ -1,0 +1,46 @@
+########################################
+# Disable directory listing
+########################################
+Options -Indexes
+ 
+########################################
+# Block dangerous / sensitive files
+########################################
+ 
+# Block xmlrpc.php
+<Files "xmlrpc.php">
+  Require all denied
+</Files>
+ 
+# Block sensitive files
+<FilesMatch "^(wp-config\.php|\.htaccess|\.htpasswd|readme\.html|license\.txt)$">
+  Require all denied
+</FilesMatch>
+ 
+########################################
+# Rewrite rules
+########################################
+RewriteEngine On
+ 
+# Block user sitemaps
+RewriteRule ^wp-sitemap-users-[0-9]+\.xml$ - [F,L]
+ 
+# Block author enumeration (?author=1 etc.)
+RewriteCond %{QUERY_STRING} (^|&)author=\d+(&|$) [NC]
+RewriteRule ^ - [F,L]
+ 
+# Block REST API user enumeration
+RewriteRule ^wp-json/wp/v2/users/?$ - [F,L]
+RewriteRule ^wp-json/wp/v2/users/[0-9]+/?$ - [F,L]
+ 
+########################################
+
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php [L]
+</IfModule>

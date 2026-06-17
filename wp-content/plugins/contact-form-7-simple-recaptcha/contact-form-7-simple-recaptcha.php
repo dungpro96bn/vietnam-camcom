@@ -1,191 +1,185 @@
 <?php
 /*
 Plugin Name: Contact Form 7 Captcha
-Description: Add No CAPTCHA reCAPTCHA to Contact Form 7 using [cf7sr-simple-recaptcha] shortcode
-Version: 0.1.2
+Description: Add reCAPTCHA V2, hCAPTCHA or Cloudflare Turnstile CAPTCHA to Contact Form 7 using [cf7sr-recaptcha], [cf7sr-hcaptcha] or [cf7sr-turnstile] shortcode
+Version: 0.1.7
 Author: 247wd
+License: GPL v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: contact-form-7-simple-recaptcha
+Requires Plugins: contact-form-7
 */
 
-$cf7sr_key = get_option('cf7sr_key');
-$cf7sr_secret = get_option( 'cf7sr_secret' );
-if (!empty($cf7sr_key) && !empty($cf7sr_secret) && !is_admin()) {
-    function enqueue_cf7sr_script() {
-        global $cf7sr;
-        if (!$cf7sr) {
-            return;
-        }
-        $cf7sr_script_url = 'https://www.google.com/recaptcha/api.js?onload=cf7srLoadCallback&render=explicit';
-        $cf7sr_key = get_option( 'cf7sr_key' );
-        ?>
-        <script type="text/javascript">
-            var widgetIds = [];
-            var cf7srLoadCallback = function() {
-                var cf7srWidgets = document.querySelectorAll('.cf7sr-g-recaptcha');
-                for (var i = 0; i < cf7srWidgets.length; ++i) {
-                    var cf7srWidget = cf7srWidgets[i];
-                    var widgetId = grecaptcha.render(cf7srWidget.id, {
-                        'sitekey' : <?php echo wp_json_encode($cf7sr_key); ?>
-                    });
-                    widgetIds.push(widgetId);
-                }
-            };
-            (function($) {
-                $('.wpcf7').on('wpcf7invalid wpcf7mailsent invalid.wpcf7 mailsent.wpcf7', function() {
-                    for (var i = 0; i < widgetIds.length; i++) {
-                        grecaptcha.reset(widgetIds[i]);
-                    }
-                });
-            })(jQuery);
-        </script>
-        <script src="<?php echo esc_url($cf7sr_script_url); ?>" async defer></script>
-        <?php
-    }
-    add_action('wp_footer', 'enqueue_cf7sr_script');
-
-    function cf7sr_wpcf7_form_elements($form) {
-        $form = do_shortcode($form);
-        return $form;
-    }
-    add_filter('wpcf7_form_elements', 'cf7sr_wpcf7_form_elements');
-
-    function cf7sr_shortcode($atts) {
-        global $cf7sr;
-        $cf7sr = true;
-        $cf7sr_key = get_option('cf7sr_key');
-        return '<div id="cf7sr-' . uniqid() . '" class="cf7sr-g-recaptcha" data-sitekey="' . esc_attr($cf7sr_key)
-            . '"></div><span class="wpcf7-form-control-wrap cf7sr-recaptcha" data-name="cf7sr-recaptcha"><input type="hidden" name="cf7sr-recaptcha" value="" class="wpcf7-form-control"></span>';
-    }
-    add_shortcode('cf7sr-simple-recaptcha', 'cf7sr_shortcode');
-
-    function cf7sr_verify_recaptcha($result) {
-        if (! class_exists('WPCF7_Submission')) {
-            return $result;
-        }
-
-        $_wpcf7 = ! empty($_POST['_wpcf7']) ? absint($_POST['_wpcf7']) : 0;
-        if (empty($_wpcf7)) {
-            return $result;
-        }
-
-        $submission = WPCF7_Submission::get_instance();
-        $data = $submission->get_posted_data();
-
-        $cf7_text = do_shortcode( '[contact-form-7 id="' . $_wpcf7 . '"]' );
-        $cf7sr_key = get_option( 'cf7sr_key' );
-        if (false === strpos($cf7_text, $cf7sr_key)) {
-            return $result;
-        }
-
-        $message = get_option('cf7sr_message');
-        if (empty($message)) {
-            $message = 'Invalid captcha';
-        }
-
-        if (empty($data['g-recaptcha-response'])) {
-            $result->invalidate(array('type' => 'captcha', 'name' => 'cf7sr-recaptcha'), $message);
-            return $result;
-        }
-
-        $cf7sr_secret = get_option('cf7sr_secret');
-        $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . $cf7sr_secret . '&response=' . $data['g-recaptcha-response'];
-        $request = wp_remote_get($url);
-        $body = wp_remote_retrieve_body($request);
-        $response = json_decode($body);
-        if (!(isset ($response->success) && 1 == $response->success)) {
-            $result->invalidate(array('type' => 'captcha', 'name' => 'cf7sr-recaptcha'), $message);
-        }
-
-        return $result;
-    }
-    add_filter('wpcf7_validate', 'cf7sr_verify_recaptcha', 20, 2);
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
 }
 
-if (is_admin()) {
-    function cf7sr_add_action_links($links) {
-        array_unshift($links , '<a href="' . admin_url( 'options-general.php?page=cf7sr_edit' ) . '">Settings</a>');
-        array_unshift($links , '<a target="_blank" style="color: red;" href="http://www.cf7captcha.com">Upgrade To Pro Free</a>');
-        return $links;
+define( 'CF7SR_VERSION', '0.1.7' );
+define( 'CF7SR_PLUGIN', __FILE__ );
+define( 'CF7SR_PLUGIN_BASENAME', plugin_basename( CF7SR_PLUGIN ) );
+define( 'CF7SR_PLUGIN_NAME', untrailingslashit( dirname( CF7SR_PLUGIN_BASENAME ) ) );
+define( 'CF7SR_PLUGIN_DIR', untrailingslashit( dirname( CF7SR_PLUGIN ) ) );
+define( 'CF7SR_PLUGIN_URL', untrailingslashit( plugin_dir_url( CF7SR_PLUGIN ) ) );
+
+function cf7sr_get_ip() {
+    if ( ! empty( $_SERVER['HTTP_CF_CONNECTING_IP'] ) ) {
+        $ip = $_SERVER['HTTP_CF_CONNECTING_IP'];
+    } else {
+        $ip = isset( $_SERVER['REMOTE_ADDR'] ) ? $_SERVER['REMOTE_ADDR'] : '';
     }
-    add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'cf7sr_add_action_links', 10, 2 );
+    $validated_ip = filter_var( trim( $ip ), FILTER_VALIDATE_IP );
+    return $validated_ip ? $validated_ip : '';
+}
 
-    function cf7sr_adminhtml() {
-        if (!current_user_can('manage_options')) {
-            wp_die(__('You do not have sufficient permissions to access this page.'));
+function cf7sr_trigger_spam($message) {
+    add_filter('wpcf7_spam', '__return_true');
+
+    add_filter('wpcf7_display_message', function($default_msg, $status) use ($message) {
+        if ($status === 'spam' && !empty($message)) {
+            return $message;
         }
-        if (! class_exists('WPCF7_Submission')) {
-            echo '<p>To use <strong>Contact Form 7 Captcha</strong> please update <strong>Contact Form 7</strong> plugin as current version is not supported.</p>';
-            return;
-        }
-        if (
-            ! empty ($_POST['update'])
-            && ! empty($_POST['cf7sr_nonce'])
-            && wp_verify_nonce($_POST['cf7sr_nonce'],'cf7sr_update_settings' )
-        ) {
-            $cf7sr_key = ! empty ($_POST['cf7sr_key']) ? sanitize_text_field($_POST['cf7sr_key']) : '';
-            update_option('cf7sr_key', $cf7sr_key);
+        return $default_msg;
+    }, 10, 2);
+}
 
-            $cf7sr_secret = ! empty ($_POST['cf7sr_secret']) ? sanitize_text_field($_POST['cf7sr_secret']) : '';
-            update_option('cf7sr_secret', $cf7sr_secret);
+$cf7sr_required_files = array(
+    CF7SR_PLUGIN_DIR . '/includes/languages.php',
+    CF7SR_PLUGIN_DIR . '/includes/stats.php',
+    CF7SR_PLUGIN_DIR . '/includes/recaptcha.php',
+    CF7SR_PLUGIN_DIR . '/includes/recaptcha-v3.php',
+    CF7SR_PLUGIN_DIR . '/includes/hcaptcha.php',
+    CF7SR_PLUGIN_DIR . '/includes/turnstile.php',
+    CF7SR_PLUGIN_DIR . '/includes/insights.php'
+);
 
-            $cf7sr_message = ! empty ($_POST['cf7sr_message']) ? sanitize_text_field($_POST['cf7sr_message']) : '';
-            update_option('cf7sr_message', $cf7sr_message);
+foreach ( $cf7sr_required_files as $file ) {
+    if ( file_exists( $file ) ) {
+        continue;
+    }
+    if ( is_admin() ) {
+        add_action( 'admin_notices', function() use ( $file ) {
+            echo '<div class="notice notice-error"><p>' . esc_html__( 'Contact Form 7 Captcha error: Files are missing. Please reinstall the plugin.', 'contact-form-7-simple-recaptcha' ) . '</p></div>';
+        });
+    }
+    return;
+}
 
-            $updated = 1;
-        } else {
-            $cf7sr_key = get_option('cf7sr_key');
-            $cf7sr_secret = get_option('cf7sr_secret');
-            $cf7sr_message = get_option('cf7sr_message');
-        }
-        ?>
-        <div class="cf7sr-wrap" style="font-size: 15px; background: #fff; border: 1px solid #e5e5e5; margin-top: 20px; padding: 20px; margin-right: 20px;">
-            <h2>
-                Captcha Settings
-                <a style="text-decoration: none" target="_blank" href="https://www.paypal.me/cf7captcha">
-                    <img style="vertical-align:middle;display:inline-block;width:100px;margin-left:5px;" src="<?php echo plugin_dir_url( __FILE__ ); ?>donate.png" alt="Donate">
+add_filter( 'wpcf7_form_elements', 'do_shortcode' );
+foreach ( $cf7sr_required_files as $file ) {
+    require_once $file;
+}
+
+function cf7sr_load_admin_css() {
+    $page = ! empty( $_GET['page'] ) ? $_GET['page'] : '';
+
+    if ( 'cf7sr-edit' == $page ) {
+        wp_enqueue_style( 'cf7sr-admin-css', CF7SR_PLUGIN_URL . '/assets/css/admin.css', array(), CF7SR_VERSION );
+    }
+}
+add_action( 'admin_enqueue_scripts', 'cf7sr_load_admin_css' );
+
+function cf7sr_add_action_links($links) {
+    array_unshift($links , '<a href="' . admin_url( 'options-general.php?page=cf7sr-edit' ) . '">Settings</a>');
+    array_unshift($links , '<a target="_blank" style="color: #df7128; font-weight: 700;" href="https://lukasapps.de/wordpress/plugins/cf7-captcha-pro/">Explore PRO Features</a>');
+    return $links;
+}
+add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'cf7sr_add_action_links', 10, 2 );
+
+function cf7sr_activation_notice() {
+    $cf7sr_notice_017 = get_option('cf7sr_notice_017');
+
+    if ( isset( $_GET['cf7sr-notice-017'] ) && '1' === $_GET['cf7sr-notice-017'] ) {
+        update_option( 'cf7sr_notice_017', 1 );
+        return;
+    }
+
+    if ( empty( $cf7sr_notice_017 ) ) { ?>
+        <div class="notice notice-success" style="position: relative; padding: 10px 20px; border-left-color: #df7128;">
+            <p style="margin: 0 0 10px 0;">
+                <strong><?php esc_html_e( 'Contact Form 7 Captcha updated:', 'contact-form-7-simple-recaptcha' ); ?></strong>
+                <?php esc_html_e( 'Added Google reCAPTCHA v3 Invisible, Submission Insights and Spam Protection Statistics!', 'contact-form-7-simple-recaptcha' ); ?>
+            </p>
+            <p style="margin: 0;">
+                <?php esc_html_e( 'Upgrade to Pro for 6-layer spam defense and Lead Recovery. Automate with CRM sync, Zapier, and SMS alerts!', 'contact-form-7-simple-recaptcha' ); ?>
+                <a target="_blank" style="font-weight: bold; color: #df7128; margin: 0 15px;" href="https://lukasapps.de/wordpress/plugins/cf7-captcha-pro/">
+                    <?php esc_html_e( 'Get CF7 Captcha Pro →', 'contact-form-7-simple-recaptcha' ); ?>
                 </a>
-                <a target="_blank" style="font-size:14px;color:#d54e21;border:1px solid #d54e21;padding:5px;text-decoration:none;margin-left:4px;border-radius:3px;" href="http://www.cf7captcha.com">Upgrade To Pro Free Limited Offer</a>
-            </h2>
-            This plugin implements "I'm not a robot" checkbox.<br><br>
-            To add Recaptcha to CF7 form, add <strong>[cf7sr-simple-recaptcha]</strong> in your form ( preferable above submit button )<br>
-            <form action="<?php echo esc_attr($_SERVER['REQUEST_URI']); ?>" method="POST">
-                <input type="hidden" value="1" name="update">
-                <?php wp_nonce_field( 'cf7sr_update_settings', 'cf7sr_nonce' ); ?>
-                <ul>
-                    <li><input type="text" style="width: 370px;" value="<?php echo esc_attr($cf7sr_key); ?>" name="cf7sr_key"> Site key</li>
-                    <li><input type="text" style="width: 370px;" value="<?php echo esc_attr($cf7sr_secret); ?>" name="cf7sr_secret"> Secret key</li>
-                    <li><input type="text" style="width: 370px;" value="<?php echo esc_attr($cf7sr_message); ?>" name="cf7sr_message"> Invalid captcha error message</li>
-                </ul>
-                <input type="submit" class="button-primary" value="Save Settings">
-            </form><br>
-            You can generate Site key and Secret key <strong><a target="_blank" href="https://www.google.com/recaptcha/admin">here</a></strong><br>
-            <strong style="color:red">Choose reCAPTCHA v2 -> Checkbox</strong><br>
-            <a target="_blank" href="https://www.google.com/recaptcha/admin"><img src="<?php echo plugin_dir_url( __FILE__ ); ?>captcha.jpg" width="400" alt="captcha" /></a><br><br>
-            <?php if (!empty($updated)): ?>
-                <p>Settings were updated successfully!</p>
-            <?php endif; ?>
+
+                <a href="<?php echo esc_url( add_query_arg( 'cf7sr-notice-017', '1' ) ); ?>"
+                   style="font-size: 12px; color: #666; text-decoration: underline;">
+                    <?php esc_html_e( 'Dismiss this notice', 'contact-form-7-simple-recaptcha' ); ?>
+                </a>
+            </p>
         </div>
-        <div class="cf7sr-wrap" style="font-size: 15px; background: #fff; border: 1px solid #e5e5e5; margin-top: 20px; padding: 20px; margin-right: 20px;">
-            <strong>Pro Version features: </strong>
-            <ul>
-                <li>WPML and POLYLANG language integration</li>
-                <li>Render captcha widget in a specific language, choose from 70 languages.</li>
-                <li>Switch between the color theme of the widget, light or dark</li>
-                <li>Switch between the type of the widget, image or audio</li>
-                <li>Switch between the size of the widget, normal or compact</li>
-            </ul>
-        </div>
-        <?php
+    <?php }
+}
+add_action( 'admin_notices', 'cf7sr_activation_notice' );
+
+function cf7sr_adminhtml() {
+    if ( ! current_user_can( 'manage_options' ) ) {
+        wp_die( esc_html__( 'You do not have sufficient permissions to access this page.', 'contact-form-7-simple-recaptcha' ) );
     }
 
-    function cf7sr_addmenu() {
-        add_submenu_page (
-            'options-general.php',
-            'CF7 Simple Recaptcha',
-            'CF7 Simple Recaptcha',
-            'manage_options',
-            'cf7sr_edit',
-            'cf7sr_adminhtml'
-        );
+    if ( ! class_exists( 'WPCF7_Submission' ) ) {
+        echo '<p>' . wp_kses(
+                __( 'To use <strong>Contact Form 7 Captcha</strong> please install or update <strong>Contact Form 7</strong> plugin as current version is not supported.', 'contact-form-7-simple-recaptcha' ),
+                array( 'strong' => array() )
+        ) . '</p>';
+        return;
     }
-    add_action('admin_menu', 'cf7sr_addmenu');
+
+    $tabs = array(
+            'stats'       => 'Statistics',
+            'recaptcha'   => 'Google reCaptcha v2',
+            'recaptcha-v3'   => 'Google reCaptcha v3',
+            'hcaptcha'    => 'hCaptcha',
+            'turnstile'   => 'Cloudflare Turnstile Captcha',
+            'insights'    => 'Insights',
+    );
+
+    $tab = ! empty( $_GET['tab'] ) && isset( $tabs[ $_GET['tab'] ] ) ? $_GET['tab'] : 'stats';
+
+    ?>
+    <div class="wrap">
+        <nav class="nav-tab-wrapper">
+            <?php foreach ( $tabs as $tabKey => $tabLabel ) { ?>
+                <a href="<?php echo esc_url( admin_url( 'admin.php?page=cf7sr-edit&tab=' . $tabKey ) ); ?>"
+                   class="nav-tab <?php echo $tab == $tabKey ? 'nav-tab-active' : ''; ?>">
+                    <?php echo esc_html( $tabLabel ); ?>
+                </a>
+            <?php } ?>
+        </nav>
+        <div class="cf7sr-content">
+            <?php
+            $admin_tab_file = CF7SR_PLUGIN_DIR . '/includes/admin-' . $tab . '.php';
+            if ( file_exists( $admin_tab_file ) ) {
+                require_once $admin_tab_file;
+            } else {
+                echo '<p>' . esc_html__( 'Error: Admin tab file missing.', 'contact-form-7-simple-recaptcha' ) . '</p>';
+            }
+            ?>
+        </div>
+    </div>
+    <script>
+        var cf7srMsg = document.querySelector('.cf7sr-msg');
+        if (cf7srMsg) {
+            setTimeout(function() {
+                cf7srMsg.remove();
+            }, 3000);
+        }
+    </script>
+    <?php
 }
+
+function cf7sr_addmenu() {
+    add_menu_page(
+        'CF7 Captcha',
+        'CF7 Captcha',
+        'manage_options',
+        'cf7sr-edit',
+        'cf7sr_adminhtml',
+        'dashicons-shield-alt',
+        30
+    );
+}
+add_action('admin_menu', 'cf7sr_addmenu');
