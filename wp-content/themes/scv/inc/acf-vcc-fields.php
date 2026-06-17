@@ -411,4 +411,65 @@ add_action('acf/init', function () {
         'active' => true,
         'description' => 'Văn bản trang Giới thiệu nguồn nhân lực.',
     ));
+
+    /* ---------- HỖ TRỢ MỞ RỘNG THỊ TRƯỜNG VN (tpl-fdi-support.php) ---------- */
+    acf_add_local_field_group(array(
+        'key' => 'group_vcc_fdi',
+        'title' => 'VCC — Hỗ trợ mở rộng thị trường VN',
+        'fields' => array(
+            // Page head
+            $t('f_fdi_crumb_home',   'crumb_home',   'Breadcrumb · trang chủ'),
+            $t('f_fdi_crumb_parent', 'crumb_parent', 'Breadcrumb · nhóm'),
+            $t('f_fdi_crumb_here',   'crumb_here',   'Breadcrumb · trang hiện tại'),
+            $t('f_fdi_ph_eye',       'ph_eye',       'Page head · eyebrow'),
+            $ta('f_fdi_ph_title',    'ph_title',     'Page head · tiêu đề (xuống dòng = <br>)', array('new_lines' => '')),
+            $ta('f_fdi_ph_lead',     'ph_lead',      'Page head · mô tả'),
+            $t('f_fdi_ph_cta1',      'ph_cta1',      'Page head · nút 1'),
+            $t('f_fdi_ph_cta2',      'ph_cta2',      'Page head · nút 2'),
+            $t('f_fdi_fb_value',     'fb_value',     'Badge · giá trị'),
+            $t('f_fdi_fb_label',     'fb_label',     'Badge · nhãn'),
+            // Intro lockup
+            $t('f_fdi_intro_chip',  'intro_chip',  'Intro · chip (One-stop FDI Support)'),
+            $ta('f_fdi_intro_title', 'intro_title', 'Intro · tiêu đề'),
+            $ta('f_fdi_intro_text',  'intro_text',  'Intro · đoạn'),
+            $rep('f_fdi_figures', 'figures', 'Intro · số liệu (fv cho phép HTML)', array(
+                array('key' => 'f_fdi_fig_v', 'name' => 'fv', 'label' => 'Giá trị (cho phép <span class="u">)', 'type' => 'text'),
+                $ta('f_fdi_fig_l', 'fl', 'Nhãn'),
+                array('key' => 'f_fdi_fig_c', 'name' => 'coral', 'label' => 'Tô màu coral', 'type' => 'true_false', 'ui' => 1),
+            )),
+            $ta('f_fdi_banner', 'banner', 'Banner (cho phép <span class="accent">)'),
+            // Tabs
+            $t('f_fdi_tab1', 'tab1', 'Tab 1'),
+            $t('f_fdi_tab2', 'tab2', 'Tab 2'),
+            // 01 Establishment
+            $t('f_fdi_est_tag',  'est_tag',   'Establishment · tag'),
+            $ta('f_fdi_est_title', 'est_title', 'Establishment · tiêu đề'),
+            $ta('f_fdi_est_text',  'est_text',  'Establishment · đoạn'),
+            $ta('f_fdi_est_list',  'est_list',  'Establishment · gạch đầu dòng (mỗi dòng 1 ý)', array('rows' => 4, 'new_lines' => '')),
+            // "Loại khác" strengths
+            $t('f_fdi_other_eyebrow', 'other_eyebrow', 'Hỗ trợ bổ sung · eyebrow'),
+            $ta('f_fdi_other_title',  'other_title',   'Hỗ trợ bổ sung · tiêu đề'),
+            $rep('f_fdi_strengths', 'strengths', 'Hỗ trợ bổ sung · 4 thẻ (theo thứ tự icon)', array(
+                $t('f_fdi_str_t', 'title', 'Tiêu đề'),
+                $ta('f_fdi_str_x', 'text', 'Nội dung'),
+            )),
+            // 02 Post setup / Operation
+            $t('f_fdi_op_tag',  'op_tag',   'Operation · tag'),
+            $ta('f_fdi_op_title', 'op_title', 'Operation · tiêu đề'),
+            $ta('f_fdi_op_text',  'op_text',  'Operation · đoạn'),
+            $ta('f_fdi_op_list',  'op_list',  'Operation · gạch đầu dòng (mỗi dòng 1 ý)', array('rows' => 6, 'new_lines' => '')),
+            // CTA
+            $ta('f_fdi_cta_title', 'cta_title', 'CTA · tiêu đề'),
+            $ta('f_fdi_cta_text',  'cta_text',  'CTA · nội dung'),
+            $t('f_fdi_cta_btn1',   'cta_btn1',  'CTA · nút 1'),
+            $t('f_fdi_cta_btn2',   'cta_btn2',  'CTA · nút 2'),
+        ),
+        'location' => array(
+            array(
+                array('param' => 'page_template', 'operator' => '==', 'value' => 'tpl-fdi-support.php'),
+            ),
+        ),
+        'active' => true,
+        'description' => 'Văn bản trang Hỗ trợ mở rộng thị trường VN.',
+    ));
 });
