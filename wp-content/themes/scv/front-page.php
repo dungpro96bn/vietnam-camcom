@@ -91,7 +91,10 @@ $contact = home_url('/contact/');
 	<div class="container">
 		<div class="about">
 			<div class="about-media reveal">
-				<div class="ph"><img style="width: 100%; height: auto" src="/wp-content/uploads/home_service_banner_pc.png" alt=""></div>
+				<div class="ph"><picture>
+					<source type="image/webp" srcset="/wp-content/uploads/home_service_banner_pc-1300.webp">
+					<img style="width: 100%; height: auto" src="/wp-content/uploads/home_service_banner_pc.png" width="1300" height="1507" alt="" loading="lazy" decoding="async">
+				</picture></div>
 				<div class="badge">
 					<span class="b-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 4 7v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V7l-8-5z"/><path d="m9 12 2 2 4-4"/></svg></span>
 					<div><b>ISO 27001</b><span><?php echo esc_html($var['home_iso_sub']); ?></span></div>

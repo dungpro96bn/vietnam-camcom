@@ -11,7 +11,9 @@ endif;
 ?>
 
 <script>
-$('input[name="category"]').prop('checked', false);
+document.addEventListener('DOMContentLoaded', function () {
+	jQuery('input[name="category"]').prop('checked', false);
+});
 </script>
 
 <?php get_footer(); ?>

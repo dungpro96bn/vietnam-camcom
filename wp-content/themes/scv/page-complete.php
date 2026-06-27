@@ -11,8 +11,8 @@ endif;
 ?>
 
 <script>
-    jQuery(function ($) {
-        $(document).ready(function () {
+    document.addEventListener('DOMContentLoaded', function () {
+        jQuery(function ($) {
             var urlHome = "<?php  echo home_url(); ?>";
             var checkSendMail = sessionStorage.getItem('sendmail');
             if(checkSendMail !== "complete"){

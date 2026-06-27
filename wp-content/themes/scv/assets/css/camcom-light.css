@@ -4,7 +4,7 @@
    Type: Be Vietnam Pro (excellent VN diacritics)
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+/* Google Fonts được nạp non-blocking trong header.php (preconnect + media-swap). */
 
 :root {
     /* surfaces */

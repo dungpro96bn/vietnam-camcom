@@ -27,6 +27,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		?></title>
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
+    <?php // Google Fonts — nạp non-blocking bằng JS-inject (thay cho @import; resilient với LiteSpeed). preconnect do wp_resource_hints. ?>
+    <?php $scv_fonts = 'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap'; ?>
+    <link rel="preload" as="style" href="<?php echo esc_url($scv_fonts); ?>">
+    <script>(function(){var l=document.createElement('link');l.rel='stylesheet';l.href='<?php echo esc_url($scv_fonts); ?>';document.head.appendChild(l);})();</script>
+    <noscript><link rel="stylesheet" href="<?php echo esc_url($scv_fonts); ?>"></noscript>
+
     <link rel="stylesheet" media="all" href="<?php bloginfo('template_directory'); ?>/assets/css/camcom-light.css">
     <link rel="stylesheet" media="all" href="<?php bloginfo('template_directory'); ?>/assets/css/camcom-hr.css">
 
@@ -81,8 +87,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <header class="nav">
 	<div class="container nav-inner">
 		<a href="<?php echo home_url('/'); ?>" class="brand">
-            <img class="brand-logo brand-logo-white skip-lazy" src="/wp-content/themes/scv/images/scv_logo_white.png" alt="VIETNAM CAMCOM" loading="eager" fetchpriority="high" decoding="sync" data-no-lazy="1" data-skip-lazy="1" />
-            <img class="brand-logo brand-logo-dark skip-lazy" src="/wp-content/themes/scv/images/scv_logo_header.png" alt="VIETNAM CAMCOM" loading="eager" fetchpriority="high" decoding="sync" data-no-lazy="1" data-skip-lazy="1" />
+            <img class="brand-logo brand-logo-white skip-lazy" src="/wp-content/themes/scv/images/scv_logo_white-980.png" width="980" height="83" alt="VIETNAM CAMCOM" loading="eager" fetchpriority="high" decoding="sync" data-no-lazy="1" data-skip-lazy="1" />
+            <img class="brand-logo brand-logo-dark skip-lazy" src="/wp-content/themes/scv/images/scv_logo_header-980.png" width="980" height="83" alt="VIETNAM CAMCOM" loading="eager" fetchpriority="high" decoding="sync" data-no-lazy="1" data-skip-lazy="1" />
 		</a>
 		<nav class="nav-links">
 			<a href="<?php echo home_url('/about/'); ?>"><?php echo $var['nav_about']; ?></a>

@@ -378,6 +378,46 @@ if (file_exists($scv_acf)) {
 }
 
 
+/* ============================================================
+   VCC — Tối ưu PageSpeed (render-blocking / unused JS / TBT)
+   ============================================================ */
+
+// 1) reCAPTCHA (CF7 core) chỉ load trên trang Liên hệ.
+//    Mặc định CF7 enqueue google-recaptcha + badge trên MỌI trang
+//    → ~591 KiB JS không dùng + ~2.1s thực thi. Gỡ ở mọi nơi trừ
+//    trang dùng template contact.
+function scv_limit_recaptcha_scripts() {
+    if (is_page_template('tpl-contact.php') || is_page_template('tpl-contact-confirm.php')) {
+        return; // giữ reCAPTCHA cho form liên hệ
+    }
+    wp_dequeue_script('google-recaptcha');
+    wp_dequeue_script('wpcf7-recaptcha');
+}
+add_action('wp_enqueue_scripts', 'scv_limit_recaptcha_scripts', 100);
+
+// 2) jQuery: defer để không chặn render. Các template legacy gọi
+//    jQuery ngay khi parse (page.php / page-complete.php) đã được bọc
+//    trong DOMContentLoaded nên an toàn.
+function scv_defer_scripts($tag, $handle) {
+    $defer = array('jquery', 'vcc-app');
+    if (in_array($handle, $defer, true) && strpos($tag, ' defer') === false) {
+        $tag = str_replace(' src=', ' defer src=', $tag);
+    }
+    return $tag;
+}
+add_filter('script_loader_tag', 'scv_defer_scripts', 10, 2);
+
+// 3) Resource hints: mở sẵn kết nối tới host bên thứ ba dùng sớm.
+function scv_resource_hints($urls, $relation_type) {
+    if ('preconnect' === $relation_type) {
+        $urls[] = array('href' => 'https://fonts.gstatic.com', 'crossorigin');
+        $urls[] = 'https://fonts.googleapis.com';
+        $urls[] = 'https://ajax.googleapis.com';
+    }
+    return $urls;
+}
+add_filter('wp_resource_hints', 'scv_resource_hints', 10, 2);
+
 add_shortcode("urlLanguage", "urlLanguage");
 function urlLanguage (){
     global $sitepress;
