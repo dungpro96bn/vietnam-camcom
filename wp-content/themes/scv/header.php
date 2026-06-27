@@ -81,7 +81,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <header class="nav">
 	<div class="container nav-inner">
 		<a href="<?php echo home_url('/'); ?>" class="brand">
-            <img class="brand-logo" src="https://vietnam-camcom.com/wp-content/themes/scv/images/scv_logo_header.svg" alt="VIETNAM CAMCOM" />
+            <img class="brand-logo brand-logo-white skip-lazy" src="/wp-content/themes/scv/images/scv_logo_white.png" alt="VIETNAM CAMCOM" loading="eager" fetchpriority="high" decoding="sync" data-no-lazy="1" data-skip-lazy="1" />
+            <img class="brand-logo brand-logo-dark skip-lazy" src="/wp-content/themes/scv/images/scv_logo_header.png" alt="VIETNAM CAMCOM" loading="eager" fetchpriority="high" decoding="sync" data-no-lazy="1" data-skip-lazy="1" />
 		</a>
 		<nav class="nav-links">
 			<a href="<?php echo home_url('/about/'); ?>"><?php echo $var['nav_about']; ?></a>
@@ -95,7 +96,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					<a href="<?php echo home_url('/labor-management/'); ?>"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></span><?php echo $var['svc_labor']; ?></a>
 				</div>
 			</div>
-			<a href="<?php echo home_url('/news/'); ?>"><?php echo $var['nav_news']; ?></a>
+			<a href="<?php echo home_url('/company/'); ?>"><?php echo $var['nav_company']; ?></a>
 			<a href="<?php echo home_url('/recruit/'); ?>"><?php echo $var['nav_recruit']; ?></a>
 		</nav>
 		<div class="nav-right">

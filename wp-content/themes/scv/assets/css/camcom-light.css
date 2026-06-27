@@ -115,6 +115,15 @@ body {
     padding: 0 26px;
 }
 
+/* responsive media guard — chống tràn ngang làm vỡ layout trên mobile/tablet */
+img, svg, video, iframe, table {
+    max-width: 100%;
+}
+
+img {
+    height: auto;
+}
+
 section {
     position: relative;
     padding: 112px 0;
@@ -290,6 +299,10 @@ h3 {
     text-decoration: none;
 }
 
+.brand img{
+    aspect-ratio: 354 / 30;
+}
+
 .brand .mark {
     width: 36px;
     height: 36px;
@@ -329,23 +342,27 @@ h3 {
 }
 
 .brand-logo {
-    height: 40px;
+    height: 30px;
     width: auto;
     display: block;
 }
 
-.nav .brand-logo {
-    filter: brightness(0) invert(1);
-    transition: filter .35s;
+/* white logo on hero (not scrolled), dark logo once nav goes solid */
+.nav .brand-logo-dark {
+    display: none;
 }
 
-.nav.scrolled .brand-logo {
-    filter: none;
+.nav.scrolled .brand-logo-white {
+    display: none;
+}
+
+.nav.scrolled .brand-logo-dark {
+    display: block;
 }
 
 footer .brand-logo {
-    height: 46px;
-    filter: brightness(0) invert(1);
+    height: auto;
+    max-width: 320px;
 }
 
 .nav-links {
@@ -476,8 +493,8 @@ footer .brand-logo {
 }
 
 .lang button.on {
-    background: #fff;
-    color: var(--blue);
+    background: var(--grad-blue);
+    color: #fff;
     box-shadow: var(--shadow-sm);
 }
 
@@ -505,11 +522,11 @@ footer .brand-logo {
 }
 
 .hero .hgrid {
-    position: absolute;
-    inset: 0;
-    background-image: linear-gradient(rgba(255, 255, 255, .05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .05) 1px, transparent 1px);
-    background-size: 70px 70px;
-    mask-image: radial-gradient(ellipse 70% 70% at 70% 40%, #000, transparent 75%);
+    /*position: absolute;*/
+    /*inset: 0;*/
+    /*background-image: linear-gradient(rgba(255, 255, 255, .05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .05) 1px, transparent 1px);*/
+    /*background-size: 70px 70px;*/
+    /*mask-image: radial-gradient(ellipse 70% 70% at 70% 40%, #000, transparent 75%);*/
 }
 
 .hero .hglow {
@@ -565,6 +582,27 @@ footer .brand-logo {
     padding: 3px 9px;
     border-radius: 100px;
     letter-spacing: .04em;
+    min-width: 100px;
+}
+
+#constellation {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.socials .seal{
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 0 10px;
+    border-radius: 10px;
+}
+.socials .seal img{
+    height: 34px;
+    width: auto;
 }
 
 .hero h1 {
@@ -701,14 +739,28 @@ footer .brand-logo {
     left: 0;
     right: 0;
     bottom: 0;
-    height: 11px;
-    background: no-repeat center/100% 100% url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 11' preserveAspectRatio='none'%3E%3Cpath d='M0 6 Q22.5 -1 45 6 T90 6 V11 H0 Z' fill='%23ff5a45'/%3E%3C/svg%3E");
+    height: 34px;
+    background: no-repeat center/100% 100% url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 11' preserveAspectRatio='none'%3E%3Cpath d='M0 6 Q22.5 -1 45 6 T90 6 V11 H0 Z' fill='red'/%3E%3C/svg%3E");
+    z-index: -1;
 }
 
 .node.vn {
     bottom: 14%;
     right: 6%;
     animation: bob 6s ease-in-out infinite .8s;
+    overflow: hidden;
+}
+
+.node.vn::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -2px;
+    height: 34px;
+    background: no-repeat center/100% 100% url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 11' preserveAspectRatio='none'%3E%3Cpath d='M0 6 Q22.5 -1 45 6 T90 6 V11 H0 Z' fill='red'/%3E%3C/svg%3E");
+    z-index: -1;
+    transform: scaleX(-1) rotate(180deg);
 }
 
 .node.jp .flag {
@@ -726,7 +778,23 @@ footer .brand-logo {
     width: 13px;
     height: 13px;
     border-radius: 50%;
-    background: #ff5a45;
+    background: red;
+}
+
+.node.vn .flag {
+    background: #da251d;
+    position: relative;
+    font-size: 0;
+}
+
+.node.vn .flag::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    background: no-repeat center/contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpolygon points='12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26' fill='%23ffff00'/%3E%3C/svg%3E");
 }
 
 @keyframes bob {
@@ -1461,14 +1529,14 @@ footer {
 }
 
 footer::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: linear-gradient(rgba(255, 255, 255, .04) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .04) 1px, transparent 1px);
-    background-size: 46px 46px;
-    -webkit-mask-image: radial-gradient(120% 92% at 82% 0%, #000 0%, transparent 70%);
-    mask-image: radial-gradient(120% 92% at 82% 0%, #000 0%, transparent 70%);
-    pointer-events: none;
+    /*content: "";*/
+    /*position: absolute;*/
+    /*inset: 0;*/
+    /*background-image: linear-gradient(rgba(255, 255, 255, .04) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .04) 1px, transparent 1px);*/
+    /*background-size: 46px 46px;*/
+    /*-webkit-mask-image: radial-gradient(120% 92% at 82% 0%, #000 0%, transparent 70%);*/
+    /*mask-image: radial-gradient(120% 92% at 82% 0%, #000 0%, transparent 70%);*/
+    /*pointer-events: none;*/
 }
 
 footer::after {
@@ -1640,6 +1708,12 @@ footer .brand .name span {
 
 /* ---------- responsive ---------- */
 @media (max-width: 960px) {
+    /* lề trái/phải 20px trên tablet & mobile */
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
     .hero-inner {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -1860,7 +1934,7 @@ footer .brand .name span {
 }
 
 /* nav collapses to drawer on tablet & below */
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
     .nav-links {
         display: none;
     }
@@ -1911,6 +1985,11 @@ footer .brand .name span {
     .svc-tabs {
         top: 64px;
     }
+    .brand img{
+        height: 24px;
+        aspect-ratio: 280 / 24;
+    }
+
 }
 
 @media (max-width: 640px) {
@@ -1952,4 +2031,13 @@ footer .brand .name span {
     .anchor {
         top: -116px;
     }
+}
+
+@media (max-width: 390px) {
+
+    .brand img{
+        height: 18px;
+        aspect-ratio: 220 / 18;
+    }
+
 }

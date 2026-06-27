@@ -472,4 +472,343 @@ add_action('acf/init', function () {
         'active' => true,
         'description' => 'Văn bản trang Hỗ trợ mở rộng thị trường VN.',
     ));
+
+    /* ---------- TỔNG QUAN CÔNG TY (tpl-company.php) ---------- */
+    acf_add_local_field_group(array(
+        'key' => 'group_vcc_company',
+        'title' => 'VCC — Tổng quan công ty',
+        'fields' => array(
+            // Page head
+            $t('f_cmp_crumb_home', 'crumb_home', 'Breadcrumb · trang chủ'),
+            $t('f_cmp_crumb_here', 'crumb_here', 'Breadcrumb · trang hiện tại'),
+            $t('f_cmp_ph_eye',     'ph_eye',     'Page head · eyebrow'),
+            $ta('f_cmp_ph_title',  'ph_title',   'Page head · tiêu đề (xuống dòng = <br>)', array('new_lines' => '')),
+            $ta('f_cmp_ph_lead',   'ph_lead',    'Page head · mô tả'),
+            $t('f_cmp_ph_cta1',    'ph_cta1',    'Page head · nút 1'),
+            $t('f_cmp_ph_cta2',    'ph_cta2',    'Page head · nút 2'),
+            $t('f_cmp_fb_value',   'fb_value',   'Badge · giá trị'),
+            $t('f_cmp_fb_label',   'fb_label',   'Badge · nhãn'),
+            // Tabs
+            $t('f_cmp_tab1', 'tab1', 'Tab 1'),
+            $t('f_cmp_tab2', 'tab2', 'Tab 2'),
+            $t('f_cmp_tab3', 'tab3', 'Tab 3'),
+            // Company info
+            $t('f_cmp_info_eyebrow', 'info_eyebrow', 'Thông tin · eyebrow'),
+            $t('f_cmp_info_title',   'info_title',   'Thông tin · tiêu đề'),
+            $t('f_cmp_lbl_name', 'lbl_name', 'Nhãn · Tên công ty'),
+            $t('f_cmp_val_name', 'val_name', 'Giá trị · Tên công ty'),
+            $t('f_cmp_lbl_rep',  'lbl_rep',  'Nhãn · Người đại diện'),
+            $t('f_cmp_val_rep',  'val_rep',  'Giá trị · Người đại diện'),
+            $t('f_cmp_lbl_biz',  'lbl_biz',  'Nhãn · Nội dung kinh doanh'),
+            $ta('f_cmp_biz_list', 'biz_list', 'Nội dung kinh doanh · danh sách (mỗi dòng 1 dịch vụ, theo thứ tự HR/BPO/WEB/FDI)', array('rows' => 4, 'new_lines' => '')),
+            $t('f_cmp_lbl_addr', 'lbl_addr', 'Nhãn · Địa chỉ'),
+            $t('f_cmp_addr_hq_label',  'addr_hq_label',  'Địa chỉ · nhãn trụ sở HN'),
+            $ta('f_cmp_addr_hq',       'addr_hq',        'Địa chỉ · trụ sở HN'),
+            $t('f_cmp_addr_hcm_label', 'addr_hcm_label', 'Địa chỉ · nhãn chi nhánh HCM'),
+            $ta('f_cmp_addr_hcm',      'addr_hcm',       'Địa chỉ · chi nhánh HCM'),
+            $t('f_cmp_lbl_phone', 'lbl_phone', 'Nhãn · Số điện thoại'),
+            $t('f_cmp_lbl_email', 'lbl_email', 'Nhãn · E-mail'),
+            $t('f_cmp_val_email', 'val_email', 'Giá trị · E-mail'),
+            $t('f_cmp_lbl_founded', 'lbl_founded', 'Nhãn · Thành lập'),
+            $t('f_cmp_val_founded', 'val_founded', 'Giá trị · Thành lập'),
+            // Group scale
+            $t('f_cmp_group_eyebrow', 'group_eyebrow', 'Tập đoàn · eyebrow'),
+            $t('f_cmp_group_title',   'group_title',   'Tập đoàn · tiêu đề'),
+            $ta('f_cmp_group_lead',   'group_lead',    'Tập đoàn · mô tả'),
+            $rep('f_cmp_figures', 'figures', 'Tập đoàn · số liệu (fv cho phép HTML data-count)', array(
+                array('key' => 'f_cmp_fig_v', 'name' => 'fv', 'label' => 'Giá trị (cho phép <span data-count>)', 'type' => 'text'),
+                $ta('f_cmp_fig_l', 'fl', 'Nhãn'),
+                array('key' => 'f_cmp_fig_c', 'name' => 'coral', 'label' => 'Tô màu coral', 'type' => 'true_false', 'ui' => 1),
+            )),
+            $ta('f_cmp_group_note', 'group_note', 'Tập đoàn · ghi chú'),
+            // Offices
+            $t('f_cmp_off_eyebrow', 'off_eyebrow', 'Văn phòng · eyebrow'),
+            $t('f_cmp_off_title',   'off_title',   'Văn phòng · tiêu đề'),
+            $ta('f_cmp_off_lead',   'off_lead',    'Văn phòng · mô tả'),
+            $t('f_cmp_off_hq_tag',    'off_hq_tag',    'Văn phòng HN · tag'),
+            $t('f_cmp_off_hq_title',  'off_hq_title',  'Văn phòng HN · tiêu đề'),
+            $ta('f_cmp_off_hq_addr',  'off_hq_addr',   'Văn phòng HN · địa chỉ'),
+            $t('f_cmp_off_hcm_tag',   'off_hcm_tag',   'Văn phòng HCM · tag'),
+            $t('f_cmp_off_hcm_title', 'off_hcm_title', 'Văn phòng HCM · tiêu đề'),
+            $ta('f_cmp_off_hcm_addr', 'off_hcm_addr',  'Văn phòng HCM · địa chỉ'),
+            $t('f_cmp_iso_title', 'iso_title', 'ISO · tiêu đề'),
+            $t('f_cmp_iso_text',  'iso_text',  'ISO · mô tả'),
+            $t('f_cmp_iso_no',    'iso_no',    'ISO · số chứng nhận'),
+            // CTA
+            $ta('f_cmp_cta_title', 'cta_title', 'CTA · tiêu đề'),
+            $ta('f_cmp_cta_text',  'cta_text',  'CTA · nội dung'),
+            $t('f_cmp_cta_btn1',   'cta_btn1',  'CTA · nút 1'),
+            $t('f_cmp_cta_btn2',   'cta_btn2',  'CTA · nút 2'),
+        ),
+        'location' => array(
+            array(
+                array('param' => 'page_template', 'operator' => '==', 'value' => 'tpl-company.php'),
+            ),
+        ),
+        'active' => true,
+        'description' => 'Văn bản trang Tổng quan công ty.',
+    ));
+
+    /* ---------- HỖ TRỢ QUẢN LÝ LAO ĐỘNG (tpl-labor-management.php) ---------- */
+    acf_add_local_field_group(array(
+        'key' => 'group_vcc_labor',
+        'title' => 'VCC — Hỗ trợ quản lý lao động',
+        'fields' => array(
+            // Page head
+            $t('f_lab_crumb_home',   'crumb_home',   'Breadcrumb · trang chủ'),
+            $t('f_lab_crumb_parent', 'crumb_parent', 'Breadcrumb · nhóm'),
+            $t('f_lab_crumb_here',   'crumb_here',   'Breadcrumb · trang hiện tại'),
+            $t('f_lab_ph_eye',       'ph_eye',       'Page head · eyebrow'),
+            $ta('f_lab_ph_title',    'ph_title',     'Page head · tiêu đề (xuống dòng = <br>)', array('new_lines' => '')),
+            $ta('f_lab_ph_lead',     'ph_lead',      'Page head · mô tả'),
+            $t('f_lab_ph_cta1',      'ph_cta1',      'Page head · nút 1'),
+            $t('f_lab_ph_cta2',      'ph_cta2',      'Page head · nút 2'),
+            $t('f_lab_fb_value',     'fb_value',     'Badge · giá trị'),
+            $t('f_lab_fb_label',     'fb_label',     'Badge · nhãn'),
+            // Intro lockup
+            $t('f_lab_intro_chip',  'intro_chip',  'Intro · chip'),
+            $ta('f_lab_intro_title', 'intro_title', 'Intro · tiêu đề'),
+            $ta('f_lab_intro_text',  'intro_text',  'Intro · đoạn'),
+            $rep('f_lab_figures', 'figures', 'Intro · số liệu (fv cho phép HTML)', array(
+                array('key' => 'f_lab_fig_v', 'name' => 'fv', 'label' => 'Giá trị (cho phép <span class="u">)', 'type' => 'text'),
+                $ta('f_lab_fig_l', 'fl', 'Nhãn'),
+                array('key' => 'f_lab_fig_c', 'name' => 'coral', 'label' => 'Tô màu coral', 'type' => 'true_false', 'ui' => 1),
+            )),
+            $ta('f_lab_banner', 'banner', 'Banner (cho phép <span class="accent">)'),
+            // Tabs
+            $t('f_lab_tab1', 'tab1', 'Tab 1'),
+            $t('f_lab_tab2', 'tab2', 'Tab 2'),
+            $t('f_lab_tab3', 'tab3', 'Tab 3'),
+            $t('f_lab_tab4', 'tab4', 'Tab 4'),
+            // 01 Why / one-stop
+            $t('f_lab_why_tag',   'why_tag',   'Vấn đề · tag'),
+            $ta('f_lab_why_title', 'why_title', 'Vấn đề · tiêu đề'),
+            $ta('f_lab_why_text',  'why_text',  'Vấn đề · đoạn'),
+            $ta('f_lab_why_list',  'why_list',  'Vấn đề · gạch đầu dòng (mỗi dòng 1 ý)', array('rows' => 4, 'new_lines' => '')),
+            $t('f_lab_onestop_eyebrow', 'onestop_eyebrow', 'Dịch vụ một cửa · eyebrow'),
+            $ta('f_lab_onestop_title',  'onestop_title',   'Dịch vụ một cửa · tiêu đề'),
+            $rep('f_lab_stops', 'stops', 'Bốn cam kết · 4 thẻ (theo thứ tự icon)', array(
+                $t('f_lab_stop_t', 'title', 'Tiêu đề'),
+                $ta('f_lab_stop_x', 'text', 'Nội dung'),
+            )),
+            // 02 Customer cases
+            $t('f_lab_cases_chip',  'cases_chip',  'Câu chuyện · chip'),
+            $ta('f_lab_cases_title', 'cases_title', 'Câu chuyện · tiêu đề'),
+            $t('f_lab_case_lbl_problem', 'case_lbl_problem', 'Câu chuyện · nhãn "Vấn đề"'),
+            $t('f_lab_case_lbl_result',  'case_lbl_result',  'Câu chuyện · nhãn "Hiệu quả"'),
+            $rep('f_lab_cases', 'cases', 'Câu chuyện · các case', array(
+                $t('f_lab_case_k', 'casek',   'Mã (CASE 01…)'),
+                $t('f_lab_case_n', 'name',    'Tên công ty'),
+                $ta('f_lab_case_p', 'problem', 'Vấn đề'),
+                $ta('f_lab_case_r', 'result',  'Hiệu quả sau khi sử dụng'),
+            )),
+            // 03 Main services
+            $t('f_lab_svc_eyebrow', 'svc_eyebrow', 'Dịch vụ chính · eyebrow'),
+            $ta('f_lab_svc_title',  'svc_title',   'Dịch vụ chính · tiêu đề'),
+            $ta('f_lab_svc_lead',   'svc_lead',    'Dịch vụ chính · mô tả'),
+            $rep('f_lab_services', 'services', 'Dịch vụ chính · 4 thẻ (theo thứ tự icon)', array(
+                $t('f_lab_sv_t', 'title', 'Tiêu đề'),
+                $ta('f_lab_sv_l', 'list', 'Gạch đầu dòng (mỗi dòng 1 ý)', array('rows' => 4, 'new_lines' => '')),
+            )),
+            // 04 FAQ
+            $t('f_lab_faq_eyebrow', 'faq_eyebrow', 'FAQ · eyebrow'),
+            $ta('f_lab_faq_title',  'faq_title',   'FAQ · tiêu đề'),
+            $rep('f_lab_faqs', 'faqs', 'FAQ · câu hỏi (a cho phép HTML)', array(
+                $ta('f_lab_faq_q', 'q', 'Câu hỏi'),
+                $ta('f_lab_faq_a', 'a', 'Trả lời (cho phép HTML: <p>, <b>, <ul><li>, <span class="ref"/dot>)', array('rows' => 8, 'new_lines' => '')),
+            )),
+            // CTA
+            $ta('f_lab_cta_title', 'cta_title', 'CTA · tiêu đề'),
+            $ta('f_lab_cta_text',  'cta_text',  'CTA · nội dung'),
+            $t('f_lab_cta_btn1',   'cta_btn1',  'CTA · nút 1'),
+            $t('f_lab_cta_btn2',   'cta_btn2',  'CTA · nút 2'),
+        ),
+        'location' => array(
+            array(
+                array('param' => 'page_template', 'operator' => '==', 'value' => 'tpl-labor-management.php'),
+            ),
+        ),
+        'active' => true,
+        'description' => 'Văn bản trang Hỗ trợ quản lý lao động.',
+    ));
+
+    /* ---------- TUYỂN DỤNG (tpl-recruit.php) ---------- */
+    acf_add_local_field_group(array(
+        'key' => 'group_vcc_recruit',
+        'title' => 'VCC — Tuyển dụng',
+        'fields' => array(
+            // Page head
+            $t('f_rec_crumb_home', 'crumb_home', 'Breadcrumb · trang chủ'),
+            $t('f_rec_crumb_here', 'crumb_here', 'Breadcrumb · trang hiện tại'),
+            $t('f_rec_ph_eye',     'ph_eye',     'Page head · eyebrow'),
+            $ta('f_rec_ph_title',  'ph_title',   'Page head · tiêu đề (xuống dòng = <br>)', array('new_lines' => '')),
+            $ta('f_rec_ph_lead',   'ph_lead',    'Page head · mô tả'),
+            $t('f_rec_ph_cta1',    'ph_cta1',    'Page head · nút 1'),
+            $t('f_rec_ph_cta2',    'ph_cta2',    'Page head · nút 2 (Facebook)'),
+            $t('f_rec_fb_value',   'fb_value',   'Badge · giá trị'),
+            $t('f_rec_fb_label',   'fb_label',   'Badge · nhãn'),
+            // Jobs section
+            $t('f_rec_jobs_eyebrow', 'jobs_eyebrow', 'Vị trí · eyebrow'),
+            $t('f_rec_jobs_title',   'jobs_title',   'Vị trí · tiêu đề'),
+            $ta('f_rec_jobs_lead',   'jobs_lead',    'Vị trí · mô tả'),
+            $t('f_rec_hours_label',  'hours_label',  'Nhãn · Giờ làm'),
+            $t('f_rec_hours_value',  'hours_value',  'Giá trị · Giờ làm'),
+            $t('f_rec_salary_label', 'salary_label', 'Nhãn · Lương'),
+            $t('f_rec_apply_label',  'apply_label',  'Nhãn · nút Ứng tuyển'),
+            $rep('f_rec_jobs', 'jobs', 'Danh sách vị trí tuyển dụng', array(
+                array('key' => 'f_rec_job_cat', 'name' => 'cat', 'label' => 'Nhóm (data/sales/finance/web → quyết định icon + màu)', 'type' => 'select', 'choices' => array(
+                    'data' => 'data — Nhập liệu', 'sales' => 'sales — Kinh doanh', 'finance' => 'finance — Tài chính', 'web' => 'web — Lập trình',
+                ), 'default_value' => 'data', 'return_format' => 'value'),
+                $t('f_rec_job_clabel', 'cat_label',  'Nhãn nhóm (hiển thị)'),
+                $t('f_rec_job_lead',   'lead_tag',   'Lead tag (vd Team Leader, để trống = ẩn)'),
+                $t('f_rec_job_title',  'title',      'Chức danh'),
+                $ta('f_rec_job_desc',  'desc',       'Mô tả'),
+                $t('f_rec_job_vnd',    'salary_vnd', 'Lương (VND)'),
+                $t('f_rec_job_usd',    'salary_usd', 'Lương (USD)'),
+                $t('f_rec_job_perk',   'perk',       'Phụ cấp (để trống = ẩn)'),
+            )),
+            // CTA
+            $ta('f_rec_cta_title', 'cta_title', 'CTA · tiêu đề'),
+            $ta('f_rec_cta_text',  'cta_text',  'CTA · nội dung'),
+            $t('f_rec_cta_btn1',   'cta_btn1',  'CTA · nút 1 (Facebook)'),
+            $t('f_rec_cta_btn2',   'cta_btn2',  'CTA · nút 2 (email)'),
+            $t('f_rec_cta_email',  'cta_email', 'CTA · địa chỉ email'),
+        ),
+        'location' => array(
+            array(
+                array('param' => 'page_template', 'operator' => '==', 'value' => 'tpl-recruit.php'),
+            ),
+        ),
+        'active' => true,
+        'description' => 'Văn bản trang Tuyển dụng.',
+    ));
+
+    /* ---------- CHÍNH SÁCH BẢO MẬT (tpl-privacy.php) ---------- */
+    acf_add_local_field_group(array(
+        'key' => 'group_vcc_privacy',
+        'title' => 'VCC — Chính sách bảo mật',
+        'fields' => array(
+            // Page head
+            $t('f_prv_crumb_home', 'crumb_home', 'Breadcrumb · trang chủ'),
+            $t('f_prv_crumb_here', 'crumb_here', 'Breadcrumb · trang hiện tại'),
+            $t('f_prv_ph_eye',     'ph_eye',     'Page head · eyebrow'),
+            $ta('f_prv_ph_title',  'ph_title',   'Page head · tiêu đề (xuống dòng = <br>)', array('new_lines' => '')),
+            $ta('f_prv_ph_lead',   'ph_lead',    'Page head · mô tả'),
+            $ta('f_prv_doc_meta',  'doc_meta',   'Page head · meta (mỗi dòng 1 mục)', array('rows' => 3, 'new_lines' => '')),
+            $t('f_prv_fb_value',   'fb_value',   'Badge · giá trị'),
+            $t('f_prv_fb_label',   'fb_label',   'Badge · nhãn'),
+            $t('f_prv_contact_email', 'contact_email', 'Email liên hệ (trong card + CTA)'),
+            // Document
+            $t('f_prv_toc_head', 'toc_head', 'Mục lục · tiêu đề'),
+            $rep('f_prv_toc', 'toc', 'Mục lục (theo thứ tự = số điều)', array(
+                $t('f_prv_toc_l', 'label', 'Nhãn mục lục'),
+            )),
+            $rep('f_prv_sections', 'sections', 'Các điều (theo thứ tự = số điều; body cho phép HTML)', array(
+                $ta('f_prv_sec_t', 'title', 'Tiêu đề điều'),
+                $ta('f_prv_sec_b', 'body',  'Nội dung (HTML: <p>, <ul class="doc-list">, <div class="doc-card">…)', array('rows' => 10, 'new_lines' => '')),
+            )),
+            // CTA
+            $ta('f_prv_cta_title', 'cta_title', 'CTA · tiêu đề'),
+            $ta('f_prv_cta_text',  'cta_text',  'CTA · nội dung'),
+            $t('f_prv_cta_btn1',   'cta_btn1',  'CTA · nút 1'),
+            $t('f_prv_cta_btn2',   'cta_btn2',  'CTA · nút 2 (điện thoại)'),
+        ),
+        'location' => array(
+            array(
+                array('param' => 'page_template', 'operator' => '==', 'value' => 'tpl-privacy.php'),
+            ),
+        ),
+        'active' => true,
+        'description' => 'Văn bản trang Chính sách bảo mật.',
+    ));
+
+    /* ---------- CHÍNH SÁCH BẢO MẬT THÔNG TIN (tpl-security.php) ---------- */
+    acf_add_local_field_group(array(
+        'key' => 'group_vcc_security',
+        'title' => 'VCC — Chính sách bảo mật thông tin',
+        'fields' => array(
+            // Page head
+            $t('f_sec_crumb_home', 'crumb_home', 'Breadcrumb · trang chủ'),
+            $t('f_sec_crumb_here', 'crumb_here', 'Breadcrumb · trang hiện tại'),
+            $t('f_sec_ph_eye',     'ph_eye',     'Page head · eyebrow'),
+            $ta('f_sec_ph_title',  'ph_title',   'Page head · tiêu đề (xuống dòng = <br>)', array('new_lines' => '')),
+            $ta('f_sec_ph_lead',   'ph_lead',    'Page head · mô tả'),
+            $ta('f_sec_doc_meta',  'doc_meta',   'Page head · meta (mỗi dòng 1 mục)', array('rows' => 3, 'new_lines' => '')),
+            $t('f_sec_fb_value',   'fb_value',   'Badge · giá trị'),
+            $t('f_sec_fb_label',   'fb_label',   'Badge · nhãn'),
+            // Statement
+            $ta('f_sec_pol_lede', 'pol_lede', 'Tuyên bố · câu mở đầu (lớn)'),
+            $ta('f_sec_pol_body', 'pol_body', 'Tuyên bố · đoạn văn (HTML: <p>…)', array('rows' => 6, 'new_lines' => '')),
+            // Objectives
+            $t('f_sec_goals_kicker', 'goals_kicker', 'Mục tiêu · kicker'),
+            $ta('f_sec_goals_title', 'goals_title',  'Mục tiêu · tiêu đề'),
+            $ta('f_sec_goals_intro', 'goals_intro',  'Mục tiêu · mô tả'),
+            $rep('f_sec_goals', 'goals', 'Mục tiêu · 3 thẻ (theo thứ tự icon)', array(
+                $t('f_sec_goal_t', 'title', 'Tiêu đề'),
+                $ta('f_sec_goal_x', 'text', 'Nội dung'),
+            )),
+            // Signature band
+            $t('f_sec_sign_ed', 'sign_ed', 'Ban hành · nhãn'),
+            $rep('f_sec_sign_rows', 'sign_rows', 'Ban hành · các dòng', array(
+                $t('f_sec_sign_k', 'k', 'Nhãn'),
+                $t('f_sec_sign_v', 'v', 'Giá trị'),
+            )),
+            $t('f_sec_cert_title', 'cert_title', 'Chứng nhận · tiêu đề'),
+            $t('f_sec_cert_no',    'cert_no',    'Chứng nhận · số'),
+            // CTA
+            $ta('f_sec_cta_title', 'cta_title', 'CTA · tiêu đề'),
+            $ta('f_sec_cta_text',  'cta_text',  'CTA · nội dung'),
+            $t('f_sec_cta_btn1',   'cta_btn1',  'CTA · nút 1'),
+            $t('f_sec_cta_btn2',   'cta_btn2',  'CTA · nút 2'),
+        ),
+        'location' => array(
+            array(
+                array('param' => 'page_template', 'operator' => '==', 'value' => 'tpl-security.php'),
+            ),
+        ),
+        'active' => true,
+        'description' => 'Văn bản trang Chính sách bảo mật thông tin.',
+    ));
+
+    /* ---------- LIÊN HỆ (tpl-contact.php + tpl-contact-confirm.php) ---------- */
+    acf_add_local_field_group(array(
+        'key' => 'group_vcc_contact',
+        'title' => 'VCC — Liên hệ',
+        'fields' => array(
+            // Page head
+            $t('f_ct_crumb_home',   'crumb_home',   'Breadcrumb · trang chủ'),
+            $t('f_ct_crumb_parent', 'crumb_parent', 'Breadcrumb · nhóm (chỉ trang Xác nhận)'),
+            $t('f_ct_crumb_here',   'crumb_here',   'Breadcrumb · trang hiện tại'),
+            $t('f_ct_ph_eye',       'ph_eye',       'Page head · eyebrow'),
+            $ta('f_ct_ph_title',    'ph_title',     'Page head · tiêu đề (xuống dòng = <br>)', array('new_lines' => '')),
+            $ta('f_ct_ph_lead',     'ph_lead',      'Page head · mô tả'),
+            // CF7 form id (per language: step1 vi943/en956/ja922 · step2 vi945/en958/ja932)
+            $t('f_ct_cf7_id',       'cf7_id',       'ID form Contact Form 7 (theo ngôn ngữ + bước)'),
+            // Aside · contact info
+            $t('f_ct_info_title',   'info_title',   'Aside · tiêu đề'),
+            $ta('f_ct_info_sub',    'info_sub',     'Aside · mô tả'),
+            $t('f_ct_lbl_addr',     'lbl_addr',     'Aside · nhãn Địa chỉ'),
+            $ta('f_ct_val_addr',    'val_addr',     'Aside · Địa chỉ'),
+            $t('f_ct_lbl_phone',    'lbl_phone',    'Aside · nhãn Điện thoại'),
+            $t('f_ct_phone_hours',  'phone_hours',  'Aside · giờ làm việc'),
+            $t('f_ct_lbl_email',    'lbl_email',    'Aside · nhãn Email'),
+            $t('f_ct_contact_email','contact_email','Aside · địa chỉ email'),
+            $t('f_ct_lbl_social',   'lbl_social',   'Aside · nhãn Mạng xã hội'),
+            $t('f_ct_social_text',  'social_text',  'Aside · text Facebook'),
+            // Aside · ISO
+            $t('f_ct_iso_title',    'iso_title',    'ISO · tiêu đề'),
+            $t('f_ct_iso_text',     'iso_text',     'ISO · mô tả'),
+            $t('f_ct_iso_no',       'iso_no',       'ISO · số chứng nhận'),
+        ),
+        'location' => array(
+            array(
+                array('param' => 'page_template', 'operator' => '==', 'value' => 'tpl-contact.php'),
+            ),
+            array(
+                array('param' => 'page_template', 'operator' => '==', 'value' => 'tpl-contact-confirm.php'),
+            ),
+        ),
+        'active' => true,
+        'description' => 'Văn bản trang Liên hệ + Xác nhận (form là Contact Form 7).',
+    ));
 });

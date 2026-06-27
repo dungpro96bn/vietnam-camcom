@@ -16,6 +16,7 @@ $contact = home_url('/contact/');
 	<div class="hgrid" aria-hidden="true"></div>
 	<div class="hglow" aria-hidden="true"></div>
 	<div class="hglow two" aria-hidden="true"></div>
+    <canvas id="constellation" aria-hidden="true"></canvas>
 	<div class="container hero-inner">
 		<div class="hero-text reveal in">
 			<span class="hero-pill"><span class="tag"><?php echo esc_html(vcc_field('hero_tag', 'CAMCOM GROUP')); ?></span> <?php echo esc_html(vcc_field('hero_pill', 'Kết nối nhân lực Việt Nam & Nhật Bản')); ?></span>
@@ -161,7 +162,6 @@ $contact = home_url('/contact/');
 
 <!-- ================= PHILOSOPHY ================= -->
 <section class="philo">
-	<div class="bg-field-dark" aria-hidden="true"></div>
 	<div class="container">
 		<div class="motto reveal">
 			<span class="eyebrow center"><?php echo esc_html(vcc_field('philo_eyebrow', 'Value · Mission · Vision · Purpose')); ?></span>
@@ -209,7 +209,7 @@ $contact = home_url('/contact/');
 		<div class="stats-grid">
 			<?php foreach ($stats as $i => $st) : ?>
 			<div class="stat reveal<?php echo $i ? ' d' . $i : ''; ?>">
-				<div class="sv"><span data-count="<?php echo esc_attr($st['value']); ?>"<?php echo $st['suffix'] ? ' data-suffix="' . esc_attr($st['suffix']) . '"' : ''; ?>><?php echo esc_html($st['value'] . $st['suffix']); ?></span></div>
+				<div class="sv"><span <?php echo $st['suffix'] ? ' data-suffix="' . esc_attr($st['suffix']) . '"' : ''; ?>><?php echo esc_html($st['value'] . $st['suffix']); ?></span></div>
 				<div class="sl"><?php echo esc_html($st['label']); ?></div>
 			</div>
 			<?php endforeach; ?>

@@ -35,7 +35,7 @@ $contact = home_url('/contact/');
 			</div>
 			<div class="ph-media reveal in d1">
 				<div class="frame">
-					<img src="https://vietnam-camcom.com/wp-content/uploads/web_mainImg_pc.png" alt="Phát triển WEB và sáng tạo nội dung" loading="eager" />
+					<img src="/wp-content/uploads/web_mainImg_pc.png" alt="Phát triển WEB và sáng tạo nội dung" loading="eager" />
 				</div>
 				<div class="float-badge">
 					<span class="fb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m18 16 4-4-4-4M6 8l-4 4 4 4M14.5 4l-5 16"/></svg></span>
@@ -56,7 +56,7 @@ $points = vcc_list('points', array('title', 'text'), array(
 	array('title' => 'Point 2 — Mạng lưới trong & ngoài nước', 'text' => 'Củng cố các cơ sở chi nhánh trong và ngoài nước, đáp ứng và đảm bảo nhu cầu cũng như lợi ích của khách hàng ở Nhật Bản và quốc tế.'),
 ));
 ?>
-<section style="padding-bottom:0;">
+<section style="padding-bottom:40px;">
 	<div class="container">
 		<div class="hr-cards reveal">
 			<?php foreach ($points as $p) : ?>
@@ -86,7 +86,7 @@ $points = vcc_list('points', array('title', 'text'), array(
 	<div class="container">
 		<div class="feature">
 			<div class="feature-media reveal">
-				<div class="frame"><img src="https://vietnam-camcom.com/wp-content/uploads/web_image01_pc.png" alt="Sản xuất website" loading="lazy" /></div>
+				<div class="frame"><img src="/wp-content/uploads/web_image01_pc.png" alt="Sản xuất website" loading="lazy" /></div>
 			</div>
 			<div class="feature-copy reveal d1">
 				<span class="feat-tag"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20"/></svg> <?php echo esc_html(vcc_field('wp_tag', 'Website')); ?></span>
@@ -106,7 +106,7 @@ $points = vcc_list('points', array('title', 'text'), array(
 		</div>
 		<div class="gallery reveal">
 			<?php for ($i = 1; $i <= 6; $i++) : ?>
-			<div class="g-item"><img src="https://vietnam-camcom.com/wp-content/uploads/slider_img0<?php echo $i; ?>.png" alt="Sản phẩm website <?php echo $i; ?>" loading="lazy" /></div>
+			<div class="g-item"><img src="/wp-content/uploads/slider_img0<?php echo $i; ?>.png" alt="Sản phẩm website <?php echo $i; ?>" loading="lazy" /></div>
 			<?php endfor; ?>
 		</div>
 	</div>
@@ -118,7 +118,7 @@ $points = vcc_list('points', array('title', 'text'), array(
 	<div class="container">
 		<div class="feature flip">
 			<div class="feat-media reveal">
-				<div class="frame"><img src="https://vietnam-camcom.com/wp-content/uploads/web_image02_pc.png" alt="Phát triển offshore tại Việt Nam" loading="lazy" /></div>
+				<div class="frame"><img src="/wp-content/uploads/web_image02_pc.png" alt="Phát triển offshore tại Việt Nam" loading="lazy" /></div>
 			</div>
 			<div class="feature-copy reveal d1">
 				<span class="feat-tag"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3v6l-5 9a2 2 0 0 0 1.8 3h12.4a2 2 0 0 0 1.8-3l-5-9V3"/><path d="M8 3h8"/></svg> <?php echo esc_html(vcc_field('lab_tag', 'Offshore Lab')); ?></span>
@@ -136,7 +136,7 @@ $points = vcc_list('points', array('title', 'text'), array(
 		<div class="strengths duo" style="margin-top:48px;">
 			<?php foreach ($lab_cards as $i => $c) : ?>
 			<article class="str-card reveal<?php echo $i ? ' d' . $i : ''; ?>">
-				<div class="ic img"><img src="https://vietnam-camcom.com/wp-content/uploads/<?php echo $lab_imgs[$i % count($lab_imgs)]; ?>" alt="" loading="lazy" /></div>
+				<div class="ic img"><img src="/wp-content/uploads/<?php echo $lab_imgs[$i % count($lab_imgs)]; ?>" alt="" loading="lazy" /></div>
 				<h3><?php echo esc_html($c['title']); ?></h3>
 				<p><?php echo esc_html($c['text']); ?></p>
 			</article>
@@ -165,7 +165,7 @@ $points = vcc_list('points', array('title', 'text'), array(
 		<div class="strengths">
 			<?php foreach ($video_cards as $i => $c) : ?>
 			<article class="str-card reveal<?php echo $i ? ' d' . $i : ''; ?>">
-				<div class="ic img"><img src="https://vietnam-camcom.com/wp-content/uploads/<?php echo $video_imgs[$i % count($video_imgs)]; ?>" alt="" loading="lazy" /></div>
+				<div class="ic img"><img src="/wp-content/uploads/<?php echo $video_imgs[$i % count($video_imgs)]; ?>" alt="" loading="lazy" /></div>
 				<h3><?php echo esc_html($c['title']); ?></h3>
 				<p><?php echo esc_html($c['text']); ?></p>
 			</article>

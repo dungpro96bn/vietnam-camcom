@@ -1,13 +1,19 @@
-/* VIETNAM CAMCOM — light landing interactions */
+/* ============================================================
+   VIETNAM CAMCOM — front-end interactions
+   navbar scroll state · mobile drawer · scroll reveal ·
+   animated counters · hero parallax · section-tab scrollspy
+   ============================================================ */
 (function () {
   'use strict';
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* navbar scroll */
+  /* navbar scroll state */
   const nav = document.querySelector('.nav');
-  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
+  if (nav) {
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
 
   /* mobile menu — build a real drawer from existing nav links */
   const mb = document.querySelector('.menu-btn');
@@ -30,7 +36,8 @@
       if (drop) {
         const head = document.createElement('div');
         head.className = 'm-group-title';
-        head.textContent = 'Dịch vụ';
+        const btn = drop.querySelector('button');
+        head.textContent = btn ? btn.textContent.trim() : 'Dịch vụ';
         panel.appendChild(head);
         drop.querySelectorAll('.dropdown a').forEach(a => {
           const c = a.cloneNode(true);
@@ -62,14 +69,10 @@
     drawer.querySelector('.m-scrim').addEventListener('click', close);
     panel.addEventListener('click', e => { if (e.target.closest('a')) close(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
-    // sync language in drawer
-    drawer.querySelectorAll('.lang button').forEach(b => b.addEventListener('click', () => {
-      drawer.querySelectorAll('.lang button').forEach(x => x.classList.remove('on'));
-      b.classList.add('on');
-    }));
+    // language buttons inside the drawer keep their inline doGTranslate onclick handler
   }
 
-  /* language toggle (visual) */
+  /* language toggle (visual highlight) */
   document.querySelectorAll('.lang button').forEach(b => {
     b.addEventListener('click', () => {
       document.querySelectorAll('.lang button').forEach(x => x.classList.remove('on'));
@@ -132,11 +135,8 @@
         cw.style.transform = '';
         document.querySelectorAll('.node').forEach(n => n.style.transform = '');
       });
-    }
 
-    /* sparkles around the orbit */
-    const cwrap = document.querySelector('.circle-wrap');
-    if (cwrap) {
+      /* sparkles around the orbit */
       const N = 5;
       for (let i = 0; i < N; i++) {
         const s = document.createElement('div');
@@ -146,7 +146,7 @@
         s.style.left = (50 + Math.cos(ang) * rad) + '%';
         s.style.top = (50 + Math.sin(ang) * rad) + '%';
         s.style.animation = `bob ${4 + Math.random() * 3}s ease-in-out ${Math.random() * 2}s infinite`;
-        cwrap.appendChild(s);
+        cw.appendChild(s);
       }
     }
   }
@@ -174,5 +174,131 @@
     window.addEventListener('scroll', spy, { passive: true });
     window.addEventListener('resize', spy, { passive: true });
   }
-})();
 
+  /* ============================================================
+     Constellation canvas — connected nodes, mouse reactive (hero)
+     ============================================================ */
+  const canvas = document.getElementById('constellation');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    let W, H, DPR, nodes = [], mouse = { x: -9999, y: -9999, tx: -9999, ty: -9999 };
+    let raf = null, running = true;
+
+    const COUNT = () => {
+      const area = W * H;
+      return Math.max(34, Math.min(96, Math.round(area / 19000)));
+    };
+
+    function resize() {
+      DPR = Math.min(window.devicePixelRatio || 1, 2);
+      W = canvas.clientWidth; H = canvas.clientHeight;
+      canvas.width = W * DPR; canvas.height = H * DPR;
+      ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+      buildNodes();
+    }
+
+    function buildNodes() {
+      const n = COUNT();
+      nodes = [];
+      for (let i = 0; i < n; i++) {
+        nodes.push({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          vx: (Math.random() - 0.5) * 0.28,
+          vy: (Math.random() - 0.5) * 0.28,
+          r: Math.random() * 1.6 + 0.8,
+        });
+      }
+    }
+
+    const LINK = 140;
+
+    function frame() {
+      if (!running) return;
+      ctx.clearRect(0, 0, W, H);
+      // ease mouse
+      mouse.x += (mouse.tx - mouse.x) * 0.08;
+      mouse.y += (mouse.ty - mouse.y) * 0.08;
+
+      for (const p of nodes) {
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0 || p.x > W) p.vx *= -1;
+        if (p.y < 0 || p.y > H) p.vy *= -1;
+
+        // subtle mouse repulsion
+        const dx = p.x - mouse.x, dy = p.y - mouse.y;
+        const d2 = dx * dx + dy * dy;
+        if (d2 < 14000 && d2 > 0.01) {
+          const f = (14000 - d2) / 14000 * 0.9;
+          const d = Math.sqrt(d2);
+          p.x += (dx / d) * f;
+          p.y += (dy / d) * f;
+        }
+      }
+
+      // links
+      for (let i = 0; i < nodes.length; i++) {
+        const a = nodes[i];
+        for (let j = i + 1; j < nodes.length; j++) {
+          const b = nodes[j];
+          const dx = a.x - b.x, dy = a.y - b.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < LINK) {
+            const al = (1 - dist / LINK) * 0.5;
+            ctx.strokeStyle = `rgba(129,140,248,${al})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
+            ctx.stroke();
+          }
+        }
+        // link to mouse
+        const mdx = a.x - mouse.x, mdy = a.y - mouse.y;
+        const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+        if (mdist < LINK + 50) {
+          const al = (1 - mdist / (LINK + 50)) * 0.7;
+          ctx.strokeStyle = `rgba(192,132,252,${al})`;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y); ctx.lineTo(mouse.x, mouse.y);
+          ctx.stroke();
+        }
+      }
+
+      // nodes
+      for (const p of nodes) {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(199,202,255,0.85)';
+        ctx.fill();
+      }
+
+      raf = requestAnimationFrame(frame);
+    }
+
+    window.addEventListener('pointermove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      if (e.clientY < rect.bottom) { mouse.tx = e.clientX - rect.left; mouse.ty = e.clientY - rect.top; }
+    });
+    window.addEventListener('pointerleave', () => { mouse.tx = -9999; mouse.ty = -9999; });
+
+    // pause the animation loop when the hero scrolls out of view
+    const heroIO = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        const wasRunning = running;
+        running = e.isIntersecting;
+        if (running && !wasRunning && !reduce) { cancelAnimationFrame(raf); frame(); }
+      });
+    }, { threshold: 0 });
+
+    window.addEventListener('resize', () => { resize(); });
+    resize();
+    if (reduce) {
+      // draw a single static frame
+      running = true; frame(); running = false; cancelAnimationFrame(raf);
+    } else {
+      frame();
+      heroIO.observe(canvas);
+    }
+  }
+})();

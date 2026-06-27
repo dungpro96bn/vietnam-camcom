@@ -36,7 +36,7 @@ $contact = home_url('/contact/');
 			</div>
 			<div class="ph-media reveal in d1">
 				<div class="frame">
-					<img src="https://vietnam-camcom.com/wp-content/uploads/fdi_support_mainImg_pc.png" alt="Hỗ trợ mở rộng thị trường tại Việt Nam" loading="eager" />
+					<img src="/wp-content/uploads/fdi_support_mainImg_pc.png" alt="Hỗ trợ mở rộng thị trường tại Việt Nam" loading="eager" />
 				</div>
 				<div class="float-badge">
 					<span class="fb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/><path d="M9 9h.01M9 13h.01M9 17h.01"/></svg></span>
@@ -51,7 +51,7 @@ $contact = home_url('/contact/');
 </section>
 
 <!-- ================= INTRO LOCKUP ================= -->
-<section style="padding-bottom:0;">
+<section style="padding-bottom:60px;">
 	<div class="container">
 		<div class="hr-intro">
 			<div class="reveal">
@@ -103,7 +103,7 @@ $contact = home_url('/contact/');
 	<div class="container">
 		<div class="feature">
 			<div class="feature-media reveal">
-				<div class="frame"><img src="https://vietnam-camcom.com/wp-content/uploads/fdi_support_image01_pc.png" alt="Hỗ trợ thành lập công ty con, văn phòng đại diện" loading="lazy" /></div>
+				<div class="frame"><img src="/wp-content/uploads/fdi_support_image01_pc.png" alt="Hỗ trợ thành lập công ty con, văn phòng đại diện" loading="lazy" /></div>
 			</div>
 			<div class="feature-copy reveal d1">
 				<span class="feat-tag"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg> <?php echo esc_html(vcc_field('est_tag', 'Establishment')); ?></span>
@@ -155,7 +155,7 @@ $contact = home_url('/contact/');
 	<div class="container">
 		<div class="feature flip">
 			<div class="feat-media reveal">
-				<div class="frame"><img src="https://vietnam-camcom.com/wp-content/uploads/fdi_support_image02_pc.png" alt="Hỗ trợ các thủ tục sau khi thành lập" loading="lazy" /></div>
+				<div class="frame"><img src="/wp-content/uploads/fdi_support_image02_pc.png" alt="Hỗ trợ các thủ tục sau khi thành lập" loading="lazy" /></div>
 			</div>
 			<div class="feature-copy reveal d1">
 				<span class="feat-tag"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg> <?php echo esc_html(vcc_field('op_tag', 'Operation')); ?></span>

@@ -35,7 +35,7 @@ $contact = home_url('/contact/');
 			</div>
 			<div class="ph-media reveal in d1">
 				<div class="frame">
-					<img src="https://vietnam-camcom.com/wp-content/uploads/bpo_mainImg_pc.png" alt="Dịch vụ BPO VIETNAM CAMCOM" loading="eager" />
+					<img src="/wp-content/uploads/bpo_mainImg_pc.png" alt="Dịch vụ BPO VIETNAM CAMCOM" loading="eager" />
 				</div>
 				<div class="float-badge">
 					<span class="fb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg></span>
@@ -101,7 +101,7 @@ $contact = home_url('/contact/');
 			<?php foreach ($cards as $i => $c) : ?>
 			<article class="str-card reveal<?php echo ($i % 3) ? ' d' . ($i % 3) : ''; ?>">
 				<span class="num"><?php echo sprintf('%02d', $i + 1); ?></span>
-				<div class="ic img"><img src="https://vietnam-camcom.com/wp-content/uploads/<?php echo $de_imgs[$i % count($de_imgs)]; ?>" alt="" loading="lazy" /></div>
+				<div class="ic img"><img src="/wp-content/uploads/<?php echo $de_imgs[$i % count($de_imgs)]; ?>" alt="" loading="lazy" /></div>
 				<h3><?php echo esc_html($c['title']); ?></h3>
 				<p><?php echo esc_html($c['text']); ?></p>
 			</article>
@@ -144,7 +144,7 @@ $contact = home_url('/contact/');
 			$flip = ($i % 2 === 1); ?>
 		<div class="feature<?php echo $flip ? ' flip' : ''; ?>"<?php echo $i ? ' style="margin-top:64px;"' : ''; ?>>
 			<div class="<?php echo $flip ? 'feat-media' : 'feature-media'; ?> reveal">
-				<div class="frame"><img src="https://vietnam-camcom.com/wp-content/uploads/<?php echo $feat_imgs[$i % count($feat_imgs)]; ?>" alt="<?php echo esc_attr($ft['title']); ?>" loading="lazy" /></div>
+				<div class="frame"><img src="/wp-content/uploads/<?php echo $feat_imgs[$i % count($feat_imgs)]; ?>" alt="<?php echo esc_attr($ft['title']); ?>" loading="lazy" /></div>
 			</div>
 			<div class="feature-copy reveal d1">
 				<span class="feat-tag"><?php echo isset($feat_icons[$i]) ? $feat_icons[$i] : ''; ?> <?php echo esc_html($ft['tag']); ?></span>
@@ -161,7 +161,7 @@ $contact = home_url('/contact/');
 
 		<div class="feature-media reveal" style="margin-top:56px;">
 			<div class="frame" style="aspect-ratio:auto;border:1px solid var(--line);box-shadow:var(--shadow-sm);">
-				<img src="https://vietnam-camcom.com/wp-content/uploads/bpo_vi_image08_pc.png" alt="Quy trình dịch vụ BPO" loading="lazy" style="width:100%;height:auto;display:block;" />
+				<img src="/wp-content/uploads/bpo_vi_image08_pc.png" alt="Quy trình dịch vụ BPO" loading="lazy" style="width:100%;height:auto;display:block;" />
 			</div>
 		</div>
 	</div>

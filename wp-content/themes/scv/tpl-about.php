@@ -11,28 +11,6 @@ get_header();
 $contact = home_url('/contact/');
 ?>
 
-<style>
-/* about page — pulled from camcom-hr.css (.hr-intro / .hr-fig) + about-specific */
-.hr-intro { display: grid; grid-template-columns: 1fr .92fr; gap: 56px; align-items: center; }
-.hr-intro h2 { margin-bottom: 18px; }
-.hr-intro p { color: var(--body); font-size: 16.5px; }
-.hr-figures { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-.hr-fig { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow-sm); }
-.hr-fig .fv { font-size: clamp(34px,4vw,46px); font-weight: 800; color: var(--navy); letter-spacing: -0.03em; line-height: 1; }
-.hr-fig .fv .u { color: var(--blue); }
-.hr-fig .fl { color: var(--muted); font-size: 14px; margin-top: 10px; }
-.hr-fig.coral { background: linear-gradient(135deg, #fff, var(--coral-soft)); border-color: #ffd9d2; }
-.hr-fig.coral .fv { color: var(--coral); }
-.strengths .ic.img { background: var(--sky); padding: 0; overflow: hidden; }
-.strengths .ic.img img { width: 60%; height: 60%; object-fit: contain; }
-.str-card:hover .ic.img { background: var(--sky); }
-.dir-purpose { max-width: 880px; margin: 28px auto 0; }
-.dir-purpose .vcard { padding: 36px 40px; }
-.dir-purpose .vcard p { font-size: 15.5px; line-height: 1.75; }
-@media (max-width: 920px) { .hr-intro { grid-template-columns: 1fr; gap: 40px; } }
-@media (max-width: 640px) { .hr-figures { grid-template-columns: 1fr; } }
-</style>
-
 <!-- ================= PAGE HEADER ================= -->
 <section class="page-head">
 	<div class="hgrid" aria-hidden="true"></div>
@@ -56,7 +34,7 @@ $contact = home_url('/contact/');
 			</div>
 			<div class="ph-media reveal in d1">
 				<div class="frame">
-					<img src="https://vietnam-camcom.com/wp-content/uploads/scv_home_img01_pc.png" alt="VIETNAM CAMCOM" loading="eager" />
+					<img src="/wp-content/uploads/scv_home_img01_pc.png" alt="VIETNAM CAMCOM" loading="eager" />
 				</div>
 				<div class="float-badge">
 					<span class="fb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M8 8V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3"/><path d="M3 13h18"/></svg></span>
@@ -100,7 +78,7 @@ $contact = home_url('/contact/');
 				<?php foreach ($figs as $f) :
 					$is_num = is_numeric($f['value']); ?>
 				<div class="hr-fig<?php echo !empty($f['coral']) ? ' coral' : ''; ?>">
-					<div class="fv"><?php if ($is_num) : ?><span data-count="<?php echo esc_attr($f['value']); ?>"<?php echo $f['suffix'] ? ' data-suffix="' . esc_attr($f['suffix']) . '"' : ''; ?>><?php echo esc_html($f['value'] . $f['suffix']); ?></span><?php else : ?><span class="u"><?php echo esc_html($f['value']); ?></span><?php endif; ?></div>
+					<div class="fv"><?php if ($is_num) : ?><span <?php echo $f['suffix'] ? ' data-suffix="' . esc_attr($f['suffix']) . '"' : ''; ?>><?php echo esc_html($f['value'] . $f['suffix']); ?></span><?php else : ?><span class="u"><?php echo esc_html($f['value']); ?></span><?php endif; ?></div>
 					<div class="fl"><?php echo esc_html($f['label']); ?></div>
 				</div>
 				<?php endforeach; ?>
@@ -130,7 +108,7 @@ $contact = home_url('/contact/');
 			<?php foreach ($strengths as $i => $s) : ?>
 			<article class="str-card reveal<?php echo $i ? ' d' . $i : ''; ?>">
 				<span class="num"><?php echo sprintf('%02d', $i + 1); ?></span>
-				<div class="ic img"><img src="https://vietnam-camcom.com/wp-content/uploads/<?php echo $str_imgs[$i % count($str_imgs)]; ?>" alt="" loading="lazy" /></div>
+				<div class="ic img"><img src="/wp-content/uploads/<?php echo $str_imgs[$i % count($str_imgs)]; ?>" alt="" loading="lazy" /></div>
 				<h3><?php echo esc_html($s['title']); ?></h3>
 				<p><?php echo esc_html($s['text']); ?></p>
 			</article>
@@ -142,7 +120,6 @@ $contact = home_url('/contact/');
 <!-- ================= DIRECTION (VALUE/MISSION/VISION/PURPOSE) ================= -->
 <section class="philo">
 	<span id="direction" class="anchor"></span>
-	<div class="bg-field-dark" aria-hidden="true"></div>
 	<div class="container">
 		<div class="motto reveal">
 			<span class="eyebrow center"><?php echo esc_html(vcc_field('philo_eyebrow', 'Value · Mission · Vision · Purpose')); ?></span>

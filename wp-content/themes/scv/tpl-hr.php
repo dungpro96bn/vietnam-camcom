@@ -36,7 +36,7 @@ $contact = home_url('/contact/');
 			</div>
 			<div class="ph-media reveal in d1">
 				<div class="frame">
-					<img src="https://vietnam-camcom.com/wp-content/uploads/hr_mainImg_pc.png" alt="Giới thiệu nguồn nhân lực VIETNAM CAMCOM" loading="eager" />
+					<img src="/wp-content/uploads/hr_mainImg_pc.png" alt="Giới thiệu nguồn nhân lực VIETNAM CAMCOM" loading="eager" />
 				</div>
 				<div class="float-badge">
 					<span class="fb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9"/></svg></span>
@@ -108,7 +108,7 @@ $contact = home_url('/contact/');
 			<article class="hr-card reveal<?php echo $i ? ' d' . $i : ''; ?>">
 				<div class="pic">
 					<span class="tagchip"><?php echo esc_html($c['tag']); ?></span>
-					<img src="https://vietnam-camcom.com/wp-content/uploads/<?php echo $card_imgs[$i % count($card_imgs)]; ?>" alt="<?php echo esc_attr($c['title']); ?>" loading="lazy" />
+					<img src="/wp-content/uploads/<?php echo $card_imgs[$i % count($card_imgs)]; ?>" alt="<?php echo esc_attr($c['title']); ?>" loading="lazy" />
 				</div>
 				<div class="body">
 					<h3><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg></span><?php echo esc_html($c['title']); ?></h3>
@@ -133,7 +133,7 @@ $contact = home_url('/contact/');
 		<div class="feature">
 			<div class="feature-media reveal">
 				<div class="frame">
-					<img src="https://vietnam-camcom.com/wp-content/uploads/hr_vi_image03_pc.png" alt="mintoku work vietnam" loading="lazy" />
+					<img src="/wp-content/uploads/hr_vi_image03_pc.png" style="width: 100%" alt="mintoku work vietnam" loading="lazy" />
 				</div>
 			</div>
 			<div class="feature-copy reveal d1">
@@ -160,7 +160,7 @@ $contact = home_url('/contact/');
 				<p><?php echo esc_html(vcc_field('fair_text', 'Ngoài ra, chúng tôi còn tổ chức và điều hành các triển lãm, ngày hội việc làm được lên kế hoạch và vận hành bởi công ty mẹ Camtech — nơi doanh nghiệp gặp gỡ trực tiếp ứng viên tiềm năng.')); ?></p>
 			</div>
 			<div class="fair-pic">
-				<img src="https://vietnam-camcom.com/wp-content/uploads/47740295_L.jpg" alt="Ngày hội việc làm Camtech" loading="lazy" />
+				<img src="/wp-content/uploads/47740295_L.jpg" alt="Ngày hội việc làm Camtech" loading="lazy" />
 			</div>
 		</div>
 	</div>

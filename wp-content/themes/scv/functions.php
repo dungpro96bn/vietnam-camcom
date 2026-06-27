@@ -1,6 +1,35 @@
 <?php
 remove_action('wp_head', 'wp_generator');
 
+/* ============================================================
+   VCC — dọn <head> để load nhẹ hơn (an toàn, áp dụng mọi trang)
+   ============================================================ */
+function scv_head_cleanup() {
+    // Bỏ script phát hiện emoji (wp-emoji) — không cần cho site này.
+    remove_action('wp_head', 'print_emoji_detection_script', 7);
+    remove_action('admin_print_scripts', 'print_emoji_detection_script');
+    remove_action('wp_print_styles', 'print_emoji_styles');
+    remove_action('admin_print_styles', 'print_emoji_styles');
+    remove_filter('the_content_feed', 'wp_staticize_emoji');
+    remove_filter('comment_text_rss', 'wp_staticize_emoji');
+    remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
+
+    // Bỏ các link/meta thừa trong <head>.
+    remove_action('wp_head', 'rsd_link');                       // RSD
+    remove_action('wp_head', 'wlwmanifest_link');               // Windows Live Writer
+    remove_action('wp_head', 'wp_shortlink_wp_head');           // shortlink
+    remove_action('wp_head', 'feed_links_extra', 3);            // extra feed links
+    remove_action('wp_head', 'rest_output_link_wp_head');       // REST link
+    remove_action('wp_head', 'wp_oembed_add_discovery_links');  // oEmbed discovery
+    remove_action('wp_head', 'wp_oembed_add_host_js');          // oEmbed host js
+    remove_action('template_redirect', 'rest_output_link_header', 11);
+}
+add_action('init', 'scv_head_cleanup');
+
+// Bỏ script wp-embed.min.js (không nhúng nội dung WP ngoài).
+function scv_dequeue_embed() { wp_dequeue_script('wp-embed'); }
+add_action('wp_footer', 'scv_dequeue_embed');
+
 //サイトナビゲーション用
 register_nav_menus(array('gnav' => 'ナビゲーション'));
 
@@ -200,6 +229,7 @@ function languageString ()
         $var['nav_about']     = 'Về chúng tôi';
         $var['nav_services']  = 'Dịch vụ';
         $var['nav_news']      = 'Tin tức';
+        $var['nav_company']   = 'Công ty';
         $var['nav_recruit']   = 'Tuyển dụng';
         $var['svc_hr']        = 'Giới thiệu nguồn nhân lực';
         $var['svc_bpo']       = 'Dịch vụ BPO';
@@ -212,6 +242,7 @@ function languageString ()
         $var['nav_about']     = 'About us';
         $var['nav_services']  = 'Services';
         $var['nav_news']      = 'News';
+        $var['nav_company']   = 'Company';
         $var['nav_recruit']   = 'Careers';
         $var['svc_hr']        = 'Human resources';
         $var['svc_bpo']       = 'BPO service';
@@ -224,6 +255,7 @@ function languageString ()
         $var['nav_about']     = '私たちについて';
         $var['nav_services']  = 'サービス';
         $var['nav_news']      = 'ニュース';
+        $var['nav_company']   = '会社概要';
         $var['nav_recruit']   = '採用情報';
         $var['svc_hr']        = '人材紹介';
         $var['svc_bpo']       = 'BPOサービス';
@@ -299,6 +331,27 @@ function languageString ()
         $var['foot_overview']  = '会社概要';
     }
 
+    // ===== VCC redesign — news (archive + single) =====
+    if ($current_language == 'vi') {
+        $var['news_eyebrow'] = 'News';
+        $var['news_title']   = 'Tin tức';
+        $var['news_lead']    = 'Cập nhật hoạt động, sự kiện và thông tin mới nhất từ VIETNAM CAMCOM.';
+        $var['news_empty']   = 'Chưa có tin tức.';
+        $var['news_back']    = 'Quay lại danh sách tin tức';
+    } elseif ($current_language == 'en') {
+        $var['news_eyebrow'] = 'News';
+        $var['news_title']   = 'News';
+        $var['news_lead']    = 'Latest updates, events and announcements from VIETNAM CAMCOM.';
+        $var['news_empty']   = 'No news yet.';
+        $var['news_back']    = 'Back to news list';
+    } else {
+        $var['news_eyebrow'] = 'News';
+        $var['news_title']   = 'ニュース';
+        $var['news_lead']    = 'ベトナムキャムコムの最新情報・お知らせをご覧いただけます。';
+        $var['news_empty']   = 'ニュースはまだありません。';
+        $var['news_back']    = 'ニュース一覧へ戻る';
+    }
+
     return $var;
 }
 
@@ -309,10 +362,10 @@ function scv_vcc_assets() {
     $uri = get_template_directory_uri();
     $dir = get_template_directory();
     wp_enqueue_script(
-        'vcc-light',
-        $uri . '/vcc/js/camcom-light.js',
+        'vcc-app',
+        $uri . '/assets/js/app.js',
         array(),
-        file_exists($dir . '/vcc/js/camcom-light.js') ? filemtime($dir . '/vcc/js/camcom-light.js') : '1.0',
+        file_exists($dir . '/assets/js/app.js') ? filemtime($dir . '/assets/js/app.js') : '1.0',
         true
     );
 }
